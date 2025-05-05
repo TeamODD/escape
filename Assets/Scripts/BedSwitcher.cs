@@ -1,16 +1,10 @@
+using System;
 using UnityEngine;
 
 public class BedSwitcher : MonoBehaviour
 {
-    private GameManager gameManager;
-
-    void Start()
+    private void OnMouseDown()
     {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-
-    void OnMouseDown() // 침대를 클릭하면
-    {
-        gameManager.SwitchWorld();
+        GameManager.Instance?.SwitchWorld();
     }
 }

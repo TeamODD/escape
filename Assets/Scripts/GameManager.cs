@@ -2,20 +2,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject dreamObjects; // DreamObjects Æú´õ
-    public GameObject realityObjects; // RealityObjects Æú´õ
+    public static GameManager Instance{get; private set;}
+    [SerializeField] private GameObject _dreamObjects;
+    [SerializeField] private GameObject _realityObjects;
 
-    private bool isInDream = true;
+    public bool IsInDream { get; private set; } = false;
+
+    private void Awake()
+    {
+        // ì‹±ê¸€í†¤ íŒ¨í„´
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        _dreamObjects.SetActive(IsInDream);
+        _realityObjects.SetActive(!IsInDream);
+    }
 
     public void SwitchWorld()
     {
-        isInDream = !isInDream;
-        dreamObjects.SetActive(isInDream);
-        realityObjects.SetActive(!isInDream);
-    }
-
-    public bool IsInDream()
-    {
-        return isInDream;
+        IsInDream = !IsInDream;
+        _dreamObjects.SetActive(IsInDream);
+        _realityObjects.SetActive(!IsInDream);
     }
 }
