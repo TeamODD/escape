@@ -2,21 +2,27 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
-    public Item item;  // 슬롯에 들어갈 아이템 
-    public GameObject icon; // 아이콘
+    private Item _item;  // 현재 슬롯의 아이템
+    private GameObject _icon; // 아이콘
 
 
-
-    public void UpdateSlot()
+    public void GetNewItem(Item input) //아이템 변수에 새로운 아이템 넣기 
     {
-        if (item != null) // 만약 현재 아이템이 들어와있다면 
+        _item = input;
+    }
+
+
+    public void UpdateSlot() // 현재 슬롯 상태 업데이트 
+    {
+        if (_item != null) // 만약 현재 아이템이 들어와있다면 
         {
-            icon.GetComponent<Image>().sprite = item.icon; // 아이템의  아이콘으로 가져와서 
-            icon.SetActive(true);//아이콘 활성화
+
+            _icon.GetComponent<Image>().sprite = _item.GetItemIcon(); // 현재 아이템의  아이콘을 가져와서 아이콘 에 저장 
+            _icon.SetActive(true);//아이콘 활성화
         }
         else
         {
-            icon.SetActive(false); // 없으면 그대로 비활성화 
+            _icon.SetActive(false); // 없으면 그대로 비활성화 
         }
     }
 

@@ -1197,7 +1197,6 @@ MonoBehaviour:
   - {fileID: 140522235}
   - {fileID: 723516882}
   - {fileID: 1452292563}
-  itemList: []
 --- !u!1 &1034342689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,11 +1586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059a7312708416c4f8f45086844ca0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dreamName: 
-  itemName: Glass
-  itemDescription: 
-  dreamIcon: {fileID: 0}
-  icon: {fileID: 0}
+  dreamItem: {fileID: 0}
+  realItem: {fileID: 0}
 --- !u!114 &1802323852
 MonoBehaviour:
   m_ObjectHideFlags: 0
