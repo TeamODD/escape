@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class InventoryButton : MonoBehaviour
 {
     public GameObject targetInventory; // 펼쳐질 인벤토리 대상 
@@ -17,9 +17,19 @@ public class InventoryButton : MonoBehaviour
         _inventoryRt = targetInventory.GetComponent<RectTransform>();  //RT 정보 가져오기 
         _selfRt = GetComponent<RectTransform>();
     }
-
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // 왼쪽 클릭 감지
+        {
+            if (!IsPointerOverUI()&&_isActive)
+            {
+                SwithchInventoryStatus();
+            }
+        }
+    }
     public void SwithchInventoryStatus()
     {
+        
         _isActive = !_isActive; // 상태변경 
 
         if (_animCoroutine != null) //이미 애니메이션이 실행중일때 
@@ -64,6 +74,19 @@ public class InventoryButton : MonoBehaviour
         Vector2 finalPos = _selfRt.anchoredPosition;
         finalPos.y = targetPosY;
         _selfRt.anchoredPosition = finalPos;
+    }
+    
+    private bool IsPointerOverUI()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        var raycastResults = new System.Collections.Generic.List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+        return raycastResults.Count > 0;
     }
 
 }
