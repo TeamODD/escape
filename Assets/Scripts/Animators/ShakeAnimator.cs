@@ -31,6 +31,13 @@ namespace Assets.Scripts.Animators
             _initialPosition = transform.position;
         }
         /// <summary>
+        /// 애니메이션 종료 시 Transform의 위치를 초기값으로 되돌립니다.
+        /// </summary>
+        protected override void OnKill()
+        {
+            transform.position = _initialPosition;
+        }
+        /// <summary>
         /// Transform에 진동 애니메이션 시퀀스를 생성합니다.
         /// 애니메이션 완료 시 Transform 위치를 원래대로 되돌립니다.
         /// </summary>
@@ -38,8 +45,7 @@ namespace Assets.Scripts.Animators
         protected override Sequence CreateSequence()
         {
             return DOTween.Sequence()
-            .Append(transform.DOShakePosition(_duration, _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode))
-            .OnComplete(()=>transform.position = _initialPosition);
+            .Append(transform.DOShakePosition(_duration, _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode));
         }
     }
 }
