@@ -1,0 +1,69 @@
+using System.Collections;
+using UnityEngine;
+
+public class InventoryButton : MonoBehaviour
+{
+    public GameObject targetInventory; // 펼쳐질 인벤토리 대상 
+    
+    
+    private bool _isActive; // 현재 인벤토리가 펼쳐져 있는지 닫혀져 있는지 확인 
+    private RectTransform _inventoryRt; // 사용될 인벤토리 변수 
+    private RectTransform _selfRt; // 사용될 자신의 Rt변수
+    private Coroutine _animCoroutine; // 코루틴 애니메이션변수
+    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        _inventoryRt = targetInventory.GetComponent<RectTransform>();  //RT 정보 가져오기 
+        _selfRt = GetComponent<RectTransform>();
+    }
+
+    public void SwithchInventoryStatus()
+    {
+        _isActive = !_isActive; // 상태변경 
+
+        if (_animCoroutine != null) //이미 애니메이션이 실행중일때 
+            StopCoroutine(_animCoroutine);
+
+        _animCoroutine = StartCoroutine(AnimateUI(_isActive)); // 현재 상태에 따른 애니메이션 실행 
+    }
+
+    IEnumerator AnimateUI(bool status)
+    {
+        float duration = 0.3f; // 애니메이션 지속 시간
+        float time = 0f;
+
+        float startBottom = _inventoryRt.offsetMin.y; //인벤토리가 보여지는 부분을 조정 
+        float targetBottom = status ? 0f : 700f; // 현재 상태에 따라 어디까지 보여질건지 
+
+        float startPosY = _selfRt.anchoredPosition.y; // 현재 버튼의 위치를 조정 
+        float targetPosY = status ? -700f : 0f; // 현재 버튼의 위치를 어디에 둘것인가 
+
+        while (time < duration) // 애니메이션 실행 
+        {
+            time += Time.deltaTime;
+            float t = Mathf.SmoothStep(0, 1, time / duration);
+
+            // bottom 애니메이션
+            Vector2 offset = _inventoryRt.offsetMin; //현재 Bottom값를 받아와서 
+            offset.y = Mathf.Lerp(startBottom, targetBottom, t); //위치설정 
+            _inventoryRt.offsetMin = offset; // 설정된 위치를 적용 
+
+            // 버튼 Y 위치 애니메이션
+            Vector2 pos = _selfRt.anchoredPosition; // 현재 좌표값받아와서 
+            pos.y = Mathf.Lerp(startPosY, targetPosY, t); //Y위치설정 
+            _selfRt.anchoredPosition = pos; // 적용
+
+            yield return null;
+        }
+        //최종 적용
+        Vector2 finalOffset = _inventoryRt.offsetMin;
+        finalOffset.y = targetBottom;
+        _inventoryRt.offsetMin = finalOffset;
+
+        Vector2 finalPos = _selfRt.anchoredPosition;
+        finalPos.y = targetPosY;
+        _selfRt.anchoredPosition = finalPos;
+    }
+
+}
