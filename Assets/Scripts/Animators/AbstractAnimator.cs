@@ -12,6 +12,10 @@ namespace Assets.Scripts.Animators
         /// </summary>
         protected abstract Sequence CreateSequence();
         /// <summary>
+        /// 필요에 따라 오버라이드할 수 있는 OnComplete 콜백 메서드입니다.
+        /// </summary>
+        protected virtual void OnComplete() { }
+        /// <summary>
         /// 필요에 따라 오버라이드할 수 있는 OnKill 콜백 메서드입니다.
         /// </summary>
         protected virtual void OnKill() { }
@@ -21,7 +25,12 @@ namespace Assets.Scripts.Animators
         protected void ResetAnimation()
         {
             StopAnimation();
-            Sequence = CreateSequence().OnKill(()=>
+            Sequence = CreateSequence()
+            .OnComplete(()=>
+            {
+                OnComplete();
+            })
+            .OnKill(()=>
             {
                 OnKill();
                 Sequence = null;
