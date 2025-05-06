@@ -1,9 +1,9 @@
 namespace Assets.Scripts.Animators
 {
-    using UnityEngine;
     using DG.Tweening;
+    using Sirenix.OdinInspector;
 
-    public abstract class AbstractAnimator : MonoBehaviour, IAnimator
+    public abstract class AbstractAnimator : SerializedMonoBehaviour, IAnimator
     {
         protected Sequence Sequence { get; private set; }
         public bool IsPlaying => Sequence != null && Sequence.IsPlaying();
