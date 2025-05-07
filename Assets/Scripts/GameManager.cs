@@ -3,11 +3,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject inventory;
-    
+    public GameObject FlowController;
     public static GameManager Instance{get; private set;}
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
+    
     private TotalInventoryController _inventoryScript;
+    private FlowController _flowScript;
     public bool IsInDream { get; private set; } = false;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _flowScript = FlowController.GetComponent<FlowController>();
         _inventoryScript = inventory.GetComponent<TotalInventoryController>();
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
