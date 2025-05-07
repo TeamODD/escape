@@ -3,12 +3,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour
+public class Item
 {
     private bool _status; // 일단 true = dream  |  false = real
-    public GameObject dreamItem;  // 꿈객체 들어감 
-    public GameObject realItem; // 현실 객체 들어감 
+    private GameObject _dreamItem;  // 꿈객체 들어감 
+    private GameObject _realItem; // 현실 객체 들어감 
 
+    public void CreateItem(bool status, GameObject dream, GameObject real)
+    {
+        _status = status;
+        _dreamItem = dream;
+        _realItem = real;
+    }
 
     public void SwitchItemStatus() //아이템 상태 바꾸기 
     {
@@ -19,11 +25,26 @@ public class Item : MonoBehaviour
     {
         if(_status)
         {
-            return dreamItem.GetComponent<Image>().sprite;
+            Debug.Log("getdreamsprite");
+            return _dreamItem.GetComponent<Image>().sprite;
+            
         }
         else
         {
-            return realItem.GetComponent<Image>().sprite;
+            return _realItem.GetComponent<Image>().sprite;
+        }
+    }
+
+    public GameObject ExtractItem()
+    {
+        if (_status)
+        {
+            return _dreamItem;
+        }
+        else
+        {
+
+            return _realItem;
         }
     }
 

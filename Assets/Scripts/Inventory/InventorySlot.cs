@@ -1,32 +1,182 @@
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 using UnityEngine.UI;
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerEnterHandler, IPointerExitHandler,IPointerClickHandler
 {
-    private Item _item;  // 현재 슬롯의 아이템
-    private GameObject _icon; // 아이콘
+    
+    public bool isZoomMode;
+    
+    private Item _item;  // 현재 슬롯에 사용될 아이템
+    private GameObject _icon; // 아이템 이미지가 뜰 아이콘
 
+    
+    
+  
+   
+    
+    private RectTransform _rectTransform; // 이미지를 잡을때 사용
+    private Canvas _canvas; //캔버스 위치를 참고할 캔버스 
+    private Vector2 _dragOffset; // 현재 드래그 길이차이 
+    private Vector2 _startLoc; // 시작위치 
+    private Image _iconImage; // 아이템이미지가 들어갈  이미지컴포넌트가 들어갈 변수 
+    
 
+    void Start()
+    {
+        Transform iconTransform = transform.Find("Icon");//이름이 icon인 자식을찾아서 
+        _icon = iconTransform.GetComponent<Image>().gameObject; //현재 자식으로 들어가있는 Image오브젝트 넣기
+        _icon.SetActive(false);
+        _rectTransform = _icon.GetComponent<RectTransform>(); //그 image의 rectange값 저장
+        _canvas = GetComponentInParent<Canvas>(); //부모캔버스 가져오기 
+        _iconImage=_icon.GetComponent<Image>(); //Image의 Image 컴포넌트 가져오기
+   
+    }
+    
     public void GetNewItem(Item input) //아이템 변수에 새로운 아이템 넣기 
     {
+        Debug.Log("callgetnew");
         _item = input;
+        _icon.SetActive(true);
+        UpdateSlot();//슬롯에 아이템 넣었으니까 비주얼 업데이트
     }
 
+    public void UseItem()  //아이템을 사용한다면 slot에서 일어나는함수 
+    {
+        _item = null;
+        _icon.GetComponent<Image>().sprite = null;
+        _icon.SetActive(false);
+    }
 
     public void UpdateSlot() // 현재 슬롯 상태 업데이트 
     {
         if (_item != null) // 만약 현재 아이템이 들어와있다면 
         {
-
+            Debug.Log("slotupdate");
             _icon.GetComponent<Image>().sprite = _item.GetItemIcon(); // 현재 아이템의  아이콘을 가져와서 아이콘 에 저장 
-            _icon.SetActive(true);//아이콘 활성화
+            
         }
-        else
-        {
-            _icon.SetActive(false); // 없으면 그대로 비활성화 
-        }
+       
     }
 
 
 
+  
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+
+        if (isZoomMode && _item != null)
+        {
+            Debug.Log("Begin drag");
+            _iconImage.maskable=false;
+            
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _canvas.transform as RectTransform,
+                eventData.position,
+                _canvas.worldCamera,
+                out Vector2 localMousePos
+            );
+            _startLoc = localMousePos;
+
+            // 드래그 시작 시점에서 마우스와 오브젝트 간의 위치 차이 저장
+            _dragOffset = _rectTransform.anchoredPosition - localMousePos;// 마우스 위치 → Canvas 로컬 좌표로 변환
+            
+            
+        }
+
+        
+        
+        
+        //transform.SetAsLastSibling();
+
+        
+        
+        
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+
+        if (isZoomMode && _item != null)
+        {
+            // 마우스 위치 → Canvas 로컬 좌표로 변환
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    _canvas.transform as RectTransform,
+                    eventData.position,
+                    _canvas.worldCamera,
+                    out Vector2 localMousePos
+                ))
+            {
+                _rectTransform.anchoredPosition = localMousePos + _dragOffset;
+            }
+        }
+            
+        
+        
+      
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        
+        if (isZoomMode && _item != null)
+        {
+            _iconImage.maskable = true;
+            Debug.Log("End drag");
+
+            // 현재 마우스 위치를 캔버스 로컬 좌표로 변환
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    _canvas.transform as RectTransform,
+                    eventData.position,
+                    _canvas.worldCamera,
+                    out Vector2 endLoc
+                ))
+            {
+                List<RaycastResult> results = new List<RaycastResult>();
+
+                PointerEventData pointerData = new PointerEventData(EventSystem.current)
+                {
+                    position = eventData.position
+                };
+
+                EventSystem.current.RaycastAll(pointerData, results);
+
+                foreach (RaycastResult result in results)
+                {
+                    if (result.gameObject.CompareTag("Finish")) // 예: 슬롯과 충돌했는지
+                    {
+                        Debug.Log("InventorySlot과 충돌함!");
+                        UseItem();
+                        return; // 슬롯과 충돌한 경우 복귀 안 함
+                    }
+                }
+
+                _rectTransform.anchoredPosition = _startLoc + _dragOffset;
+                Debug.Log("Returned to original position.");
+            }
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        
+        //Debug.Log("on.");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        
+        //Debug.Log("off.");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(_item!=null) 
+            Debug.Log("item exist");
+        if(_icon.GetComponent<Image>().sprite!=null)
+            Debug.Log("sprite exist");
+    }
  
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-
+    
     public List<InventorySlot> inventorySlots=new List<InventorySlot>(); // 존재하는 인벤토리가 들어갈 리스트
 
     private Item[] _itemList; // 현재 인벤토리에 존재하는 아이템 종류 
@@ -25,18 +25,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
+ 
     public void AddItem(Item item) //새로운 아이템 인벤토리에 넣기
     {
+        
         for (int i = 0; i < _itemList.Length; i++) // 인벤토리 빈칸 찾기 
         {
             if (_itemList[i] == null) //빈칸 찾으면 삽입
             {
+                Debug.Log("calladditem");   
                 _itemList[i] = item; //현재 아이템을 아이템 리스트에 넣고 
                 inventorySlots[i].GetNewItem(item); //인벤토리 슬롯의 아이템에도 넣는다 
+                
+                break;
             }
         }
-            UpdateAllSlotUI(); // 새로운 아이템이 들어왔으니 Slot 업데이트 
+           
 
     }
 
