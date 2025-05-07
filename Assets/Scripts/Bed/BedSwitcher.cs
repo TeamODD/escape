@@ -5,6 +5,11 @@ public class BedSwitcher : MonoBehaviour
 {
     private void OnMouseDown()
     {
+        
         GameManager.Instance?.SwitchWorld();
+        
     }
+    
+    
+    
 }

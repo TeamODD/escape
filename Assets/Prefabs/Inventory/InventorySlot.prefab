@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isZoomMode: 1
+  button: {fileID: 0}
+  background: {fileID: 9031289563909652578}
 --- !u!1 &3141061141621337340
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +179,8 @@ GameObject:
   - component: {fileID: 9040390613538296649}
   - component: {fileID: 4579524318542773913}
   - component: {fileID: 7348753260825522250}
+  - component: {fileID: 7698347808762664066}
+  - component: {fileID: 5376146009093692452}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -241,3 +245,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7698347808762664066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031289563909652578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
+--- !u!114 &5376146009093692452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031289563909652578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16a721872167e249a7127e2ffb8b6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
