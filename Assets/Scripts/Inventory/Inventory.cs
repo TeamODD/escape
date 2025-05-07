@@ -45,12 +45,17 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void SwitchInventoryStatus() // 꿈과 현실이 바뀔때 외관 스위치를 위한 함수 
+    public void SwitchInventoryStatus(bool status) // 꿈과 현실이 바뀔때 외관 스위치를 위한 함수 
     {
+        Debug.Log("SwitchStatus");
         for (int i = 0; i < _itemList.Length; i++) // 인벤토리 안에 들어있는 아이템들의 상태 일제히 변경
         {
-            _itemList[i].SwitchItemStatus();
+            
+            //_itemList[i].SwitchItemStatus();
+            inventorySlots[i].SwitchItem(status);
+            
         }
+       
         UpdateAllSlotUI(); // 새로운 아이템이 들어왔으니 Slot 업데이트 
     }
 

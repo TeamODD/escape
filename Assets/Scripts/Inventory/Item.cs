@@ -16,9 +16,9 @@ public class Item
         _realItem = real;
     }
 
-    public void SwitchItemStatus() //아이템 상태 바꾸기 
+    public void SwitchItemStatus(bool status) //아이템 상태 바꾸기 
     {
-        _status = !_status;
+        _status = status;
     }
 
     public Sprite GetItemIcon() // 현재 상태의 아이콘 반환 

@@ -7,6 +7,11 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     
     public bool isZoomMode;
+    public GameObject button;
+    public GameObject background;
+    
+    private Inventoryhighlighter _buttonHighlighter;
+    private Inventoryhighlighter _targetHighlighter;
     
     private Item _item;  // 현재 슬롯에 사용될 아이템
     private GameObject _icon; // 아이템 이미지가 뜰 아이콘
@@ -28,10 +33,13 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Transform iconTransform = transform.Find("Icon");//이름이 icon인 자식을찾아서 
         _icon = iconTransform.GetComponent<Image>().gameObject; //현재 자식으로 들어가있는 Image오브젝트 넣기
         _icon.SetActive(false);
+        
         _rectTransform = _icon.GetComponent<RectTransform>(); //그 image의 rectange값 저장
         _canvas = GetComponentInParent<Canvas>(); //부모캔버스 가져오기 
         _iconImage=_icon.GetComponent<Image>(); //Image의 Image 컴포넌트 가져오기
-   
+
+        _targetHighlighter = background.GetComponent<Inventoryhighlighter>();
+        _buttonHighlighter=button.GetComponent<Inventoryhighlighter>();
     }
     
     public void GetNewItem(Item input) //아이템 변수에 새로운 아이템 넣기 
@@ -39,6 +47,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("callgetnew");
         _item = input;
         _icon.SetActive(true);
+        
+        _targetHighlighter.OnHighlighter();
+        _buttonHighlighter.OnHighlighter();
+        
         UpdateSlot();//슬롯에 아이템 넣었으니까 비주얼 업데이트
     }
 
@@ -60,13 +72,19 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
        
     }
 
-
+    public void SwitchItem(bool status)
+    {
+        _item.SwitchItemStatus(status);
+       
+        UpdateSlot();
+    }
 
   
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-
+        _targetHighlighter.OffHighliter();
+        _buttonHighlighter.OffHighliter();
         if (isZoomMode && _item != null)
         {
             Debug.Log("Begin drag");
@@ -98,7 +116,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-
+        _targetHighlighter.OffHighliter();
+        _buttonHighlighter.OffHighliter();
         if (isZoomMode && _item != null)
         {
             // 마우스 위치 → Canvas 로컬 좌표로 변환
@@ -173,10 +192,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(_item!=null) 
-            Debug.Log("item exist");
-        if(_icon.GetComponent<Image>().sprite!=null)
-            Debug.Log("sprite exist");
+        _targetHighlighter.OffHighliter();
+        _buttonHighlighter.OffHighliter();
     }
- 
+    
 }
