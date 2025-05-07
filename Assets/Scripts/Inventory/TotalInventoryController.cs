@@ -55,13 +55,11 @@ public class TotalInventoryController : MonoBehaviour
         }
     }
     
-    public void AllInventorySwitchStatus(bool status) //모든 인벤토리의 상태(꿈과 현실)를 한번에 변환 
+    public void AllInventorySwitchStatus() //모든 인벤토리의 상태(꿈과 현실)를 한번에 변환 
     {
         for (int i = 0; i < inventorys.Count; i++)
         {
-            
-            inventorys[i].SwitchInventoryStatus(status);
-            
+            inventorys[i].SwitchInventoryStatus();
         }
     }
     
