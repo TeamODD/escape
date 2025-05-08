@@ -23,6 +23,7 @@ public class TotalInventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) // 숫자 키보드 '1' 키 (키패드 아님)
         {
+            Debug.Log("input 1 key");
             MakeItemForTest();
         }
     }

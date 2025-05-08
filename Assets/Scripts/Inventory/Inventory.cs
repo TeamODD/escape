@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
         int index = GetInputIndex(item.ExtractItem());
       
         
-        Debug.Log("calladditem");   
+       
         _itemList[index] = item; //현재 아이템을 아이템 리스트에 넣고 
         inventorySlots[index].GetNewItem(item); //인벤토리 슬롯의 아이템에도 넣는다 
                 
@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
 
     public void SwitchInventoryStatus(bool status) // 꿈과 현실이 바뀔때 외관 스위치를 위한 함수 
     {
-        Debug.Log("SwitchStatus");
+        
         for (int i = 0; i < _itemList.Length; i++) // 인벤토리 안에 들어있는 아이템들의 상태 일제히 변경
         {
             

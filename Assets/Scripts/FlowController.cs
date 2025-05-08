@@ -9,8 +9,8 @@ public class FlowController : MonoBehaviour
     public List<GameObject> lastDoors = new List<GameObject>();
     
     public TotalInventoryController inventory;
-    public DialogueController dialogueController;
     
+    private DialogueController _dialogueController;
     private int _flowIndex;
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
@@ -23,6 +23,7 @@ public class FlowController : MonoBehaviour
         _gameSwitchCount = 0;
         _currentSelectObject = null;
         _previousObject = null;
+        _dialogueController = GetComponent<DialogueController>();
     }
     
     // Update is called once per frame
@@ -60,7 +61,7 @@ public class FlowController : MonoBehaviour
             _previousObject = _currentSelectObject; //플로우 증가 
             _flowIndex++; // 플로우 증가 
             inventory.CheckCanInsertObject(_currentSelectObject);
-            dialogueController.PrintDialogue(_flowIndex);
+            _dialogueController.PrintDialogue(_flowIndex);
             
             //스크립트 출력
             

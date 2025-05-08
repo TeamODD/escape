@@ -44,7 +44,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     public void GetNewItem(Item input) //아이템 변수에 새로운 아이템 넣기 
     {
-        Debug.Log("callgetnew");
+        
         _item = input;
         _icon.SetActive(true);
         
@@ -65,7 +65,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if (_item != null) // 만약 현재 아이템이 들어와있다면 
         {
-            Debug.Log("slotupdate");
+            
             _icon.GetComponent<Image>().sprite = _item.GetItemIcon(); // 현재 아이템의  아이콘을 가져와서 아이콘 에 저장 
             
         }
@@ -87,7 +87,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _buttonHighlighter.OffHighliter();
         if (isZoomMode && _item != null)
         {
-            Debug.Log("Begin drag");
+            
+            
             _iconImage.maskable=false;
             
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -143,7 +144,9 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (isZoomMode && _item != null)
         {
             _iconImage.maskable = true;
-            Debug.Log("End drag");
+           
+            
+            
 
             // 현재 마우스 위치를 캔버스 로컬 좌표로 변환
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -166,14 +169,14 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 {
                     if (result.gameObject.CompareTag("Finish")) // 예: 슬롯과 충돌했는지
                     {
-                        Debug.Log("InventorySlot과 충돌함!");
+                        
                         UseItem();
                         return; // 슬롯과 충돌한 경우 복귀 안 함
                     }
                 }
 
                 _rectTransform.anchoredPosition = _startLoc + _dragOffset;
-                Debug.Log("Returned to original position.");
+                
             }
         }
     }
