@@ -25,7 +25,7 @@ public class Item
     {
         if(_status)
         {
-            Debug.Log("getdreamsprite");
+            
             return _dreamItem.GetComponent<Image>().sprite;
             
         }

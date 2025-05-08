@@ -60,7 +60,7 @@ public class FlowController : MonoBehaviour
             _previousObject = _currentSelectObject; //플로우 증가 
             _flowIndex++; // 플로우 증가 
             inventory.CheckCanInsertObject(_currentSelectObject);
-            dialogueController.PrintDialogue();
+            dialogueController.PrintDialogue(_flowIndex);
             
             //스크립트 출력
             

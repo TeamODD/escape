@@ -44,10 +44,10 @@ public class InventoryButton : MonoBehaviour
         float time = 0f;
 
         float startBottom = _inventoryRt.offsetMin.y; //인벤토리가 보여지는 부분을 조정 
-        float targetBottom = status ? 0f : 700f; // 현재 상태에 따라 어디까지 보여질건지 
+        float targetBottom = status ? 0f : 900f; // 현재 상태에 따라 어디까지 보여질건지 
 
         float startPosY = _selfRt.anchoredPosition.y; // 현재 버튼의 위치를 조정 
-        float targetPosY = status ? -700f : 0f; // 현재 버튼의 위치를 어디에 둘것인가 
+        float targetPosY = status ? -900f : 0f; // 현재 버튼의 위치를 어디에 둘것인가 
 
         while (time < duration) // 애니메이션 실행 
         {

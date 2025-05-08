@@ -106,7 +106,6 @@ public class TotalInventoryController : MonoBehaviour
     {
         if(itemForTest!=null)
         {
-            Debug.Log("InputTestItem");
             CheckCanInsertObject(itemForTest);
         }
         
