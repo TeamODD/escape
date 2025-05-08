@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class FlowController : MonoBehaviour
@@ -41,11 +42,11 @@ public class FlowController : MonoBehaviour
         {
             if (lastDoors[0] == _currentSelectObject) //꿈일때
             {
-                //노멀엔딩
+                //노멀 엔딩
             }
             else
             {
-                //트루엔딩
+                //트루 엔딩
                 
             }
         }
@@ -62,4 +63,7 @@ public class FlowController : MonoBehaviour
         }
         
     }
+    
+    
+   
 }
