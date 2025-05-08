@@ -7,7 +7,10 @@ public class FlowController : MonoBehaviour
     
     public List<GameObject> flowObjects = new List<GameObject>();
     public List<GameObject> lastDoors = new List<GameObject>();
+    
     public TotalInventoryController inventory;
+    public DialogueController dialogueController;
+    
     private int _flowIndex;
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
@@ -57,7 +60,10 @@ public class FlowController : MonoBehaviour
             _previousObject = _currentSelectObject; //플로우 증가 
             _flowIndex++; // 플로우 증가 
             inventory.CheckCanInsertObject(_currentSelectObject);
+            dialogueController.PrintDialogue();
+            
             //스크립트 출력
+            
             
             //아이템을 얻고  플로우 진행 
         }
