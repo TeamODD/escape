@@ -30,8 +30,8 @@ namespace Assets.Scripts.Animators
         /// <summary>
         /// 대상에 페이드 아웃 애니메이션 시퀀스를 생성합니다.
         /// </summary>
-        /// <returns>생성 시퀀스</returns>
-        protected override Sequence CreateSequence()
+        /// <returns>애니메이션 시퀀스</returns>
+        protected override Sequence CreateAnimationSequence()
         {
             return DOTween.Sequence()
             .Append(DOTween.To(()=>_fadable.Value, x => _fadable.Value = x, _endValue, _duration).SetEase(_ease));

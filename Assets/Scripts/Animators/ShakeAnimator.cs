@@ -41,8 +41,8 @@ namespace Assets.Scripts.Animators
         /// Transform에 진동 애니메이션 시퀀스를 생성합니다.
         /// 애니메이션 완료 시 Transform 위치를 원래대로 되돌립니다.
         /// </summary>
-        /// <returns>생성 시퀀스</returns>
-        protected override Sequence CreateSequence()
+        /// <returns>애니메이션 시퀀스</returns>
+        protected override Sequence CreateAnimationSequence()
         {
             return DOTween.Sequence()
             .Append(transform.DOShakePosition(_duration, _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode));

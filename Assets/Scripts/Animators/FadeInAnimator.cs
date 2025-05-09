@@ -25,8 +25,8 @@ namespace Assets.Scripts.Animators
         /// 대상에 페이드 인 애니메이션 시퀀스를 생성합니다.
         /// 애니메이션 시작 전 오브젝트를 활성화합니다.
         /// </summary>
-        /// <returns>생성 시퀀스</returns>
-        protected override Sequence CreateSequence()
+        /// <returns>애니메이션 시퀀스</returns>
+        protected override Sequence CreateAnimationSequence()
         {
             gameObject.SetActive(true);
 
