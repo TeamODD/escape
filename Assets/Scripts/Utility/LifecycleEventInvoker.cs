@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Common
+namespace Assets.Scripts.Utility
 {    
     using UnityEngine;
     using UnityEngine.Events;
