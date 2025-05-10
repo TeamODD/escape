@@ -2,7 +2,7 @@ namespace Assets.Scripts.Animators
 {
     using UnityEngine;
     using DG.Tweening;
-    using Animators.FadableAdapters;
+    using FadableAdapters;
 
     public class FadeOutAnimator : AbstractAnimator
     {
@@ -14,19 +14,6 @@ namespace Assets.Scripts.Animators
         [SerializeField] private float _duration = 0.5f;
         [Tooltip("적용할 이징(Ease) 타입입니다.")]
         [SerializeField] private Ease _ease = Ease.Linear;
-        [Tooltip("애니메이션 종료 후 오브젝트 비활성화 여부입니다.")]
-        [SerializeField] private bool _deactivateOnComplete = true;
-        /// <summary>
-        /// 애니메이션 종료 시 대상을 최종값으로 설정합니다.
-        /// </summary>
-        protected override void OnComplete()
-        {
-            _fadable.Value = _endValue;
-            if(_deactivateOnComplete)
-            {
-                gameObject.SetActive(false);
-            }
-        }
         /// <summary>
         /// 대상에 페이드 아웃 애니메이션 시퀀스를 생성합니다.
         /// </summary>

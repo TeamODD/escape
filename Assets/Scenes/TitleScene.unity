@@ -327,7 +327,6 @@ MonoBehaviour:
   _endValue: 0
   _duration: 0.25
   _ease: 1
-  _deactivateOnComplete: 0
 --- !u!114 &397003637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2155,7 +2154,6 @@ MonoBehaviour:
   _endValue: 0
   _duration: 1.5
   _ease: 1
-  _deactivateOnComplete: 0
 --- !u!114 &1407158084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3020,11 +3018,22 @@ MonoBehaviour:
       m_Calls: []
   <OnKillEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1981971203}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _endValue: 0
   _duration: 3
   _ease: 1
-  _deactivateOnComplete: 1
 --- !u!114 &1981971208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3058,7 +3067,19 @@ MonoBehaviour:
       Data: 
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1981971203}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   <OnCompleteEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []

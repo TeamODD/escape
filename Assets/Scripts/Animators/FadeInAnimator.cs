@@ -2,7 +2,7 @@ namespace Assets.Scripts.Animators
 {
     using UnityEngine;
     using DG.Tweening;
-    using Animators.FadableAdapters;
+    using FadableAdapters;
 
     public class FadeInAnimator : AbstractAnimator
     {
@@ -15,21 +15,11 @@ namespace Assets.Scripts.Animators
         [Tooltip("적용할 이징(Ease) 타입입니다.")]
         [SerializeField] private Ease _ease = Ease.Linear;
         /// <summary>
-        /// 애니메이션 종료 시 대상을 최종값으로 설정합니다.
-        /// </summary>
-        protected override void OnComplete()
-        {
-            _fadable.Value = _endValue;
-        }
-        /// <summary>
         /// 대상에 페이드 인 애니메이션 시퀀스를 생성합니다.
-        /// 애니메이션 시작 전 오브젝트를 활성화합니다.
         /// </summary>
         /// <returns>애니메이션 시퀀스</returns>
         protected override Sequence CreateAnimationSequence()
         {
-            gameObject.SetActive(true);
-
             return DOTween.Sequence()
             .Append(DOTween.To(()=>_fadable.Value, x => _fadable.Value = x, _endValue, _duration).SetEase(_ease));
         }
