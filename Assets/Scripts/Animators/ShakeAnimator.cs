@@ -6,7 +6,7 @@ namespace Assets.Scripts.Animators
     public class ShakeAnimator : AbstractAnimator
     {
         [Tooltip("애니메이션 대상 오브젝트입니다.")]
-        [SerializeField] private GameObject _target;
+        [SerializeField] private Transform _target;
         [Tooltip("애니메이션의 지속 시간(초)입니다.")]
         [SerializeField] private float _duration = 0.1f;
         [Tooltip("진동 세기입니다.")]
@@ -28,7 +28,7 @@ namespace Assets.Scripts.Animators
         protected override Sequence CreateAnimationSequence()
         {
             return DOTween.Sequence()
-            .Append(_target.transform.DOShakePosition(_duration, _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode));
+            .Append(_target.DOShakePosition(_duration, _strength, _vibrato, _randomness, _snapping, _fadeOut, _shakeRandomnessMode));
         }
     }
 }
