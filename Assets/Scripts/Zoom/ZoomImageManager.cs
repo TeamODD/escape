@@ -1,23 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ZoomImageManager : MonoBehaviour
 {
-    public GameObject ZoomImagPanel;
-    
-    
-    public Sprite DefaultZoomeSprite;
-    
-    private static ZoomImageManager _instance;
-    public static ZoomImageManager Instance => _instance;
+    [field: SerializeField] public UnityEvent<Sprite> OnShowEvent { get; private set; } = new();
+    [field: SerializeField] public UnityEvent OnHideEvent { get; private set; } = new();
 
-    private void Awake()
+    public void Show(Sprite sprite)
     {
-        _instance = this;
-        ZoomImagPanel.SetActive(false);
+        OnShowEvent?.Invoke(sprite);
     }
 
-    public void ShowZoomImage(Sprite image)
+    public void Hide()
     {
-
+        OnHideEvent?.Invoke();
     }
 }
