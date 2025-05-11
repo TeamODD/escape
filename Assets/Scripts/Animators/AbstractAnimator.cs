@@ -113,6 +113,7 @@ namespace Assets.Scripts.Animators
                 return;
             }
             Sequence.Kill();
+            Sequence = null;
         }
         /// <summary>
         /// 애니메이션을 즉시 완료 처리합니다.
