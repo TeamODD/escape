@@ -72,6 +72,15 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
        
     }
 
+    public void OnItemHighLight()
+    {
+        if (_item != null) // 만약 현재 아이템이 들어와있다면 
+        {
+            
+            _icon.GetComponent<Image>().sprite = _item.GetHighLightIcon(); // 현재 아이템의  아이콘을 가져와서 아이콘 에 저장 
+            
+        }
+    }
     public void SwitchItem(bool status)
     {
         _item.SwitchItemStatus(status);
@@ -184,13 +193,13 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnPointerEnter(PointerEventData eventData)
     {
         
-        //Debug.Log("on.");
+        OnItemHighLight();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         
-        //Debug.Log("off.");
+        UpdateSlot();
     }
 
     public void OnPointerClick(PointerEventData eventData)
