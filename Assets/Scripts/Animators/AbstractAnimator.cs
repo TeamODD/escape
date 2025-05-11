@@ -43,6 +43,10 @@ namespace Assets.Scripts.Animators
         /// </summary>
         [field:SerializeField] public UnityEvent OnKillEvent { get; protected set; }
         /// <summary>
+        /// 애니메이션을 반복 재생할지 여부를 결정합니다.
+        /// </summary>
+        [field:SerializeField] public bool Loop { get; private set; }
+        /// <summary>
         /// 애니메이션의 시퀀스를 생성합니다.
         /// </summary>
         /// <returns>애니메이션 시퀀스</returns>
@@ -63,12 +67,19 @@ namespace Assets.Scripts.Animators
             {
                 OnComplete();
                 OnCompleteEvent.Invoke();
+                if(Loop)
+                {
+                    PlayAnimation();
+                }
             })
             .OnKill(()=>
             {
                 OnKill();
                 OnKillEvent.Invoke();
-                Sequence = null;
+                if(!Loop)
+                {
+                    Sequence = null;
+                }
             });
             return Sequence;
         }
