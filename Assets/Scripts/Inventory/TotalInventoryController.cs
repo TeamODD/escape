@@ -9,7 +9,8 @@ public class TotalInventoryController : MonoBehaviour
     
     public ItemMappingTable mappingTable;
     public GameObject itemForTest;
-    public List<Inventory> inventorys=new List<Inventory>(); 
+    public List<Inventory> inventorys=new List<Inventory>();
+    public List<GameObject> canInsertObjects = new List<GameObject>();
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -69,33 +70,31 @@ public class TotalInventoryController : MonoBehaviour
     
     public void CheckCanInsertObject(GameObject input)
     {
-        if (mappingTable.IsExist(input)) //매핑테이블에서 존재하는 게임 오브젝트인지 확인 
+        int idx = canInsertObjects.IndexOf(input);
+        if (idx!=-1) // 만약 삽입 가능한 리스트에 들어가있는 오브젝트라면 
         {
-            
             Item inputItem = new Item();
             GameObject Partner = mappingTable.GetPartner(input); //매핑되는 오브젝트 얻어옴
+            
             if (mappingTable.CheckIsDreamObject(input)) //넣은게 꿈 아이템일때 = 꿈 일때 
             {
 
-                inputItem.CreateItem(true, input, Partner);
+                inputItem.CreateItem(true, input,mappingTable.GetHighLightItem(input) ,Partner,mappingTable.GetHighLightItem(Partner));
             }
-            else // 넣은게 꿈 아이템일때 
+            else
             {
-                inputItem.CreateItem(false, Partner, input);
+                inputItem.CreateItem(true, Partner, mappingTable.GetHighLightItem(Partner),input,mappingTable.GetHighLightItem(input));
             }
-
-
-
-
-            if (!mappingTable.CheckIsBroochType(input)) //추후 추가 필요 1인벤토리에 들어갈 내용이라면 
+            
+            if (idx <= 4) //0번인벤토리에 삽입
             {
-                inventorys[0].AddItem(inputItem);
+                inventorys[0].AddItem(inputItem,idx);
             }
-            else //2 인벤토리에 들어갈내요이라면 
+            else // 1번 입벤토리에 삽임
             {
-                inventorys[1].AddItem(inputItem);
+                inventorys[1].AddItem(inputItem,idx-5);
             }
-
+            
         }
         else
         {

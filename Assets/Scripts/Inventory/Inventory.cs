@@ -6,9 +6,7 @@ public class Inventory : MonoBehaviour
 {
     
     public List<InventorySlot> inventorySlots=new List<InventorySlot>(); // 존재하는 인벤토리가 들어갈 리스트
-
-
-    public List<GameObject> inventoryInputOrder = new List<GameObject>();
+    
     
     private Item[] _itemList; // 현재 인벤토리에 존재하는 아이템 종류 
 
@@ -27,15 +25,10 @@ public class Inventory : MonoBehaviour
             inventorySlots[i].UpdateSlot(); // 현재 잔존하는 모든슬롯들에게 UpdateSlot호출
         }
     }
-
-    public int GetInputIndex(GameObject input)
+    
+    public void AddItem(Item item,int index) //새로운 아이템 인벤토리에 넣기
     {
-        return inventoryInputOrder.IndexOf(input);
-    }
- 
-    public void AddItem(Item item) //새로운 아이템 인벤토리에 넣기
-    {
-        int index = GetInputIndex(item.ExtractItem());
+        
       
         
        
