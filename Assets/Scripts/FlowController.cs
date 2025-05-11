@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class FlowController : MonoBehaviour
@@ -10,7 +9,6 @@ public class FlowController : MonoBehaviour
     
     public TotalInventoryController inventory;
     
-    private DialogueController _dialogueController;
     private int _flowIndex;
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
@@ -23,7 +21,6 @@ public class FlowController : MonoBehaviour
         _gameSwitchCount = 0;
         _currentSelectObject = null;
         _previousObject = null;
-        _dialogueController = GetComponent<DialogueController>();
     }
     
     // Update is called once per frame

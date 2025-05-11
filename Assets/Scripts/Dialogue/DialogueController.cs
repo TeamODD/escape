@@ -1,89 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mime;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class DialogueController : MonoBehaviour
+namespace Assets.Scripts.Dialogue
 {
-    public GameObject dialogueText;
-    public GameObject dialogueCanvas;
-    public float typeingSpped=0.15f;
-    
-        
-    private Text _text; // 메인 텍스트 
-    private DialogueList _dialogueList;
-    private Coroutine _typingCoroutine;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _text = dialogueText.GetComponent<Text>();
-        _dialogueList = GetComponent<DialogueList>();
-        
-        //dialogueCanvas.SetActive(false);
-    }
+    using UnityEngine;
+    using UnityEngine.Events;
+    using Sirenix.OdinInspector;
+    using TMPro;
+    using Animators;
 
-    // Update is called once per frame
-    void Update()
+    public class DialogueController : SerializedMonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.A)) // 숫자 키보드 '2' 키 (키패드 아님)
+        [field:SerializeField] public TMP_Text Text { get; private set; }
+        [field:SerializeField] public TextFadeAnimator Animator { get; private set; }
+        [field:SerializeField] public DialogueData Data { get; private set; }
+        [field:SerializeField] public UnityEvent OnPlayDialogue { get; private set; }
+        [field:SerializeField] public UnityEvent OnNextDialogue { get; private set; }
+        private int _contentIndex;
+        public void PlayDialogue(DialogueData data)
         {
-            Debug.Log("input testing key");
-            PrintDialogue(-1);
+            Data = data;
+            _contentIndex = 0;
+            Text.text = Data.Contents[_contentIndex++];
+            Animator.PlayAnimation();
+            OnPlayDialogue.Invoke();
+        }
+        public void PlayDialogue()
+        {
+            _contentIndex = 0;
+            Text.text = Data.Contents[_contentIndex++];
+            Animator.PlayAnimation();
+            OnPlayDialogue.Invoke();
+        }
+        public void NextDialogue()
+        {
+            if(Animator.IsPlaying)
+            {
+                Animator.CompleteAnimation();
+                return;
+            }
+            if(_contentIndex==Data.Contents.Length)
+            {
+                Data.OnCompleted.Invoke();
+                _contentIndex++;
+                return;
+            }
+            else if(_contentIndex>Data.Contents.Length)
+            {
+                return;
+            }
+            Text.text = Data.Contents[_contentIndex++];
+            Animator.PlayAnimation();
+            OnNextDialogue.Invoke();
         }
     }
-
-
-   
-
-    public void PrintDialogue(int flowIndex) // 음수라면 서브 독백 
-    {
-        Debug.Log("script print");
-        _switchDialogueCanvas(true);
-        string text="";
-        if (flowIndex>=0) 
-        {
-            //text = _dialogueList.mainDialogue[flowIndex];
-        }
-        else
-        {
-            //text = _dialogueList.subDialogue[0];
-            //서브에서 랜덤하게 출력 
-        }
-        StartTyping(text);
-    }
-
-    public void executeLoopText(int Count)
-    {
-        
-    }
-
-    public void StartTyping(string text) // 타이핑 애니메이션
-    {
-        if (_typingCoroutine != null)
-        {
-            StopCoroutine((_typingCoroutine));
-        }
-
-        _typingCoroutine = StartCoroutine(_typingText(text));
-    }
-
-    private IEnumerator _typingText(string fullText)
-    {
-        _text.text = "";
-        foreach (char c in fullText)
-        {
-            _text.text += c;
-            yield return new WaitForSeconds(typeingSpped);
-        }
-
-        _typingCoroutine=null;
-    }
-
-    private void _switchDialogueCanvas(bool type)
-    {
-        dialogueCanvas.SetActive(type);
-    }
-    
-    
 }
