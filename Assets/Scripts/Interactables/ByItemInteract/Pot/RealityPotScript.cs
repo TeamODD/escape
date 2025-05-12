@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RealityPotScript : ClickHandler
 {
-    
+    public AudioClip WaterSFX;
     private float _timer = 0f;
     void Update()
     {
@@ -42,6 +42,7 @@ public class RealityPotScript : ClickHandler
 
     public void GetPoison()
     {
+        _soundController.StartEffectBgm(WaterSFX);
         flowIdx++;
         ChangeSprite(flowIdx);
     }

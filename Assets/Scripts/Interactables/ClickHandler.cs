@@ -5,11 +5,13 @@ using UnityEngine.EventSystems;
 
 public class ClickHandler : MonoBehaviour
 {
+    
     public List<Sprite> imageList;
     public FlowController flowController;
     protected  bool canExamineFlow = false;
     private SpriteRenderer _spriteRenderer;
-
+    private AudioClip _clickSFX;
+    protected SoundControllerScript _soundController;
     protected int flowIdx;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,11 +39,19 @@ public class ClickHandler : MonoBehaviour
 
         // 트리거에 이벤트 추가
         trigger.triggers.Add(entry);
+
+        _soundController = SoundControllerScript.Instance;
+        
+        //상호작용 가능한 객체를 대상으로 
+        _clickSFX=Resources.Load<AudioClip>("SFX/CLICK");
+
     }
     public void OnPointerClicked(BaseEventData data)
     {
         PointerEventData pointerData = (PointerEventData)data;
-
+        if(_clickSFX==null)
+            Debug.Log("nosfx");
+        _soundController.StartEffectBgm(_clickSFX);
        
         CheckIsExsistDo();
         

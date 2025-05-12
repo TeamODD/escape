@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WoodPlankLiftedScript : ClickHandler
 {
+    public AudioClip crackSFX;
     public RealityBoxScript realityBoxScript;
     public override void DoToWork()
     {
@@ -14,6 +15,8 @@ public class WoodPlankLiftedScript : ClickHandler
         {
             realityBoxScript.OneFlowPlus();
             ChangeSprite(flowIdx);
+            _soundController.StartEffectBgm(crackSFX);
+
         }
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RealityBoxScript : ClickHandler
 {
+    public AudioClip openSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void DoToWork()
     {
@@ -12,6 +13,7 @@ public class RealityBoxScript : ClickHandler
         }
         else if (flowIdx == 2)
         {
+            _soundController.StartEffectBgm(openSFX);
             ChangeSprite(flowIdx);
             flowController.CheckGameObject(gameObject); 
         }

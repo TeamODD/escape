@@ -5,18 +5,20 @@ using UnityEngine;
 
 public class TotalInventoryController : MonoBehaviour
 {
-    private bool _isInventoryFirst;
     
+
+    public AudioClip itemPickSFX;
     public ItemMappingTable mappingTable;
     public GameObject itemForTest;
     public List<Inventory> inventorys=new List<Inventory>();
     public List<GameObject> canInsertObjects = new List<GameObject>();
-    
-    
+    private SoundControllerScript _soundControllerScript;
+    private bool _isInventoryFirst;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _initSetting();
+        _soundControllerScript = SoundControllerScript.Instance;
     }
 
     // Update is called once per frame
@@ -75,6 +77,7 @@ public class TotalInventoryController : MonoBehaviour
         if (idx!=-1) // 만약 삽입 가능한 리스트에 들어가있는 오브젝트라면 
         {
             Debug.Log("input");
+            _soundControllerScript.StartEffectBgm(itemPickSFX);
             Item inputItem = new Item();
             GameObject dreamObject = mappingTable.GetInvenDreamIcon(input);
             GameObject realObject = mappingTable.GetInvenRealIcon(input);
