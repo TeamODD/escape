@@ -48,6 +48,7 @@ namespace Assets.Scripts.Dialogue
             }
             if(_contentIndex==Data.Contents.Length)
             {
+                Animator.CompleteAnimation();
                 Data.OnCompleted.Invoke();
                 _contentIndex++;
                 return;
