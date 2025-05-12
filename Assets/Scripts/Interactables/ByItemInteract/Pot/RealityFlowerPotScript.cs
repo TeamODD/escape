@@ -9,8 +9,8 @@ public class RealityFlowerPotScript : ClickHandler
         if (flowIdx == 1)
         {
             flowController.CheckGameObject(gameObject);
-            OneFlowPlus();
-            
+            flowIdx++;
+
         }
     }
     

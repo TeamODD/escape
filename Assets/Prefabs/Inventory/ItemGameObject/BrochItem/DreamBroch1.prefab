@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4138357236614223320}
   - component: {fileID: 5774326674227731447}
   m_Layer: 0
-  m_Name: DreamBearBroch
+  m_Name: DreamBroch1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

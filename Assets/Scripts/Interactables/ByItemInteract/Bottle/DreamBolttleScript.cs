@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DreamBolttleScript : ClickHandler
 {
+    public ClickHandler dreamDrawer;
     public bool isDrink=false;
     public RealityBottleScript realityBottleScript;
     public override void DoToWork()
@@ -13,7 +14,7 @@ public class DreamBolttleScript : ClickHandler
             ChangeSprite(flowIdx);
             CheckFlowIsFinish();
             realityBottleScript.PlayerDrinkInDream();
-            
+            dreamDrawer.OneFlowPlus();
         }
         else if (flowIdx == 1)
         {

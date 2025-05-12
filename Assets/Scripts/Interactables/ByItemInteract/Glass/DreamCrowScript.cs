@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DreamCrowScropt : ClickHandler
 {
+    public AudioClip eatSFX;
     public GameManager gameManager;
     public GameObject realityFlowerPot;
     public RealityScrewScript realityScrewScript;
@@ -17,6 +18,8 @@ public class DreamCrowScropt : ClickHandler
 
     public void GetWarm()
     {
+        
+        _soundController.StartEffectBgm(eatSFX);
         OneFlowPlus();
         realityStainGlass.OneFlowPlus();
         realityPotScript.OneFlowPlus();
