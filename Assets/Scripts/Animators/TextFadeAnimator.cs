@@ -13,7 +13,7 @@ namespace Assets.Scripts.Animators
         /// <summary>
         /// 현재 시퀀스의 재생 여부를 반환합니다.
         /// </summary>
-        public bool IsPlaying => _animationCoroutine != null;
+        public bool IsPlaying => _animationCoroutine != null || _runningTweens.Count > 0;
         /// <summary>
         /// 애니메이션 시작 시 발생하는 이벤트입니다. 
         /// 인스펙터 또는 코드에서 리스너를 등록하여 시작 시 호출할 동작을 연결할 수 있습니다.
@@ -64,7 +64,7 @@ namespace Assets.Scripts.Animators
         /// </summary>
         public void PlayAnimation()
         {
-            if(IsPlaying || _runningTweens.Count>0)
+            if(IsPlaying)
             {
                 return;
             }
@@ -108,9 +108,13 @@ namespace Assets.Scripts.Animators
             {
                 return;
             }
+            
+            if(_animationCoroutine != null)
+            {
+                StopCoroutine(_animationCoroutine);
+                _animationCoroutine = null;
+            }
 
-            StopCoroutine(_animationCoroutine);
-            _animationCoroutine = null;
             foreach(Tween tween in _runningTweens)
             {
                 tween.Kill();
@@ -128,7 +132,6 @@ namespace Assets.Scripts.Animators
             }
             Text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
 
-
             _runningTweens.Clear();
             _processedIndices.Clear();
 
@@ -140,13 +143,16 @@ namespace Assets.Scripts.Animators
         /// </summary>
         public void PauseAnimation()
         {
-            if(!IsPlaying && _runningTweens.Count<=0)
+            if(_runningTweens.Count <= 0)
             {
                 return;
             }
             
-            StopCoroutine(_animationCoroutine);
-            _animationCoroutine = null;
+            if(_animationCoroutine != null)
+            {
+                StopCoroutine(_animationCoroutine);
+                _animationCoroutine = null;
+            }
 
             foreach(Tween tween in _runningTweens)
             {
@@ -158,7 +164,7 @@ namespace Assets.Scripts.Animators
         /// </summary>
         public void ResumeAnimation()
         {
-            if(IsPlaying || _runningTweens.Count<=0)
+            if(IsPlaying)
             {
                 return;
             }
