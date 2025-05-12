@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RealityPotScript : ClickHandler
 {
+    
     private float _timer = 0f;
     void Update()
     {
@@ -25,8 +26,10 @@ public class RealityPotScript : ClickHandler
     
     public override void DoToWork()
     {
+        
         if (flowIdx == 1)
         {
+            
             flowController.CheckGameObject(gameObject); 
             //애벌래 획득 스크립트 등장
             flowIdx++;

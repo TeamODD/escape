@@ -79,6 +79,7 @@ public class ClickHandler : MonoBehaviour
 
     public void ChangeSprite(int targetIdx)
     {
+        
         _spriteRenderer.sprite = imageList[targetIdx];
         
     }

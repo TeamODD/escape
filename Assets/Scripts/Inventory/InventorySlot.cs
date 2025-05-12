@@ -21,7 +21,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public RealityPotScript realityPotScript;
     public DreamCrowScropt dreamCrowScript;
-    
+    public DreamTeddyBearScript dreamTeddyBearScript;
   
    
     
@@ -73,6 +73,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         else if (targetUseItem.name == "DreamCrow")
         {
             dreamCrowScript.GetWarm();
+        }
+        else if (targetUseItem.name == "DreamBear")
+        {
+            dreamTeddyBearScript.GetKnife();
         }
     }
 

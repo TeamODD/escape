@@ -34,15 +34,18 @@ public class FlowController : MonoBehaviour
 
     public void CheckGameObject(GameObject input)
     {
-       
+        
         _currentSelectObject = input;
+        
+       
         if (_flowIndex>=1&&_gameSwitchCount >= 4) // 아직 히든앤딩이 가능하고 꿈 현실 변환도 4번 이상하면 
         {
             //히든 앤딩
         }
-        else if (_gameSwitchCount >= 4) // 히든엔딩이 안되지만 4번이상
+        else if (_gameSwitchCount >= 8) // 히든엔딩이 안되지만 4번이상
         {
             //배드엔딩
+            
         }
         else if (flowObjects.Count == _flowIndex + 1) // 기존 플로우를 다하면 
         {
@@ -56,13 +59,13 @@ public class FlowController : MonoBehaviour
                 
             }
         }
-        Debug.Log(_currentSelectObject);
+        inventory.CheckCanInsertObject(_currentSelectObject);
         if (flowObjects[_flowIndex] == _currentSelectObject) // 현재 플로우에딱 적합한 물체라면 
         {
             Debug.Log("==");
             _previousObject = _currentSelectObject; //플로우 증가 
             _flowIndex++; // 플로우 증가 
-            inventory.CheckCanInsertObject(_currentSelectObject);
+            
             //dialogueController.PrintDialogue(_flowIndex);
             
             //스크립트 출력
@@ -73,6 +76,7 @@ public class FlowController : MonoBehaviour
         else
         {
             //해당오브젝트가 하는 일반 상호작용
+            Debug.Log("dont eat");
         }
         
     }
