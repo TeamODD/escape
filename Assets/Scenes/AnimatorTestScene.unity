@@ -666,10 +666,25 @@ MonoBehaviour:
       Data: 1|System.String[], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 6
     - Name: 
       Entry: 1
       Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1
+    - Name: 
+      Entry: 1
+      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue122222222222
+    - Name: 
+      Entry: 1
+      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue13333333333333
+    - Name: 
+      Entry: 1
+      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1444444444444
+    - Name: 
+      Entry: 1
+      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1555555555555
+    - Name: 
+      Entry: 1
+      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1777777777777777
     - Name: 
       Entry: 13
       Data: 
@@ -2107,6 +2122,8 @@ GameObject:
   - component: {fileID: 1824601349}
   - component: {fileID: 1824601348}
   - component: {fileID: 1824601351}
+  - component: {fileID: 1824601352}
+  - component: {fileID: 1824601353}
   m_Layer: 5
   m_Name: Next Arrow Image
   m_TagString: Untagged
@@ -2261,6 +2278,12 @@ MonoBehaviour:
       Data: 
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
+      m_Calls: []
+  <OnCompleteEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnKillEvent>k__BackingField:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1824601351}
         m_TargetAssemblyTypeName: Assets.Scripts.Utility.RectTransformInitializer,
@@ -2275,12 +2298,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  <OnCompleteEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnKillEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
+      - m_Target: {fileID: 1824601352}
+        m_TargetAssemblyTypeName: Assets.Scripts.Utility.ColorInitializer, Assembly-CSharp
+        m_MethodName: InitializeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1824601353}
+        m_TargetAssemblyTypeName: Assets.Scripts.Utility.ScaleInitializer, Assembly-CSharp
+        m_MethodName: InitializeScale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <Loop>k__BackingField: 1
 --- !u!114 &1824601349
 MonoBehaviour:
@@ -2388,6 +2429,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Transform>k__BackingField: {fileID: 1824601343}
   <AnchoredPosition>k__BackingField: {x: -25, y: 12.5, z: 0}
+--- !u!114 &1824601352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824601342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00a07749bf4f4d87bc57e5856a7c822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1824601346}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _Adatper
+      Entry: 7
+      Data: 0|Assets.Scripts.Utility.ColorAdapters.ImageAdapter, Assembly-CSharp
+    - Name: _Image
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+  _initialColor: {r: 1, g: 1, b: 1, a: 0.2}
+--- !u!114 &1824601353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824601342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feee10e94347d45aeb078ff05c6faa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1824601343}
+  _scale: {x: 1, y: 0.6, z: 1}
 --- !u!1 &2083742720
 GameObject:
   m_ObjectHideFlags: 0
