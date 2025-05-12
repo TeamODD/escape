@@ -35,7 +35,7 @@ public class TotalInventoryController : MonoBehaviour
         for (int i = 0; i < inventorys.Count; i++)
         {
             
-            inventorys[i].gameObject.SetActive(false);
+            SetRenderVisible(inventorys[i].gameObject, false);
         }
 
         _isInventoryFirst = false;
@@ -47,13 +47,14 @@ public class TotalInventoryController : MonoBehaviour
 
         if (_isInventoryFirst)
         {
-            inventorys[0].gameObject.SetActive(true);
-            inventorys[1].gameObject.SetActive(false);
+            SetRenderVisible(inventorys[0].gameObject, true);
+            SetRenderVisible(inventorys[1].gameObject, false);
+            
         }
         else
         {
-            inventorys[0].gameObject.SetActive(false);
-            inventorys[1].gameObject.SetActive(true);
+            SetRenderVisible(inventorys[0].gameObject, false);
+            SetRenderVisible(inventorys[1].gameObject, true);
         }
     }
     
@@ -68,22 +69,25 @@ public class TotalInventoryController : MonoBehaviour
     }
     
     
-    public void CheckCanInsertObject(GameObject input)
+    public void CheckCanInsertObject(GameObject input) //현재 클릭된 물체 
     {
-        int idx = canInsertObjects.IndexOf(input);
+        int idx = canInsertObjects.IndexOf(input); // 삽입되는 정보가 담긴 리스에 담긴 오브젝트라면 
         if (idx!=-1) // 만약 삽입 가능한 리스트에 들어가있는 오브젝트라면 
         {
+            Debug.Log("input");
             Item inputItem = new Item();
-            GameObject Partner = mappingTable.GetPartner(input); //매핑되는 오브젝트 얻어옴
+            GameObject dreamObject = mappingTable.GetInvenDreamIcon(input);
+            GameObject realObject = mappingTable.GetInvenRealIcon(input);
+
             
-            if (mappingTable.CheckIsDreamObject(input)) //넣은게 꿈 아이템일때 = 꿈 일때 
+            if (mappingTable.CheckIsDreamObject(input)) //넣은게 꿈 아이템일때 = 꿈 일때  전체 매핑 테이블에서 비교 
             {
 
-                inputItem.CreateItem(true, input,mappingTable.GetHighLightItem(input) ,Partner,mappingTable.GetHighLightItem(Partner));
+                inputItem.CreateItem(true,dreamObject ,mappingTable.GetHighLightItem(dreamObject) ,realObject,mappingTable.GetHighLightItem(realObject));
             }
             else
             {
-                inputItem.CreateItem(true, Partner, mappingTable.GetHighLightItem(Partner),input,mappingTable.GetHighLightItem(input));
+                inputItem.CreateItem(false, dreamObject, mappingTable.GetHighLightItem(dreamObject),realObject,mappingTable.GetHighLightItem(realObject));
             }
             
             if (idx <= 4) //0번인벤토리에 삽입
@@ -110,5 +114,17 @@ public class TotalInventoryController : MonoBehaviour
         }
         
        
+    }
+    public void SetRenderVisible(GameObject panel, bool visible)
+    {
+        CanvasGroup cg = panel.GetComponent<CanvasGroup>();
+        if (cg == null)
+        {
+            cg = panel.AddComponent<CanvasGroup>();
+        }
+
+        cg.alpha = visible ? 1f : 0f;
+        cg.interactable = visible;
+        cg.blocksRaycasts = visible;
     }
 }

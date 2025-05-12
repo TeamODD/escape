@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance{get; private set;}
+    public TotalInventoryController totalInventoryController;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
 
@@ -30,5 +31,6 @@ public class GameManager : MonoBehaviour
         IsInDream = !IsInDream;
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
+        totalInventoryController.AllInventorySwitchStatus(IsInDream);
     }
 }

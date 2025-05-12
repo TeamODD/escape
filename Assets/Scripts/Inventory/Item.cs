@@ -30,26 +30,26 @@ public class Item
         if(_status)
         {
             
-            return _dreamItem.GetComponent<Image>().sprite;
+            return _dreamItem.GetComponent<SpriteRenderer>().sprite;
             
         }
         else
         {
-            return _realItem.GetComponent<Image>().sprite;
+            return _realItem.GetComponent<SpriteRenderer>().sprite;
         }
     }
 
-    public Sprite GetHighLightIcon() // 현재 상태의 아이콘 반환 
+    public Sprite GetHighLightIcon() // 현재하이라이트 아이콘 반환 
     {
         if(_status)
         {
             
-            return _dreamHighlight.GetComponent<Image>().sprite;
+            return _dreamHighlight.GetComponent<SpriteRenderer>().sprite;
             
         }
         else
         {
-            return _realHighlight.GetComponent<Image>().sprite;
+            return _realHighlight.GetComponent<SpriteRenderer>().sprite;
         }
     }
     public GameObject ExtractItem()

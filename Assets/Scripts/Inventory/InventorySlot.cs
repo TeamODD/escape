@@ -9,6 +9,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public bool isZoomMode;
     public GameObject button;
     public GameObject background;
+
+    public GameObject targetUseItem;
     
     private Inventoryhighlighter _buttonHighlighter;
     private Inventoryhighlighter _targetHighlighter;
@@ -16,7 +18,9 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Item _item;  // 현재 슬롯에 사용될 아이템
     private GameObject _icon; // 아이템 이미지가 뜰 아이콘
 
-    
+
+    public RealityPotScript realityPotScript;
+    public DreamCrowScropt dreamCrowScript;
     
   
    
@@ -47,7 +51,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         
         _item = input;
         _icon.SetActive(true);
-        
+        if(gameObject==true)
         _targetHighlighter.OnHighlighter();
         _buttonHighlighter.OnHighlighter();
         
@@ -59,6 +63,17 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _item = null;
         _icon.GetComponent<Image>().sprite = null;
         _icon.SetActive(false);
+        
+        //아이템 사용 상호작용 
+        Debug.Log(targetUseItem);
+        if (targetUseItem.name == "RealityPot")
+        {
+            realityPotScript.GetPoison();
+        }
+        else if (targetUseItem.name == "DreamCrow")
+        {
+            dreamCrowScript.GetWarm();
+        }
     }
 
     public void UpdateSlot() // 현재 슬롯 상태 업데이트 
@@ -83,7 +98,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void SwitchItem(bool status)
     {
-        _item.SwitchItemStatus(status);
+        if(_item!=null)
+            _item.SwitchItemStatus(status);
        
         UpdateSlot();
     }
@@ -176,7 +192,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
                 foreach (RaycastResult result in results)
                 {
-                    if (result.gameObject.CompareTag("Finish")) // 예: 슬롯과 충돌했는지
+                    if (result.gameObject==targetUseItem) // 예: 슬롯과 충돌했는지
                     {
                         
                         UseItem();

@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class BedSwitcher : MonoBehaviour
 {
-    private void OnMouseDown()
+    
+  
+    public void GetMouseDown()
     {
-        
         GameManager.Instance?.SwitchWorld();
-        
     }
+        
+    
     
     
     
