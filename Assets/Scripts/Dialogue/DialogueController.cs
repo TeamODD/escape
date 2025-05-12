@@ -8,6 +8,16 @@ namespace Assets.Scripts.Dialogue
 
     public class DialogueController : SerializedMonoBehaviour
     {
+        public static DialogueController Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+        }
         [field:SerializeField] public TMP_Text Text { get; private set; }
         [field:SerializeField] public TextFadeAnimator Animator { get; private set; }
         [field:SerializeField] public DialogueData Data { get; private set; }
