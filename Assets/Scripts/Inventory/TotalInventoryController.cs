@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class TotalInventoryController : MonoBehaviour
 {
-    private bool _isInventoryFirst;
     
+
+    public AudioClip itemPickSFX;
     public ItemMappingTable mappingTable;
     public GameObject itemForTest;
-    public List<Inventory> inventorys=new List<Inventory>(); 
-    
-    
+    public List<Inventory> inventorys=new List<Inventory>();
+    public List<GameObject> canInsertObjects = new List<GameObject>();
+    private SoundControllerScript _soundControllerScript;
+    private bool _isInventoryFirst;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _initSetting();
+        _soundControllerScript = SoundControllerScript.Instance;
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class TotalInventoryController : MonoBehaviour
         for (int i = 0; i < inventorys.Count; i++)
         {
             
-            inventorys[i].gameObject.SetActive(false);
+            SetRenderVisible(inventorys[i].gameObject, false);
         }
 
         _isInventoryFirst = false;
@@ -46,13 +49,14 @@ public class TotalInventoryController : MonoBehaviour
 
         if (_isInventoryFirst)
         {
-            inventorys[0].gameObject.SetActive(true);
-            inventorys[1].gameObject.SetActive(false);
+            SetRenderVisible(inventorys[0].gameObject, true);
+            SetRenderVisible(inventorys[1].gameObject, false);
+            
         }
         else
         {
-            inventorys[0].gameObject.SetActive(false);
-            inventorys[1].gameObject.SetActive(true);
+            SetRenderVisible(inventorys[0].gameObject, false);
+            SetRenderVisible(inventorys[1].gameObject, true);
         }
     }
     
@@ -67,35 +71,37 @@ public class TotalInventoryController : MonoBehaviour
     }
     
     
-    public void CheckCanInsertObject(GameObject input)
+    public void CheckCanInsertObject(GameObject input) //현재 클릭된 물체 
     {
-        if (mappingTable.IsExist(input)) //매핑테이블에서 존재하는 게임 오브젝트인지 확인 
+        int idx = canInsertObjects.IndexOf(input); // 삽입되는 정보가 담긴 리스에 담긴 오브젝트라면 
+        if (idx!=-1) // 만약 삽입 가능한 리스트에 들어가있는 오브젝트라면 
         {
-            
+            Debug.Log("input");
+            _soundControllerScript.StartEffectBgm(itemPickSFX);
             Item inputItem = new Item();
-            GameObject Partner = mappingTable.GetPartner(input); //매핑되는 오브젝트 얻어옴
-            if (mappingTable.CheckIsDreamObject(input)) //넣은게 꿈 아이템일때 = 꿈 일때 
+            GameObject dreamObject = mappingTable.GetInvenDreamIcon(input);
+            GameObject realObject = mappingTable.GetInvenRealIcon(input);
+
+            
+            if (mappingTable.CheckIsDreamObject(input)) //넣은게 꿈 아이템일때 = 꿈 일때  전체 매핑 테이블에서 비교 
             {
 
-                inputItem.CreateItem(true, input, Partner);
+                inputItem.CreateItem(true,dreamObject ,mappingTable.GetHighLightItem(dreamObject) ,realObject,mappingTable.GetHighLightItem(realObject));
             }
-            else // 넣은게 꿈 아이템일때 
+            else
             {
-                inputItem.CreateItem(false, Partner, input);
+                inputItem.CreateItem(false, dreamObject, mappingTable.GetHighLightItem(dreamObject),realObject,mappingTable.GetHighLightItem(realObject));
             }
-
-
-
-
-            if (!mappingTable.CheckIsBroochType(input)) //추후 추가 필요 1인벤토리에 들어갈 내용이라면 
+            
+            if (idx <= 4) //0번인벤토리에 삽입
             {
-                inventorys[0].AddItem(inputItem);
+                inventorys[0].AddItem(inputItem,idx);
             }
-            else //2 인벤토리에 들어갈내요이라면 
+            else // 1번 입벤토리에 삽임
             {
-                inventorys[1].AddItem(inputItem);
+                inventorys[1].AddItem(inputItem,idx-5);
             }
-
+            
         }
         else
         {
@@ -111,5 +117,17 @@ public class TotalInventoryController : MonoBehaviour
         }
         
        
+    }
+    public void SetRenderVisible(GameObject panel, bool visible)
+    {
+        CanvasGroup cg = panel.GetComponent<CanvasGroup>();
+        if (cg == null)
+        {
+            cg = panel.AddComponent<CanvasGroup>();
+        }
+
+        cg.alpha = visible ? 1f : 0f;
+        cg.interactable = visible;
+        cg.blocksRaycasts = visible;
     }
 }

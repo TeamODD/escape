@@ -1,8 +1,17 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public LighControlScript lighControlScript;
+    public AudioClip dreamBgm;
+    public AudioClip realityBgm;
+    public bool isLightOn = false;
     public static GameManager Instance{get; private set;}
+    public TotalInventoryController totalInventoryController;
+    private AudioClip _clickSFX;
+    private SoundControllerScript _soundControllerScript;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
 
@@ -23,6 +32,13 @@ public class GameManager : MonoBehaviour
     {
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
+        _soundControllerScript=SoundControllerScript.Instance;
+        _clickSFX=Resources.Load<AudioClip>("SFX/CLICK");
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void SwitchWorld()
@@ -30,5 +46,28 @@ public class GameManager : MonoBehaviour
         IsInDream = !IsInDream;
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
+        totalInventoryController.AllInventorySwitchStatus(IsInDream);
+        _switchMusic();
+        if (isLightOn)
+        {
+            lighControlScript.LightOn();
+            isLightOn = false;
+        }
     }
+
+    private void _switchMusic()
+    {
+        AudioClip MainAudio;
+        if (IsInDream)
+        {
+            MainAudio = dreamBgm;
+        }
+        else
+        {
+            MainAudio = realityBgm;
+        }
+        _soundControllerScript.StartMainBgm(MainAudio);
+    }
+
+ 
 }

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1197324617778931818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.04, y: -4.02, z: -8.767692}
+  m_LocalPosition: {x: -13.809, y: -4.057, z: -8.767692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,6 +194,45 @@ MonoBehaviour:
   mappingTable:
   - dreamItem: {fileID: 0}
     realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  - dreamItem: {fileID: 0}
+    realItem: {fileID: 0}
+  HighLightTable:
+  - targetItem: {fileID: 0}
+    highlightingItem: {fileID: 0}
 --- !u!1 &4225400461772778251
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,13 +7,17 @@ public class Item
 {
     private bool _status; // 일단 true = dream  |  false = real
     private GameObject _dreamItem;  // 꿈객체 들어감 
+    private GameObject _dreamHighlight;
     private GameObject _realItem; // 현실 객체 들어감 
-
-    public void CreateItem(bool status, GameObject dream, GameObject real)
+    private GameObject _realHighlight;
+    
+    public void CreateItem(bool status, GameObject dream,GameObject dreamHighlight,GameObject real,GameObject realHighlight)
     {
         _status = status;
         _dreamItem = dream;
+        _dreamHighlight = dreamHighlight;
         _realItem = real;
+        _realHighlight = realHighlight;
     }
 
     public void SwitchItemStatus(bool status) //아이템 상태 바꾸기 
@@ -26,15 +30,28 @@ public class Item
         if(_status)
         {
             
-            return _dreamItem.GetComponent<Image>().sprite;
+            return _dreamItem.GetComponent<SpriteRenderer>().sprite;
             
         }
         else
         {
-            return _realItem.GetComponent<Image>().sprite;
+            return _realItem.GetComponent<SpriteRenderer>().sprite;
         }
     }
 
+    public Sprite GetHighLightIcon() // 현재하이라이트 아이콘 반환 
+    {
+        if(_status)
+        {
+            
+            return _dreamHighlight.GetComponent<SpriteRenderer>().sprite;
+            
+        }
+        else
+        {
+            return _realHighlight.GetComponent<SpriteRenderer>().sprite;
+        }
+    }
     public GameObject ExtractItem()
     {
         if (_status)
