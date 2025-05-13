@@ -7,8 +7,6 @@ public class RealityDrawerScript : ClickHandler
     {
         if (flowIdx == 0)
         {
-            secondDrawer.transform.localPosition = new Vector3(0.289f, -0.182f, 0f);
-
             flowIdx++;
         }
      
