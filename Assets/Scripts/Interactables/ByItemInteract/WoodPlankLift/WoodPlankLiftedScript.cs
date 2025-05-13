@@ -13,7 +13,7 @@ public class WoodPlankLiftedScript : ClickHandler
             flowIdx++;
             
         }
-        else
+        else if(flowIdx==4)
         {
             realityBoxScript.OneFlowPlus();
             ChangeSprite(flowIdx);

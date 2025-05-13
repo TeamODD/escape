@@ -11,8 +11,11 @@ public class ClickHandler : MonoBehaviour
     protected  bool canExamineFlow = false;
     private SpriteRenderer _spriteRenderer;
     private AudioClip _clickSFX;
+    protected ZoomTarget _zoomTarget;
     protected SoundControllerScript _soundController;
     protected int flowIdx;
+    protected bool isEnableZoom = true;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,7 +47,7 @@ public class ClickHandler : MonoBehaviour
         
         //상호작용 가능한 객체를 대상으로 
         _clickSFX=Resources.Load<AudioClip>("SFX/CLICK");
-
+        _zoomTarget = GetComponent<ZoomTarget>();
     }
     public void OnPointerClicked(BaseEventData data)
     {
@@ -105,5 +108,15 @@ public class ClickHandler : MonoBehaviour
         {
             SetcanExamineFlow(true);
         }
+    }
+
+    public void SwitchisEnableZoom(bool status)
+    {
+        isEnableZoom = status;
+    }
+
+    public bool GetisEnableZoomStatus()
+    {
+        return isEnableZoom;
     }
 }

@@ -1,6 +1,7 @@
 using NUnit.Framework.Internal.Commands;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class TotalInventoryController : MonoBehaviour
@@ -109,6 +110,12 @@ public class TotalInventoryController : MonoBehaviour
         }
     }
 
+
+    public bool CheckAllBrouchGet()
+    {
+        
+        return inventorys[1].CheckAllItemGet();
+    }
     public void MakeItemForTest()
     {
         if(itemForTest!=null)

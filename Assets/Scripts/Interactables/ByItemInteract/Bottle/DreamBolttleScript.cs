@@ -7,20 +7,27 @@ public class DreamBolttleScript : ClickHandler
     public RealityBottleScript realityBottleScript;
     public override void DoToWork()
     {
-       
+
         if (flowIdx == 0)
         {
-            flowIdx++;
-            ChangeSprite(flowIdx);
-            CheckFlowIsFinish();
-            realityBottleScript.PlayerDrinkInDream();
-            dreamDrawer.OneFlowPlus();
+            _zoomTarget.ZoomRequset();
         }
         else if (flowIdx == 1)
         {
-            //마신다 안마신다 
-            SetcanExamineFlow(true);
+            
+            flowController.CheckGameObject(gameObject);
+            
         }
-       
+      
+    }
+
+    public void DrinkDreamBottle()
+    {
+        Debug.Log("Drink!");
+        SwitchisEnableZoom(false);
+        OneFlowPlus();
+        realityBottleScript.OneFlowPlus();
+        dreamDrawer.OneFlowPlus();
+        
     }
 }
