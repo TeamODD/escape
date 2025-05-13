@@ -24,7 +24,7 @@ namespace Assets.Scripts.Animators
         protected override Sequence CreateAnimationSequence()
         {
             return DOTween.Sequence()
-            .Append(_target.DOMove(_endValue, _duration, _snapping).SetEase(_ease).SetRelative(_relative));
+            .Append(_target.DOLocalMove(_endValue, _duration, _snapping).SetEase(_ease).SetRelative(_relative));
         }
     }
 }
