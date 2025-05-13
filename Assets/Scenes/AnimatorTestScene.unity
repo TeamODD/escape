@@ -258,8 +258,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text New Text New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f4c8ad700e5de4868bb633aaf8d7b8cb, type: 2}
+  m_sharedMaterial: {fileID: 2920558769883584782, guid: f4c8ad700e5de4868bb633aaf8d7b8cb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -666,25 +666,22 @@ MonoBehaviour:
       Data: 1|System.String[], mscorlib
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 5
     - Name: 
       Entry: 1
-      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1
+      Data: "\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC\uC544\uC790\uCC28\uCE74\uD0C0\uD30C\u3160\u314F"
     - Name: 
       Entry: 1
-      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue122222222222
+      Data: "\uACE0\uB178\uB3C4\uB85C\uBAA8\uBCF4\uC18C\uC624\uC870\uCD08\uCF54\uD1A0\uD3EC\u3160\u3157"
     - Name: 
       Entry: 1
-      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue13333333333333
+      Data: "\u3157\u3141\u3134\u3147\u3139\u3134\u3141\u3147\u3139\u3134"
     - Name: 
       Entry: 1
-      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1444444444444
+      Data: "\u3134\u3142\u3137\u3131\u3148\u3137"
     - Name: 
       Entry: 1
-      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1555555555555
-    - Name: 
-      Entry: 1
-      Data: Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1 Dialogue1777777777777777
+      Data: "\u3141\u3134\u3147\uB79C\u3141\uC5D8\u3134\uC560\uB818\u3134\uC5B4\u3151\u3150"
     - Name: 
       Entry: 13
       Data: 
