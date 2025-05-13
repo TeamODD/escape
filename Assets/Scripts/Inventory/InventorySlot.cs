@@ -22,7 +22,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public RealityPotScript realityPotScript;
     public DreamCrowScropt dreamCrowScript;
     public DreamTeddyBearScript dreamTeddyBearScript;
-  
+    public DreamDoorScript DreamDoorScript;
    
     
     private RectTransform _rectTransform; // 이미지를 잡을때 사용
@@ -60,24 +60,33 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void UseItem()  //아이템을 사용한다면 slot에서 일어나는함수 
     {
+        
+        
+        //아이템 사용 상호작용 
+        
+        if (targetUseItem.name == "RealityPotImage")
+        {
+            realityPotScript.GetPoison();
+        }
+        else if (targetUseItem.name == "DreamCrowImage")
+        {
+            dreamCrowScript.GetWarm();
+        }
+        else if (targetUseItem.name == "DreamBearImage")
+        {
+            dreamTeddyBearScript.GetKnife();
+        }
+        else if (targetUseItem.name == "DreamDoorImage")
+        {
+            DreamDoorScript.GetBrouchToDoor(_item.ExtractItem());
+            
+            //dreamTeddyBearScript.GetKnife();
+        }
+        
         _item = null;
         _icon.GetComponent<Image>().sprite = null;
         _icon.SetActive(false);
         
-        //아이템 사용 상호작용 
-        Debug.Log(targetUseItem);
-        if (targetUseItem.name == "RealityPot")
-        {
-            realityPotScript.GetPoison();
-        }
-        else if (targetUseItem.name == "DreamCrow")
-        {
-            dreamCrowScript.GetWarm();
-        }
-        else if (targetUseItem.name == "DreamBear")
-        {
-            dreamTeddyBearScript.GetKnife();
-        }
     }
 
     public void UpdateSlot() // 현재 슬롯 상태 업데이트 
@@ -196,11 +205,15 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
                 foreach (RaycastResult result in results)
                 {
-                    if (result.gameObject==targetUseItem) // 예: 슬롯과 충돌했는지
+                    Debug.Log(result);
+                    if (result.gameObject.name==targetUseItem.name) // 예: 슬롯과 충돌했는지
                     {
+                        if (true) //그게 줌상태에서 가능한 상호작용인지 비교
+                        {
+                            UseItem();
+                            return; // 슬롯과 충돌한 경우 복귀 안 함
+                        }
                         
-                        UseItem();
-                        return; // 슬롯과 충돌한 경우 복귀 안 함
                     }
                 }
 

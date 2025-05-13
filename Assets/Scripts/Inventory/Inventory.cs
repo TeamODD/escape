@@ -54,5 +54,23 @@ public class Inventory : MonoBehaviour
     }
 
 
+    public bool CheckAllItemGet()
+    {
+        bool temp=true;
+        for (int i = 0; i < _itemList.Length; i++) // 인벤토리 안에 들어있는 아이템들의 상태 일제히 변경
+        {
+            
+            //_itemList[i].SwitchItemStatus();
+            if (_itemList[i] == null)//아이템에 빈칸이 하나라도 있다면
+            {
+                temp = false;
+                break;
+            }
+            
+        }
+
+        return temp;
+    }
+
 
 }

@@ -12,6 +12,7 @@ public class ZoomImage : MonoBehaviour
     private void Start()
     {
         var manager = FindObjectOfType<ZoomImageManager>();
+
         manager.OnShowEvent.AddListener(OnShow);
         manager.OnHideEvent.AddListener(OnHide);
     }
@@ -20,11 +21,13 @@ public class ZoomImage : MonoBehaviour
     {
         image.sprite = sprite;
         panel.SetActive(true);
-        fadeInAnimator.PlayAnimation();
+        //fadeInAnimator.PlayAnimation();
     }
 
     public void OnHide()
     {
+        Debug.Log("zoomout");
+        panel.SetActive(false);
         fadeOutAnimator.PlayAnimation();
     }
 }

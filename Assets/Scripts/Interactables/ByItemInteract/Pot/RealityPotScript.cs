@@ -4,16 +4,20 @@ using UnityEngine;
 public class RealityPotScript : ClickHandler
 {
     public AudioClip WaterSFX;
+    public ZoomImage ZoomImage;
     private float _timer = 0f;
     void Update()
     {
+       
+        
+        
         if (flowIdx == 1)
         {
             _timer += Time.deltaTime; // 프레임당 경과시간 누적
 
             if (_timer >= 2f) // 2초 지났으면
             {
-                Debug.Log("shake shake");
+               
                 //흔들흔들 애니메이션 추가
                 _timer = 0f; // 타이머 초기화
             }
@@ -26,8 +30,14 @@ public class RealityPotScript : ClickHandler
     
     public override void DoToWork()
     {
-        
-        if (flowIdx == 1)
+        if (flowIdx == 0)
+        {
+            _zoomTarget.ZoomRequset();
+            _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
+            _zoomTarget.SwitchHitImageName("RealityPotImage");
+
+        }
+        else if (flowIdx == 1)
         {
             
             flowController.CheckGameObject(gameObject); 
@@ -42,7 +52,10 @@ public class RealityPotScript : ClickHandler
 
     public void GetPoison()
     {
+       
         _soundController.StartEffectBgm(WaterSFX);
+        ZoomImage.OnHide();
+        
         flowIdx++;
         ChangeSprite(flowIdx);
     }
