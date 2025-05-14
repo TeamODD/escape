@@ -2,27 +2,36 @@ using System;
 using UnityEngine;
 using CodeMonkey.Utils;
 using System.Collections.Generic;
+using DG.Tweening;
+using UnityEditor;
 using UnityEngine.Rendering;
 
 public class Testing : MonoBehaviour
 {
     private Grid grid;
+    public GameObject ballObject;
+    public Sprite floorSprite;
+    public Sprite wallSprite;
+    public Sprite goalSprite;
+    
     private Vector2Int ballPosition;
     private bool isSelectingMove = false;
     private int currentPatternIndex = 0;
     
     private Vector2Int startBallPosition = new Vector2Int(0, 0);
-    
     private int[][,] patterns;
+    //private BallMover ballMover;
+    private bool isMoving = false;
+    private BallMover ballMover;        
     public void Start()
     {
-        grid = new Grid(4,4,10f, new Vector3(-10,-10));//위치 셀크기 위치 정하셈
+        grid = new Grid(4,4,10f, new Vector3(-10,-10),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
         patterns = new int[][,]
         {
             new int[,] {
                 {0, 0, 2, 0},
                 {0, 0, 2, 0},
-                {2, 2, 2, 0},
+                {2, 2, 2, 2},
                 {0, 0, 2, 3}
             },
             new int[,] {
@@ -39,6 +48,8 @@ public class Testing : MonoBehaviour
             }
         };
         ApplyPattern(0);
+        MoveBallToPosition(startBallPosition);
+        ballMover = ballObject.GetComponent<BallMover>();
     }
 
     private void Update()
@@ -63,10 +74,7 @@ public class Testing : MonoBehaviour
                 // 이동가능한 타일이면 공 이동
                 if (IsAdjacent(ballPosition, new Vector2Int(x, y))&& grid.GetValue(x,y)!=2)
                 {
-                    //공위치 초기화
-                    grid.SetValue(ballPosition.x, ballPosition.y,0);// 이전거 지우고
-                    ballPosition = new Vector2Int(x, y);
-                    grid.SetValue(ballPosition.x, ballPosition.y,1);// 새위치 표시
+                    MoveBallToPosition(new Vector2Int(x, y));
                     grid.ClearHighLights();
                     isSelectingMove = false;
                 }
@@ -89,6 +97,8 @@ public class Testing : MonoBehaviour
 
     private void ApplyPattern(int index)
     {
+        grid.ClearHighLights();
+        isSelectingMove = false;
         int[,] pattern = patterns[index];
 
         for (int x = 0; x < 4; x++)
@@ -98,15 +108,33 @@ public class Testing : MonoBehaviour
                 grid.SetValue(x, y, pattern[y, x]); // y,x 순서에 주의 (행렬)
             }
         }
-
+        
         // 공이 벽 위에 있는지 확인
         if (pattern[ballPosition.y, ballPosition.x] == 2)
         {
-            ballPosition = startBallPosition;
+            MoveBallToPosition(startBallPosition);
         }
-
-        // 공 위치 덮어쓰기
-        grid.SetValue(ballPosition.x, ballPosition.y, 1);
+        else
+        {
+            MoveBallToPosition(ballPosition);
+        }
     }
-    
+
+    private void MoveBallToPosition(Vector2Int gridPos)
+    {
+        ballPosition = gridPos;
+        Vector3 worldPos = grid.GetWorldPosition(gridPos.x, gridPos.y) + new Vector3(grid.GetCellSize(), grid.GetCellSize())*0.5f;
+        worldPos.z = -5f;
+        ballObject.transform.DOMove(worldPos,0.3f).SetEase(Ease.InOutSine).Play();
+        if (grid.GetValue(gridPos.x, gridPos.y) == 3)
+        {
+            Debug.Log("골인입니다.");
+        }
+    }
+
+    public void NextPattern()
+    {
+        currentPatternIndex = (currentPatternIndex + 1) % patterns.Length;
+        ApplyPattern(currentPatternIndex);
+    }
 }
