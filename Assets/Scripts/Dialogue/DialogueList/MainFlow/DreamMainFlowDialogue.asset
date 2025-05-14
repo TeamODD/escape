@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13fcf40591784725804f7297f8e73a8, type: 3}
+  m_Name: DreamMainFlowDialogue
+  m_EditorClassIdentifier: 
+  <CompleteType>k__BackingField: 0
+  <Contents>k__BackingField:
+  - "\u2026? "
+  - "\uC5EC\uAE34 \uC5B4\uB514\uC9C0? "
+  - "\uAFC8\uC778\uAC74\uAC00"
+  - "\uBB18\uD55C \uAFC8\uC774\uB2E4. "
+  - "-\uD53C\uACE4\uD558\uAC8C \uB354 \uB458\uB7EC\uBCF4\uC9C0 \uB9D0\uACE0 \uC7A0\uC5D0\uC11C
+    \uAE68\uB3C4\uB85D\uD558\uC790- "
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []

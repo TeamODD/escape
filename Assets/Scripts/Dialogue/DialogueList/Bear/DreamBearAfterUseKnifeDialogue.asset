@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13fcf40591784725804f7297f8e73a8, type: 3}
+  m_Name: DreamBearAfterUseKnifeDialogue
+  m_EditorClassIdentifier: 
+  <CompleteType>k__BackingField: 0
+  <Contents>k__BackingField:
+  - "\uD3B8\uC9C0\uCE7C\uB85C \uC778\uD615\uC758 \uBC30\uB97C \uAC08\uB790\uB2E4. "
+  - "\uAC08\uB77C\uC9C4 \uD2C8\uC73C\uB85C \uC19C\uC774 \uC794\uB729 \uD280\uC5B4
+    \uB098\uC654\uB2E4. "
+  - "\uD280\uC5B4\uB098\uC628 \uC19C\uB4E4 \uC0AC\uC774\uC5D0 \uBE0C\uB85C\uCE58
+    \uC870\uAC01\uC774 \uBC18\uC9DD\uC774\uACE0 \uC788\uB2E4."
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []

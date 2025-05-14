@@ -1,3 +1,4 @@
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 
 public class RealityScrewScript : ClickHandler
@@ -7,6 +8,8 @@ public class RealityScrewScript : ClickHandler
     {
         if (flowIdx == 1)
         {
+            //스테인글라스의
+            DialogueController.Instance.PlayDialogue(dialogueData[0]);
             flowController.CheckGameObject(gameObject); 
             OneFlowPlus();
         }

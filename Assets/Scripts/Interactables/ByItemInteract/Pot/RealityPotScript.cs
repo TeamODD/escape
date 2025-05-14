@@ -1,3 +1,4 @@
+using Assets.Scripts.Dialogue;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -32,6 +33,9 @@ public class RealityPotScript : ClickHandler
     {
         if (flowIdx == 0)
         {
+            //잡초가 무성하게~~
+            DialogueController.Instance.PlayDialogue(dialogueData[0]);
+            DialogueController.Instance.applyDialogueOn();
             _zoomTarget.ZoomRequset();
             _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
             _zoomTarget.SwitchHitImageName("RealityPotImage");
@@ -40,10 +44,18 @@ public class RealityPotScript : ClickHandler
         else if (flowIdx == 1)
         {
             
+            DialogueController.Instance.OnCompleted.Invoke();
+            //아무것도 없을~~
+            DialogueController.Instance.PlayDialogue(dialogueData[1]);
             flowController.CheckGameObject(gameObject); 
             //애벌래 획득 스크립트 등장
             flowIdx++;
             ChangeSprite(flowIdx);
+        }
+        else if (flowIdx == 2)
+        {
+            //흙밖에 없는~~
+            DialogueController.Instance.PlayDialogue(dialogueData[3]);
         }
         
         
@@ -52,7 +64,8 @@ public class RealityPotScript : ClickHandler
 
     public void GetPoison()
     {
-       
+        //물병의 액체~
+        DialogueController.Instance.PlayDialogue(dialogueData[2]);
         _soundController.StartEffectBgm(WaterSFX);
         ZoomImage.OnHide();
         

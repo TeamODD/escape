@@ -21,14 +21,16 @@ public class ZoomTarget : MonoBehaviour
         HitImage.name = name;
     }
 
-    public void ZoomRequset()
+    public void ZoomRequset() // 줌시도할때
     {
+        GameManager.Instance.SwitchZoomInStatus(true);
         ClickHandler clickTarget = GetComponent<ClickHandler>();
 
         if (clickTarget.GetisEnableZoomStatus()) // 만약 줌인이 가능한 상태라면 
         {
             _selectButtonController.SetAnswerInt(gameObject);//자신을 보냄   
-            MakeSelectButton();
+            _selectButtonController.SwithchAllButtonStatus(false); //기본적으로 버튼은 꺼져있게 설정 
+            
             
             manager.Show(targetSprite);
             

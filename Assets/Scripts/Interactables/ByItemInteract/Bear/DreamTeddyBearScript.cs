@@ -1,3 +1,4 @@
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 
 public class DreamTeddyBearScript : ClickHandler
@@ -9,6 +10,10 @@ public class DreamTeddyBearScript : ClickHandler
     {
         if (flowIdx == 0)
         {
+            //푹신해 보이는
+            DialogueController.Instance.PlayDialogue(dialogueData[0]);
+            DialogueController.Instance.applyDialogueOn();
+            
             _zoomTarget.ZoomRequset();
             _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
             _zoomTarget.SwitchHitImageName("DreamBearImage");
@@ -22,6 +27,8 @@ public class DreamTeddyBearScript : ClickHandler
 
     public void GetKnife()
     {
+        //편지칼로 인형
+        DialogueController.Instance.PlayDialogue(dialogueData[1]);
         zoomImage.OnHide();
         _soundController.StartEffectBgm(KnifeSFX);
         OneFlowPlus();

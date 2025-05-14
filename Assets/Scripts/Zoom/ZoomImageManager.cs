@@ -1,3 +1,4 @@
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,8 +12,9 @@ public class ZoomImageManager : MonoBehaviour
         OnShowEvent?.Invoke(sprite);
     }
 
-    public void Hide()
+    public void Hide() //줌 닫을때 
     {
         OnHideEvent?.Invoke();
+        DialogueController.Instance.OnCompleted.Invoke();
     }
 }

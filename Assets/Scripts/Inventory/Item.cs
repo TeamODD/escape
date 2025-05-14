@@ -65,5 +65,14 @@ public class Item
         }
     }
 
+    public GameObject GetDreamGameObject()
+    {
 
+        return _dreamItem;
+    }
+
+    public bool GetItemStatus()
+    {
+        return _status;
+    }
 }

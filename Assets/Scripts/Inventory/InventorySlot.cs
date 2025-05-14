@@ -2,10 +2,11 @@ using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using Assets.Scripts.Dialogue;
 using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerEnterHandler, IPointerExitHandler,IPointerClickHandler
 {
-    
+    public List<DialogueData> DialogueDatas;
     public bool isZoomMode;
     public GameObject button;
     public GameObject background;
@@ -208,11 +209,13 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     Debug.Log(result);
                     if (result.gameObject.name==targetUseItem.name) // 예: 슬롯과 충돌했는지
                     {
-                        if (true) //그게 줌상태에서 가능한 상호작용인지 비교
+                        UseItem();
+                        return;
+                        if (isSlotConsist(result.gameObject))//슬롯에 지정값과 일치한다면
                         {
-                            UseItem();
-                            return; // 슬롯과 충돌한 경우 복귀 안 함
+                            
                         }
+                             // 슬롯과 충돌한 경우 복귀 안 함
                         
                     }
                 }
@@ -239,6 +242,156 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _targetHighlighter.OffHighliter();
         _buttonHighlighter.OffHighliter();
+
+        if (_item != null)//만약 슬롯에 아이템이 들어있는 경우에
+        {
+            if (_item.GetDreamGameObject().name == "RealityBottle(Get)")//물병 클릭일때
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[0]); // 매끄럽고
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[1]); //검은색 용액..
+                }
+                
+
+            }else if (_item.GetDreamGameObject().name == "JellyWarm")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[2]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[3]); // 대화출력
+                }
+            }else if (_item.GetDreamGameObject().name == "DreamBrouchMid")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[4]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[5]); // 대화출력
+                }
+            }else if (_item.GetDreamGameObject().name == "DreamBrouch4")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[6]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[7]); // 대화출력
+                }
+            }else if (_item.GetDreamGameObject().name == "DreamBrouch3")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[8]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[9]); // 대화출력
+                }
+            }else if (_item.GetDreamGameObject().name == "DreamBrouch2")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[10]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[11]); // 대화출력
+                }
+            }else if (_item.GetDreamGameObject().name == "DreamBrouch1")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[12]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[13]); // 대화출력
+                }
+            }else if (_item.GetDreamGameObject().name == "DreamKnife")
+            {
+                if (_item.GetItemStatus() == true) //꿈 아이템이라면 
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[14]); // 대화출력
+                }
+                else
+                {
+                    DialogueController.Instance.PlayDialogue(DialogueDatas[15]); // 대화출력
+                }
+            }
+            
+        }
     }
-    
+
+
+    public bool isSlotConsist(GameObject input)
+    {
+        if (input.name == "RealityBottle") //만약 현재 input이 이거일때
+        {
+            if (_item.GetDreamGameObject().name == "RealityBottle(Get)")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "JellyWarm")
+        {
+            if (_item.GetDreamGameObject().name == "RealityWarm")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "DreamBottle")
+        {
+            if (_item.GetDreamGameObject().name == "DreamBroch1")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "RealityFlowerPot")
+        {
+            if (_item.GetDreamGameObject().name == "DreamBrouch4")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "RealityFountainPen")
+        {
+            if (_item.GetDreamGameObject().name == "DreamKnife")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "RealityBox")
+        {
+            if (_item.GetDreamGameObject().name == "DreamBrouch3")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "RealityScrew")
+        {
+            if (_item.GetDreamGameObject().name == "DreamBrouchMid")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+        else if (input.name == "DreamBear")
+        {
+            if (_item.GetDreamGameObject().name == "DreamBrouch2")//아이템이 일치한다면 
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

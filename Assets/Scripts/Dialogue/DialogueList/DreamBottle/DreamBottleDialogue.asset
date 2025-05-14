@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13fcf40591784725804f7297f8e73a8, type: 3}
+  m_Name: DreamBottleDialogue
+  m_EditorClassIdentifier: 
+  <CompleteType>k__BackingField: 1
+  <Contents>k__BackingField:
+  - " \uB0B4 \uBC29\uC758 \uBCD1\uC740 \uBE44\uC5B4 \uC788\uB294\uB370 \uC5EC\uAE30\uC120
+    \uAC00\uB4DD \uCC28\uC788\uB2E4."
+  - "\uCC38\u2026 \uBB18\uD55C \uC0C9\uC758 \uC561\uCCB4\uB2E4 \uB9C8\uCE58 \uBE68\uB824\uB4E4
+    \uAC83\uB9CC \uAC19\uC740\u2026"
+  - " \uB2EC\uCF64\uD55C \uB9DB\uC774 \uB0A0 \uAC83\uB9CC \uAC19\uB2E4."
+  - "\uB9C8\uC154\uBCFC\uAE4C?"
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []

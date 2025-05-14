@@ -1,3 +1,4 @@
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 
 public class RealityBottleScript : ClickHandler
@@ -6,18 +7,29 @@ public class RealityBottleScript : ClickHandler
     public bool isSelectEatOrGet = false;
     public override void DoToWork()
     {
-        
-       
-           //줌인 시도하는 코드 삽입 마신다 안마신다 
-       
-        //줌인 코드 삽입 하면 됨 지금은 바로 비활성화 
-        if (flowIdx == 1) //isdrink가 true가 되면  flow증가
+        if (flowIdx == 0)
         {
+            //금이 가 있는 빈병이다
+            DialogueController.Instance.PlayDialogue(dialogueData[0]);
+        }
+        else if (flowIdx == 1) //물이 채워진 상태에서 
+        {
+            //뭐지? 분명~~
+            DialogueController.Instance.PlayDialogue(dialogueData[1]);
+            DialogueController.Instance.applyButtonOn(4);
             _zoomTarget.ZoomRequset();
         }
-    
+        else if (flowIdx == 2)
+        {
+            
+        }
+
+        
     }
-    
+    public void RequestZoom()
+    {
+        _zoomTarget.ZoomRequset();
+    }
 
     public void PlayerSelectDrinkPoison()
     {
@@ -32,5 +44,16 @@ public class RealityBottleScript : ClickHandler
     {
         OneFlowPlus();
         flowController.CheckGameObject(gameObject);
+    }
+
+    public void PlayerSelectDontDrink()
+    {
+        isSelectEatOrGet = true;
+        RequestZoom();
+        Debug.Log("sellectdrink");
+        //아무래도 해골마크..
+        
+        DialogueController.Instance.PlayDialogue(dialogueData[2]);//자막이 꺼지기 전에 다시 시작해서 appyl button  안됨
+        DialogueController.Instance.applyButtonOn(1);
     }
 }

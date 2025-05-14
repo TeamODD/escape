@@ -1,3 +1,4 @@
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 
 public class RealityBoxScript : ClickHandler
@@ -8,6 +9,8 @@ public class RealityBoxScript : ClickHandler
     {
          if (flowIdx == 1)
         {
+            //바닥의판자
+            DialogueController.Instance.PlayDialogue(dialogueData[0]);
             _zoomTarget.ZoomRequset();
             _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
             //상자 퍼즐 진행 성공했다 치고
@@ -15,6 +18,8 @@ public class RealityBoxScript : ClickHandler
         }
         else if (flowIdx == 2)
         {
+            //상자가열렷다
+            DialogueController.Instance.PlayDialogue(dialogueData[1]);
             _soundController.StartEffectBgm(openSFX);
             ChangeSprite(flowIdx);
             flowController.CheckGameObject(gameObject); 

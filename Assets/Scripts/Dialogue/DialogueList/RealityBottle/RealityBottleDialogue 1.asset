@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13fcf40591784725804f7297f8e73a8, type: 3}
+  m_Name: RealityBottleDialogue 1
+  m_EditorClassIdentifier: 
+  <CompleteType>k__BackingField: 0
+  <Contents>k__BackingField:
+  - "\uC544\uBB34 \uB9DB\uB3C4 \uB098\uC9C0 \uC54A\uB294\uB2E4. "
+  - "\uAC08\uC99D\uC774 \uD574\uC18C\uB41C \uAC83 \uAC19\uB2E4. "
+  - "\u2026"
+  - "\u2026 \u2026 "
+  - "\u2026 \u2026 \u2026? "
+  - "\uC5B4\uC9C0\uB7FD\uB2E4. "
+  - "\uC2DC\uC57C\uAC00 \uC5B4\uB450\uC6CC\uC9C4\uB2E4. "
+  - "\uD558\uC9C0\uB9CC \uACE0\uD1B5\uC2A4\uB7FD\uC9C4 \uC54A\uB2E4. "
+  - "\uB9C8\uCE58 \uC7A0\uC5D0 \uB4DC\uB294 \uAC83 \uAC19\uC740 \uAC10\uAC01\uC774\uB2E4. "
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []

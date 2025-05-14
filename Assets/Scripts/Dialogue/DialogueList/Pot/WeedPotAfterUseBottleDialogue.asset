@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13fcf40591784725804f7297f8e73a8, type: 3}
+  m_Name: WeedPotAfterUseBottleDialogue
+  m_EditorClassIdentifier: 
+  <CompleteType>k__BackingField: 0
+  <Contents>k__BackingField:
+  - "\uBB3C\uBCD1\uC758 \uC561\uCCB4\uB97C \uD654\uBD84\uC5D0 \uBD80\uC5B4\uB123\uC790
+    \uC7A1\uCD08\uAC00 \uB179\uB4EF\uC774 \uC0AC\uB77C\uC9C4\uB2E4. "
+  - "\uC7A1\uCD08\uAC00 \uC0AC\uB77C\uC838 \uC5B4\uB518\uAC00 \uD711\uD55C \uD654\uBD84\uB9CC
+    \uB0A8\uC558\uB2E4. "
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []

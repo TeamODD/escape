@@ -1,9 +1,17 @@
 using System.Collections.Generic;
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectButtonController : MonoBehaviour
 {
+    public List<DialogueData> dialogueDatas;
+    
+    
+    
+    
+    
+    
     public ButtonTextScript LeftText;
     public ButtonTextScript RightText;
     public GameObject leftButton;
@@ -11,7 +19,7 @@ public class SelectButtonController : MonoBehaviour
     public ZoomImage zoomImage;
     public List<GameObject> SelectedList;
     private int selectedAnswer;
-
+   
     private GameObject _currentSelectedObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,7 +44,6 @@ public class SelectButtonController : MonoBehaviour
         _currentSelectedObject = Target;
         selectedAnswer=SelectedList.IndexOf(Target);
         SetText();
-        Debug.Log((selectedAnswer));
     }
 
     public void SetText()
@@ -99,8 +106,10 @@ public class SelectButtonController : MonoBehaviour
     }
     public void GetAnswer(bool answer) //왼쪽 대답이 false오른쪽대답이 true
     {
+        Debug.Log(answer);
+        Debug.Log("buttonisselected");
         
-        zoomImage.OnHide();
+        zoomImage.OnHide(); //대답을 받으면 사라진다 
         LeftText.SetText("");
         RightText.SetText("");
         switch (selectedAnswer)
@@ -136,10 +145,13 @@ public class SelectButtonController : MonoBehaviour
                 
                 if (answer) //안마신다 
                 {
-                    
+                    //dreamBottleDontDrinkDialogue
+                    DialogueController.Instance.PlayDialogue(dialogueDatas[0]);
                 }
                 else //마신다 
                 {
+                    //dreamBottleDrinkDialogue
+                    DialogueController.Instance.PlayDialogue(dialogueDatas[1]);
                     DreamBolttleScript dreamBolttleScript = _currentSelectedObject.GetComponent<DreamBolttleScript>();
                     dreamBolttleScript.DrinkDreamBottle();
                 }
@@ -166,23 +178,30 @@ public class SelectButtonController : MonoBehaviour
                     
                     if (answer)//안마신다
                     {
-                        realityBottleScript.isSelectEatOrGet = true;
+                        realityBottleScript.PlayerSelectDontDrink();
+                      
+                        
+                        
                     }
                     else //마신다 
                     {
-                       
+                        //아무맛도나지~~
+                        DialogueController.Instance.PlayDialogue(dialogueDatas[3]);
                         realityBottleScript.PlayerSelectDrinkPoison();
                     }
                 } // 안마실거냐 
-                else
+                else //맨처음에 
                 {
                    
                     if (answer) //안챙기냐 
                     {
-                    
+                        //꺼림칙하니~~
+                        DialogueController.Instance.PlayDialogue(dialogueDatas[4]);
                     }
                     else//챙기냐 
                     {
+                        //어딘가~~
+                        DialogueController.Instance.PlayDialogue(dialogueDatas[5]);
                         realityBottleScript.PlayerSelectGetBottle();
                     }
                 }

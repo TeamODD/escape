@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Assets.Scripts.Dialogue;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ClickHandler : MonoBehaviour
 {
-    
+    public List<DialogueData> dialogueData;
     public List<Sprite> imageList;
     public FlowController flowController;
     protected  bool canExamineFlow = false;

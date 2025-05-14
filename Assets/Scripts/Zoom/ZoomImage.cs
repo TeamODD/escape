@@ -26,7 +26,7 @@ public class ZoomImage : MonoBehaviour
 
     public void OnHide()
     {
-        Debug.Log("zoomout");
+        GameManager.Instance.SwitchZoomInStatus(false);
         panel.SetActive(false);
         fadeOutAnimator.PlayAnimation();
     }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TotalInventoryController totalInventoryController;
     private AudioClip _clickSFX;
     private SoundControllerScript _soundControllerScript;
+    private bool _isZoomIn;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
 
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+       
         // 싱글톤 패턴
         if (Instance != null && Instance != this)
         {
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
         _soundControllerScript=SoundControllerScript.Instance;
@@ -43,16 +46,21 @@ public class GameManager : MonoBehaviour
 
     public void SwitchWorld()
     {
-        IsInDream = !IsInDream;
-        _dreamObjects.SetActive(IsInDream);
-        _realityObjects.SetActive(!IsInDream);
-        totalInventoryController.AllInventorySwitchStatus(IsInDream);
-        _switchMusic();
-        if (isLightOn)
+        
+        if (!_isZoomIn)//줌인이 되어있지 않다면
         {
-            lighControlScript.LightOn();
-            isLightOn = false;
+            IsInDream = !IsInDream;
+            _dreamObjects.SetActive(IsInDream);
+            _realityObjects.SetActive(!IsInDream);
+            totalInventoryController.AllInventorySwitchStatus(IsInDream);
+            _switchMusic();
+            if (isLightOn)
+            {
+                lighControlScript.LightOn();
+                isLightOn = false;
+            }
         }
+        
     }
 
     private void _switchMusic()
@@ -69,5 +77,10 @@ public class GameManager : MonoBehaviour
         _soundControllerScript.StartMainBgm(MainAudio);
     }
 
+    public void SwitchZoomInStatus(bool input)
+    {
+        
+        _isZoomIn = input;
+    }
  
 }

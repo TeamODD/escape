@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13fcf40591784725804f7297f8e73a8, type: 3}
+  m_Name: 3DreamButterflyBrouchWingDialogue
+  m_EditorClassIdentifier: 
+  <CompleteType>k__BackingField: 0
+  <Contents>k__BackingField:
+  - "\uC0C9\uC774 \uBC14\uB79C \uAC83 \uAC19\uC740 \uB098\uBE44 \uBE0C\uB85C\uCE58\uC774\uB2E4. "
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
