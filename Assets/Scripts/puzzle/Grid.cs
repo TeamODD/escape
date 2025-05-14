@@ -4,39 +4,52 @@ using UnityEngine.UI;
 
 public class Grid
 {
-
     private int width;
     private int height;
     private float cellSize;
     private int[,] gridArray;
-    private TextMesh[,] debugTextArray;
+    private GameObject[,] cellVisuals;
     private Vector3 originPosition;
-    public Grid(int width, int height, float cellSize, Vector3 originPosition)
+
+    private Transform parentTransform;
+    private Sprite floorSprite;
+    private Sprite wallSprite;
+    private Sprite goalSprite;
+
+    public Grid(int width, int height, float cellSize, Vector3 originPosition, Sprite floorSprite, Sprite wallSprite, Sprite goalSprite)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
         this.originPosition = originPosition;
-        
+        this.floorSprite = floorSprite;
+        this.wallSprite = wallSprite;
+        this.goalSprite = goalSprite;
+
         gridArray = new int[width, height];
-        debugTextArray = new TextMesh[width, height];
-        
-        for (int x = 0; x < gridArray.GetLength(0); x++)
+        cellVisuals = new GameObject[width, height];
+        parentTransform = new GameObject("GridVisuals").transform;
+
+        for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < gridArray.GetLength(1); y++)
+            for (int y = 0; y < height; y++)
             {
-                debugTextArray[x,y]=UtilsClass.CreateWorldText(gridArray[x, y].ToString(), null, GetWorldPosition(x, y)+ new Vector3(cellSize,cellSize)*.5f,20, Color.white, TextAnchor.MiddleCenter); //텍스트를 쉽게 보여주는 에셋 사이즈도 바꿀수있음
-                Debug.DrawLine(GetWorldPosition(x,y), GetWorldPosition(x, y+1), Color.white, 100f);
-                Debug.DrawLine(GetWorldPosition(x,y), GetWorldPosition(x+1, y), Color.white, 100f);
+                Vector3 cellPos = GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * 0.5f;
+
+                GameObject cellGO = new GameObject($"Cell_{x}_{y}", typeof(SpriteRenderer));
+                cellGO.transform.position = cellPos;
+                cellGO.transform.localScale = Vector3.one * (cellSize * 0.9f); // 크기 조절
+                cellGO.transform.parent = parentTransform;
+                cellVisuals[x, y] = cellGO;
+
+                SetValue(x, y, 0); // 초기값: floor
             }
         }
-        Debug.DrawLine(GetWorldPosition(0,height), GetWorldPosition(width,height), Color.white, 100f);
-        Debug.DrawLine(GetWorldPosition(width,0), GetWorldPosition(width,height), Color.white, 100f);
     }
-    
-    private Vector3 GetWorldPosition(int x, int y)
+
+    public Vector3 GetWorldPosition(int x, int y)
     {
-        return new Vector3(x, y)* cellSize + originPosition;
+        return new Vector3(x, y) * cellSize + originPosition;
     }
 
     public void GetXY(Vector3 worldPosition, out int x, out int y)
@@ -44,13 +57,13 @@ public class Grid
         x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
-    
+
     public void SetValue(int x, int y, int value)
     {
-        if (x >= 0 && x < width && y >= 0 && y < height)//값이 유효한지 확인
+        if (x >= 0 && x < width && y >= 0 && y < height)
         {
             gridArray[x, y] = value;
-            debugTextArray[x, y].text = gridArray[x, y].ToString();
+            UpdateSprite(x, y);
         }
     }
 
@@ -58,37 +71,52 @@ public class Grid
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        SetValue(x,y,value);
+        SetValue(x, y, value);
     }
 
     public int GetValue(int x, int y)
     {
-        if (x >= 0 && x < width && y >= 0 && y < height) //값이 유효한지 확인
-        {
+        if (x >= 0 && x < width && y >= 0 && y < height)
             return gridArray[x, y];
-        }
-        else
-        {
-            return 0;
-        }
+        return 0;
     }
 
     public int GetValue(Vector3 worldPosition)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        return GetValue(x,y);
+        return GetValue(x, y);
+    }
+
+    private void UpdateSprite(int x, int y)
+    {
+        SpriteRenderer sr = cellVisuals[x, y].GetComponent<SpriteRenderer>();
+        switch (gridArray[x, y])
+        {
+            case 0:
+                sr.sprite = floorSprite;
+                sr.color = Color.white;
+                break;
+            case 2:
+                sr.sprite = wallSprite;
+                sr.color = Color.white;
+                break;
+            case 3:
+                sr.sprite = goalSprite;
+                sr.color = Color.white;
+                break;
+            default:
+                sr.sprite = null;
+                break;
+        }
     }
 
     public void HighlightAvailableTiles(int x, int y)
     {
         ClearHighLights();
-        Vector2Int[] directions =
-        {
-            Vector2Int.up,
-            Vector2Int.down,
-            Vector2Int.left,
-            Vector2Int.right
+        Vector2Int[] directions = {
+            Vector2Int.up, Vector2Int.down,
+            Vector2Int.left, Vector2Int.right
         };
 
         foreach (var dir in directions)
@@ -99,20 +127,22 @@ public class Grid
             {
                 if (gridArray[checkX, checkY] != 2)
                 {
-                    debugTextArray[checkX, checkY].color = Color.yellow;
+                    SpriteRenderer sr = cellVisuals[checkX, checkY].GetComponent<SpriteRenderer>();
+                    sr.color = Color.yellow;
                 }
             }
         }
     }
 
-    public void  ClearHighLights()
+    public void ClearHighLights()
     {
         for (int x = 0; x < width; x++)
-        {
             for (int y = 0; y < height; y++)
-            {
-                debugTextArray[x, y].color = Color.white;
-            }
-        }
+                UpdateSprite(x, y);
+    }
+
+    public float GetCellSize()
+    {
+        return cellSize;
     }
 }
