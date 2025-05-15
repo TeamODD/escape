@@ -1,4 +1,5 @@
 using System;
+using Assets.Scripts.Dialogue;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
     public void SwitchWorld()
     {
         
-        if (!_isZoomIn)//줌인이 되어있지 않다면
+        if (!_isZoomIn&&!DialogueController.Instance.isUsed)//줌인이 되어있지 않다면
         {
             IsInDream = !IsInDream;
             _dreamObjects.SetActive(IsInDream);
@@ -82,5 +83,6 @@ public class GameManager : MonoBehaviour
         
         _isZoomIn = input;
     }
+   
  
 }

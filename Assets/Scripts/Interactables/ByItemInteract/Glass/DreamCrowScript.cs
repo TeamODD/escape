@@ -12,6 +12,10 @@ public class DreamCrowScropt : ClickHandler
     public RealityPotScript realityPotScript;
     public DreamPotScript dreamPotScript;
     public LighControlScript lighControlScript;
+
+    public ZoomTarget secondZoomTarget;
+
+    private bool _isCrowGone;
     //스크류오브젝트 생성후적용해야함
     public override void DoToWork()
     {
@@ -36,7 +40,9 @@ public class DreamCrowScropt : ClickHandler
     {
         //애벌레 모양
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
-        ZoomImage.OnHide();
+        secondZoomTarget.ZoomRequset();
+        _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
+        _isCrowGone = true;
         _soundController.StartEffectBgm(eatSFX);
         OneFlowPlus();
         dreamPotScript.OneFlowPlus();
@@ -48,5 +54,15 @@ public class DreamCrowScropt : ClickHandler
         Debug.Log("active");
         realityFlowerPot.GetComponent<RealityFlowerPotScript>().OneFlowPlus();
         realityFlowerPot.GetComponent<SpriteRenderer>().sortingOrder=3;
+    }
+
+    public void CrowIsGone()
+    {
+        if (_isCrowGone)
+        {
+            _isCrowGone = false;
+            ZoomImage.OnHide();
+        }
+        
     }
 }

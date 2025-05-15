@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DREAMFLOWERPOT_0: -5276927520776749414
+      DREAMFLOWERPOT_1: -7103417208166343098
+      DREAMFLOWERPOT_2: 233153639489189339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

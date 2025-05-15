@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_letterknife_0: -3647958020439767616
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

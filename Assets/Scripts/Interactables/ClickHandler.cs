@@ -68,7 +68,10 @@ public class ClickHandler : MonoBehaviour
 
     public void CheckIsExsistDo()
     {
-        
+        if (DialogueController.Instance.isUsed)
+        {
+            return;
+        }
         
         if (canExamineFlow)
         {

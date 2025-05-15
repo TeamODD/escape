@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class DreamBolttleScript : ClickHandler
 {
+    public ZoomImage ZoomImage;
     public ClickHandler dreamDrawer;
     public bool isDrink=false;
     public RealityBottleScript realityBottleScript;
+    private bool _isRequestItem;
     
     public override void DoToWork()
     {
@@ -19,13 +21,10 @@ public class DreamBolttleScript : ClickHandler
         else if (flowIdx ==1 )
         {
             
-            flowController.CheckGameObject(gameObject);
-            flowIdx++;
-        }
-        else if (flowIdx == 2)
-        {
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
+            
         }
+       
       
     }
 
@@ -36,6 +35,16 @@ public class DreamBolttleScript : ClickHandler
         OneFlowPlus();
         realityBottleScript.OneFlowPlus();
         dreamDrawer.OneFlowPlus();
-        
+        _isRequestItem = true;
+    }
+
+    public void GetItem()
+    {
+        if (_isRequestItem)
+        {
+            ZoomImage.OnHide();
+            flowController.CheckGameObject(gameObject);
+            _isRequestItem = false;
+        }
     }
 }

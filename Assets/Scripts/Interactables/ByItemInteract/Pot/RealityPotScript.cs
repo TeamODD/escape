@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class RealityPotScript : ClickHandler
 {
+    public ZoomTarget secondZoomTarget;
     public AudioClip WaterSFX;
     public ZoomImage ZoomImage;
     private float _timer = 0f;
+    private bool _isRequestItem;
     void Update()
     {
        
@@ -47,7 +49,7 @@ public class RealityPotScript : ClickHandler
             DialogueController.Instance.OnCompleted.Invoke();
             //아무것도 없을~~
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
-            flowController.CheckGameObject(gameObject); 
+            _isRequestItem = true;
             //애벌래 획득 스크립트 등장
             flowIdx++;
             ChangeSprite(flowIdx);
@@ -65,6 +67,10 @@ public class RealityPotScript : ClickHandler
     public void GetPoison()
     {
         //물병의 액체~
+        
+        secondZoomTarget.ZoomRequset();
+        _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
+        
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
         _soundController.StartEffectBgm(WaterSFX);
         ZoomImage.OnHide();
@@ -72,5 +78,15 @@ public class RealityPotScript : ClickHandler
         flowIdx++;
         ChangeSprite(flowIdx);
     }
-    
+
+    public void GetWarm()
+    {
+        if (_isRequestItem == true)
+        {
+            ZoomImage.OnHide();
+            flowController.CheckGameObject(gameObject);
+            _isRequestItem = false;
+        }
+        
+    }
 }

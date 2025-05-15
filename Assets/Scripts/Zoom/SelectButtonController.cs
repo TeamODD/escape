@@ -106,8 +106,7 @@ public class SelectButtonController : MonoBehaviour
     }
     public void GetAnswer(bool answer) //왼쪽 대답이 false오른쪽대답이 true
     {
-        Debug.Log(answer);
-        Debug.Log("buttonisselected");
+      
         
         zoomImage.OnHide(); //대답을 받으면 사라진다 
         LeftText.SetText("");

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_dream_larva_0: 7685861255256435095
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

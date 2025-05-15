@@ -1,4 +1,5 @@
 using System;
+using Assets.Scripts.Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +10,13 @@ public class ZoomTarget : MonoBehaviour
     [SerializeField] private Sprite targetSprite;
     public ZoomImageManager manager;
     public SelectButtonController _selectButtonController;
-    public Image HitImage; 
+    public Image HitImage;
     private void Start()
     {
         
     }
 
-
+    
     public void SwitchHitImageName(String name)
     {
         HitImage.name = name;
@@ -23,6 +24,11 @@ public class ZoomTarget : MonoBehaviour
 
     public void ZoomRequset() // 줌시도할때
     {
+        if (DialogueController.Instance._isApplyButtonOn == false)
+        {
+            DialogueController.Instance.QuitButton.SetActive(true);
+        }
+        
         GameManager.Instance.SwitchZoomInStatus(true);
         ClickHandler clickTarget = GetComponent<ClickHandler>();
 

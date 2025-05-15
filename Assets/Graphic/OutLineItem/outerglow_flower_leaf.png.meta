@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_flower_leaf_0: -1695266936160285608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

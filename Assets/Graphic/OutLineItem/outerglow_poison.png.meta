@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_poison_0: -5396672576422796954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -15,11 +15,14 @@ public class TotalInventoryController : MonoBehaviour
     public List<GameObject> canInsertObjects = new List<GameObject>();
     private SoundControllerScript _soundControllerScript;
     private bool _isInventoryFirst;
+
+    private InvenAlarmScript _invenAlarm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _initSetting();
         _soundControllerScript = SoundControllerScript.Instance;
+        _invenAlarm = GetComponent<InvenAlarmScript>();
     }
 
     // Update is called once per frame
@@ -77,7 +80,7 @@ public class TotalInventoryController : MonoBehaviour
         int idx = canInsertObjects.IndexOf(input); // 삽입되는 정보가 담긴 리스에 담긴 오브젝트라면 
         if (idx!=-1) // 만약 삽입 가능한 리스트에 들어가있는 오브젝트라면 
         {
-            Debug.Log("input");
+            
             _soundControllerScript.StartEffectBgm(itemPickSFX);
             Item inputItem = new Item();
             GameObject dreamObject = mappingTable.GetInvenDreamIcon(input);
@@ -97,11 +100,13 @@ public class TotalInventoryController : MonoBehaviour
             if (idx <= 4) //0번인벤토리에 삽입
             {
                 inventorys[0].AddItem(inputItem,idx);
+                
             }
             else // 1번 입벤토리에 삽임
             {
                 inventorys[1].AddItem(inputItem,idx-5);
             }
+            _invenAlarm.AlarmGetNewItem(dreamObject);
             
         }
         else
