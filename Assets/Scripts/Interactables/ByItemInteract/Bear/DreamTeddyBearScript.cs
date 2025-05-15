@@ -6,6 +6,8 @@ public class DreamTeddyBearScript : ClickHandler
     public ZoomImage zoomImage;
     public ClickHandler trashWarm;
     public AudioClip KnifeSFX;
+    public ZoomTarget secondZoomTarget;
+    private bool _requestItem;
     public override void DoToWork()
     {
         if (flowIdx == 0)
@@ -20,19 +22,34 @@ public class DreamTeddyBearScript : ClickHandler
         }
         if (flowIdx == 1)
         {
-            flowController.CheckGameObject(gameObject);
+            
             
         }
     }
 
     public void GetKnife()
     {
-        //편지칼로 인형
+        _requestItem = true;
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
-        zoomImage.OnHide();
+        //편지칼로 인형
+        secondZoomTarget.ZoomRequset();
+        _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
+        
+       
         _soundController.StartEffectBgm(KnifeSFX);
         OneFlowPlus();
         trashWarm.OneFlowPlus();
+       
     }
-  
+
+    public void GetItem()
+    {
+        if (_requestItem )
+        {
+            flowController.CheckGameObject(gameObject);
+            zoomImage.OnHide();
+            _requestItem = false;
+        }
+        
+    }
 }

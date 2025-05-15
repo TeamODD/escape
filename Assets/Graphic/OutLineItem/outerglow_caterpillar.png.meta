@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_caterpillar_0: 1689678272085811444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

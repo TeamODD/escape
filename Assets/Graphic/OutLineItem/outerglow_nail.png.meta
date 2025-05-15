@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_nail_0: -8362720790378824432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

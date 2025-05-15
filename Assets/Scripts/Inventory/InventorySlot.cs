@@ -52,9 +52,12 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         
         _item = input;
         _icon.SetActive(true);
-        if(gameObject==true)
-        _targetHighlighter.OnHighlighter();
-        _buttonHighlighter.OnHighlighter();
+        if (gameObject == true)
+        {
+            _targetHighlighter.OnHighlighter();
+            _buttonHighlighter.OnHighlighter();
+        }
+        
         
         UpdateSlot();//슬롯에 아이템 넣었으니까 비주얼 업데이트
     }
@@ -207,14 +210,17 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 foreach (RaycastResult result in results)
                 {
                     Debug.Log(result);
-                    if (result.gameObject.name==targetUseItem.name) // 예: 슬롯과 충돌했는지
+                    Debug.Log(targetUseItem.name);
+                    Debug.Log(_item.GetDreamGameObject().name );
+                    if (isSlotConsist(result.gameObject))//슬롯에 지정값과 일치한다면
                     {
                         UseItem();
                         return;
-                        if (isSlotConsist(result.gameObject))//슬롯에 지정값과 일치한다면
-                        {
-                            
-                        }
+                    }
+                    if (result.gameObject.name==targetUseItem.name) // 예: 슬롯과 충돌했는지
+                    {
+                        
+                       
                              // 슬롯과 충돌한 경우 복귀 안 함
                         
                     }
@@ -335,63 +341,35 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public bool isSlotConsist(GameObject input)
     {
-        if (input.name == "RealityBottle") //만약 현재 input이 이거일때
+        if (input.name == "RealityPotImage") //만약 현재 input이 이거일때
         {
-            if (_item.GetDreamGameObject().name == "RealityBottle(Get)")//아이템이 일치한다면 
+            if (_item.GetDreamGameObject().name == "DreamEmptyBottle")//아이템이 일치한다면 
             {
                 return true;
             }
         }
-        else if (input.name == "JellyWarm")
-        {
-            if (_item.GetDreamGameObject().name == "RealityWarm")//아이템이 일치한다면 
-            {
-                return true;
-            }
-        }
-        else if (input.name == "DreamBottle")
-        {
-            if (_item.GetDreamGameObject().name == "DreamBroch1")//아이템이 일치한다면 
-            {
-                return true;
-            }
-        }
-        else if (input.name == "RealityFlowerPot")
-        {
-            if (_item.GetDreamGameObject().name == "DreamBrouch4")//아이템이 일치한다면 
-            {
-                return true;
-            }
-        }
-        else if (input.name == "RealityFountainPen")
+        else if (input.name == "DreamBearImage")
         {
             if (_item.GetDreamGameObject().name == "DreamKnife")//아이템이 일치한다면 
             {
                 return true;
             }
         }
-        else if (input.name == "RealityBox")
+        else if (input.name == "DreamCrowImage")
         {
-            if (_item.GetDreamGameObject().name == "DreamBrouch3")//아이템이 일치한다면 
+            if (_item.GetDreamGameObject().name == "JellyWarm")//아이템이 일치한다면 
             {
                 return true;
             }
         }
-        else if (input.name == "RealityScrew")
+        else if (input.name == "DreamDoorImage")
         {
-            if (_item.GetDreamGameObject().name == "DreamBrouchMid")//아이템이 일치한다면 
+            if (_item.GetDreamGameObject().name == "DreamBroch1"||_item.GetDreamGameObject().name == "DreamBrouch2"||_item.GetDreamGameObject().name == "DreamBrouchMid"||_item.GetDreamGameObject().name == "DreamBrouch3"||_item.GetDreamGameObject().name == "DreamBrouch4")//아이템이 일치한다면 
             {
                 return true;
             }
         }
-        else if (input.name == "DreamBear")
-        {
-            if (_item.GetDreamGameObject().name == "DreamBrouch2")//아이템이 일치한다면 
-            {
-                return true;
-            }
-        }
-
+       
         return false;
     }
 }

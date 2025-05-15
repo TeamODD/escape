@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_hairpin_0: 379855233435666825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

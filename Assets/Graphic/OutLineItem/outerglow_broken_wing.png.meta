@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      outerglow_broken_wing_0: 5582444981181272663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

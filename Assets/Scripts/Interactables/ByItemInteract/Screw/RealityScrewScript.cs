@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class RealityScrewScript : ClickHandler
 {
+    public ZoomImage ZoomImage;
+
+    private bool _isRequestItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void DoToWork()
     {
@@ -10,8 +13,21 @@ public class RealityScrewScript : ClickHandler
         {
             //스테인글라스의
             DialogueController.Instance.PlayDialogue(dialogueData[0]);
-            flowController.CheckGameObject(gameObject); 
+            _isRequestItem = true;
+            
+            
             OneFlowPlus();
         }
+    }
+
+    public void getScrew()
+    {
+        if (_isRequestItem)
+        {
+            flowController.CheckGameObject(gameObject); 
+            ZoomImage.OnHide();
+            _isRequestItem = false;
+        }
+        
     }
 }

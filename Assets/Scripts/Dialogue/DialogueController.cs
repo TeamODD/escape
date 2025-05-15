@@ -10,6 +10,8 @@ namespace Assets.Scripts.Dialogue
 
     public class DialogueController : SerializedMonoBehaviour
     {
+        public bool isUsed;
+        public GameObject QuitButton;
         public static DialogueController Instance { get; private set; }
         private void Awake()
         {
@@ -29,14 +31,18 @@ namespace Assets.Scripts.Dialogue
         [field:SerializeField] public UnityEvent OnCompleted{ get; private set; }
         private int _contentIndex;
 
-        private bool _isApplyButtonOn;
+        public bool _isApplyButtonOn;
+        public bool _isApplyDialogueDontOut;
+        public SelectButtonController SelectButtonController;
         
         private int _isApplyedIdx;
-        public SelectButtonController SelectButtonController;
+
         public void PlayDialogue(DialogueData data)
         {
-           Debug.Log("PlayDialogue");
+            isUsed = true;
+            _isApplyedIdx = -1;
             _isApplyButtonOn = false;
+            _isApplyDialogueDontOut = false;
             
             Data = data;
             _contentIndex = 0;
@@ -53,9 +59,7 @@ namespace Assets.Scripts.Dialogue
         }
         public void NextDialogue()
         {
-            Debug.Log(_isApplyButtonOn);
-            Debug.Log(_isApplyedIdx);
-            Debug.Log(_contentIndex);
+            
             if (_isApplyButtonOn&&_isApplyedIdx==_contentIndex)//버튼키기 신청이 되있다면 또한 버튼설정된것과 일치한다묜
             {
                 SelectButtonController.SwithchAllButtonStatus(true);//그때 버튼을켜라
@@ -69,15 +73,23 @@ namespace Assets.Scripts.Dialogue
             if(_contentIndex==Data.Contents.Length)
             {
                 Animator.CompleteAnimation();
+                _contentIndex++;
                 //Data.OnCompleted.Invoke();
-                if (_isApplyButtonOn == false) 
+                if (_isApplyDialogueDontOut) //선택버튼은 필요없지만 나가면안될때
                 {
                     
-                    OnCompleted.Invoke();
+                    return;
                 }
+                else if (_isApplyButtonOn  )  //선택버튼 필요 
+                {
+
+                    return;
+                }
+
+                OnCompleted.Invoke();
+              
                 
-                
-                _contentIndex++;
+               
                 return;
             }
             else if(_contentIndex>Data.Contents.Length)
@@ -93,17 +105,20 @@ namespace Assets.Scripts.Dialogue
 
         public void applyButtonOn(int idx)
         {
-            
+            QuitButton.SetActive(false);
             _isApplyButtonOn = true;
             _isApplyedIdx = idx;
         }
         
         public void applyDialogueOn()
         {
-            _isApplyButtonOn = true;
-            
-            
+            _isApplyDialogueDontOut=true;
         }
-        
+
+        public void SetDialogueStatusfalse()
+        {
+            isUsed = false;
+        }
+      
     }
 }

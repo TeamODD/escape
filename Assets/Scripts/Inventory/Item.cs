@@ -27,6 +27,7 @@ public class Item
 
     public Sprite GetItemIcon() // 현재 상태의 아이콘 반환 
     {
+        _status = GameManager.Instance.IsInDream;
         if(_status)
         {
             
