@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DreamDoorScript : ClickHandler
 {
+    public bool doorIsOpen;
+    public ZoomImage ZoomImage;
+    public RealiryDoorScript RealiryDoorScript;
+    public List<AudioClip> Clips;
     public ZoomTarget SecondZoomTarget;
     public TotalInventoryController TotalInventoryController;
     public List<SpriteRenderer> Brouchs;
@@ -34,6 +38,7 @@ public class DreamDoorScript : ClickHandler
         {
             //나비모양~
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
+            EndingScript.Instance.RequsetEnding(1);
             
         }
             
@@ -82,8 +87,12 @@ public class DreamDoorScript : ClickHandler
     {
         //다꽃아넣
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
+        DialogueController.Instance.RequestSFX(1,Clips[0]);
         SecondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
+        RealiryDoorScript.OneFlowPlus();
+        doorIsOpen = true;
+
     }
     
     private bool CheckAllBrouchInserted() //모든 브로치가 다모였는지확인 
@@ -97,5 +106,19 @@ public class DreamDoorScript : ClickHandler
         }
         return true;
     }
-    
+
+    public void DoorOpen()
+    {
+        if (doorIsOpen)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Brouchs[i].color=new Color32(0, 0, 0, 0);
+            }
+            
+            ZoomImage.OnHide();
+            doorIsOpen = false;
+        }
+        
+    }
 }

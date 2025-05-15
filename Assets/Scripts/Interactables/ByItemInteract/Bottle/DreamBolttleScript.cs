@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class DreamBolttleScript : ClickHandler
 {
+    public AudioClip drinkSFX;
     public ZoomImage ZoomImage;
-    public ClickHandler dreamDrawer;
+   
     public bool isDrink=false;
     public RealityBottleScript realityBottleScript;
     private bool _isRequestItem;
@@ -31,10 +32,11 @@ public class DreamBolttleScript : ClickHandler
     public void DrinkDreamBottle()
     {
         
+        _soundController.StartEffectBgm(drinkSFX);
         SwitchisEnableZoom(false);
         OneFlowPlus();
         realityBottleScript.OneFlowPlus();
-        dreamDrawer.OneFlowPlus();
+        
         _isRequestItem = true;
     }
 

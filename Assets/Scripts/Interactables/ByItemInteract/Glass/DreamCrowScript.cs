@@ -5,7 +5,7 @@ public class DreamCrowScropt : ClickHandler
 {
     public ZoomImage ZoomImage;
     public AudioClip eatSFX;
-    public GameManager gameManager;
+    public ClickHandler dreamBackground;
     public GameObject realityFlowerPot;
     public RealityScrewScript realityScrewScript;
     public RealityStainGlass realityStainGlass;
@@ -49,9 +49,10 @@ public class DreamCrowScropt : ClickHandler
         realityStainGlass.OneFlowPlus();
         realityPotScript.OneFlowPlus();
         realityScrewScript.OneFlowPlus();
-        gameManager.isLightOn = true;
+        dreamBackground.OneFlowPlus();
+     
         realityFlowerPot.SetActive(true);
-        Debug.Log("active");
+        
         realityFlowerPot.GetComponent<RealityFlowerPotScript>().OneFlowPlus();
         realityFlowerPot.GetComponent<SpriteRenderer>().sortingOrder=3;
     }
@@ -60,6 +61,7 @@ public class DreamCrowScropt : ClickHandler
     {
         if (_isCrowGone)
         {
+            GameManager.Instance.isLightOn = true;
             _isCrowGone = false;
             ZoomImage.OnHide();
         }

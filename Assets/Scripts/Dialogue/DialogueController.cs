@@ -10,6 +10,8 @@ namespace Assets.Scripts.Dialogue
 
     public class DialogueController : SerializedMonoBehaviour
     {
+        public SoundControllerScript soundControllerScript;
+        private AudioClip _clip;
         public bool isUsed;
         public GameObject QuitButton;
         public static DialogueController Instance { get; private set; }
@@ -31,16 +33,20 @@ namespace Assets.Scripts.Dialogue
         [field:SerializeField] public UnityEvent OnCompleted{ get; private set; }
         private int _contentIndex;
 
+        public bool _isApplySfx;
         public bool _isApplyButtonOn;
         public bool _isApplyDialogueDontOut;
         public SelectButtonController SelectButtonController;
         
         private int _isApplyedIdx;
-
+        private int _sfxAppledIdx;
         public void PlayDialogue(DialogueData data)
         {
+            _clip = null;
             isUsed = true;
+            _sfxAppledIdx = -1;
             _isApplyedIdx = -1;
+            _isApplySfx = false;
             _isApplyButtonOn = false;
             _isApplyDialogueDontOut = false;
             
@@ -64,7 +70,12 @@ namespace Assets.Scripts.Dialogue
             {
                 SelectButtonController.SwithchAllButtonStatus(true);//그때 버튼을켜라
             }
-           
+
+
+            if (_isApplySfx && _sfxAppledIdx == _contentIndex)//음이 신청되있는 상태라면
+            {
+                soundControllerScript.StartEffectBgm(_clip);
+            }
             if(Animator.IsPlaying)
             {
                 Animator.CompleteAnimation();
@@ -118,6 +129,13 @@ namespace Assets.Scripts.Dialogue
         public void SetDialogueStatusfalse()
         {
             isUsed = false;
+        }
+
+        public void RequestSFX(int idx,AudioClip clipInput)
+        {
+            _isApplySfx = true;
+            _sfxAppledIdx = idx;
+            _clip = clipInput;
         }
       
     }

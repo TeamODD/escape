@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Assets.Scripts.Dialogue;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class FlowController : MonoBehaviour
@@ -8,7 +10,9 @@ public class FlowController : MonoBehaviour
     public List<GameObject> lastDoors = new List<GameObject>();
     
     public TotalInventoryController inventory;
-    
+
+
+    public List<DialogueData> DialogueDatas;
     private int _flowIndex;
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
@@ -29,52 +33,36 @@ public class FlowController : MonoBehaviour
         
     }
 
+    public void CheckSwitch()
+    {
+        _gameSwitchCount++;
+        Debug.Log(_gameSwitchCount);
+        if (_flowIndex==0&&_gameSwitchCount >= 8) // 아직 히든앤딩이 가능하고 꿈 현실 변환도 4번 이상하면 
+        {
+            //히든 앤딩
+            DialogueController.Instance.PlayDialogue(DialogueDatas[0]);
+            EndingScript.Instance.RequsetEnding(0);
+        }
+        else if (_gameSwitchCount >= 15) // 히든엔딩이 안되지만 4번이상
+        {
+            //배드엔딩
+            DialogueController.Instance.PlayDialogue(DialogueDatas[1]);
+            EndingScript.Instance.RequsetEnding(1);
+        }
+    }
     public void CheckGameObject(GameObject input)
     {
         
         _currentSelectObject = input;
+      
         
        
-        if (_flowIndex>=1&&_gameSwitchCount >= 4) // 아직 히든앤딩이 가능하고 꿈 현실 변환도 4번 이상하면 
-        {
-            //히든 앤딩
-        }
-        else if (_gameSwitchCount >= 8) // 히든엔딩이 안되지만 4번이상
-        {
-            //배드엔딩
-            
-        }
-        else if (flowObjects.Count == _flowIndex + 1) // 기존 플로우를 다하면 
-        {
-            if (lastDoors[0] == _currentSelectObject) //꿈일때
-            {
-                //노멀 엔딩
-            }
-            else
-            {
-                //트루 엔딩
-                
-            }
-        }
         inventory.CheckCanInsertObject(_currentSelectObject);
-        if (flowObjects[_flowIndex] == _currentSelectObject) // 현재 플로우에딱 적합한 물체라면 
-        {
-            Debug.Log("==");
-            _previousObject = _currentSelectObject; //플로우 증가 
-            _flowIndex++; // 플로우 증가 
+        
+            _flowIndex++; 
             
-            //dialogueController.PrintDialogue(_flowIndex);
-            
-            //스크립트 출력
-            
-            
-            //아이템을 얻고  플로우 진행 
-        }
-        else
-        {
-            //해당오브젝트가 하는 일반 상호작용
-            Debug.Log("dont eat");
-        }
+          
+        
         
     }
     

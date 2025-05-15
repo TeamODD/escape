@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class InventoryButton : MonoBehaviour
 {
+    public AudioClip invOpenSFX;
     public GameObject targetInventory; // 펼쳐질 인벤토리 대상 
     public float buttonHeight;
     
@@ -10,7 +11,8 @@ public class InventoryButton : MonoBehaviour
     private RectTransform _inventoryRt; // 사용될 인벤토리 변수 
     private RectTransform _selfRt; // 사용될 자신의 Rt변수
     private Coroutine _animCoroutine; // 코루틴 애니메이션변수
-    
+
+    public SoundControllerScript SoundControllerScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +33,15 @@ public class InventoryButton : MonoBehaviour
     {
         
         _isActive = !_isActive; // 상태변경 
-
+        SoundControllerScript.StartEffectBgm(invOpenSFX);
+        if (_isActive)
+        {
+            GameManager.Instance.isInvOpen = true;
+        }
+        else
+        {
+            GameManager.Instance.isInvOpen = false;
+        }
         if (_animCoroutine != null) //이미 애니메이션이 실행중일때 
             StopCoroutine(_animCoroutine);
 
@@ -85,7 +95,8 @@ public class InventoryButton : MonoBehaviour
 
         var raycastResults = new System.Collections.Generic.List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, raycastResults);
-
+        
+        
         return raycastResults.Count > 0;
     }
 

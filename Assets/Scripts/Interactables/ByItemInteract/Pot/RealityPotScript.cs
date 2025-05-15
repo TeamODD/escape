@@ -67,13 +67,13 @@ public class RealityPotScript : ClickHandler
     public void GetPoison()
     {
         //물병의 액체~
-        
+        _isRequestItem = true;
         secondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
         _soundController.StartEffectBgm(WaterSFX);
-        ZoomImage.OnHide();
+        //ZoomImage.OnHide();
         
         flowIdx++;
         ChangeSprite(flowIdx);
@@ -81,8 +81,9 @@ public class RealityPotScript : ClickHandler
 
     public void GetWarm()
     {
-        if (_isRequestItem == true)
+        if (_isRequestItem )
         {
+            
             ZoomImage.OnHide();
             flowController.CheckGameObject(gameObject);
             _isRequestItem = false;

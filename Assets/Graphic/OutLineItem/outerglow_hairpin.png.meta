@@ -116,12 +116,12 @@ TextureImporter:
       name: outerglow_hairpin_0
       rect:
         serializedVersion: 2
-        x: 1661
-        y: 831
-        width: 185
-        height: 194
+        x: 1691
+        y: 861
+        width: 124
+        height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,11 +134,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: outerglow_hairpin_1
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 828
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b740c41653946a40b9e288778021a56
+      internalID: -1628835790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 884f98f518dcf3a4589debe9a399ed8f
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       outerglow_hairpin_0: 379855233435666825
+      outerglow_hairpin_1: -1628835790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,7 @@ public class ZoomTarget : MonoBehaviour
     public ZoomImageManager manager;
     public SelectButtonController _selectButtonController;
     public Image HitImage;
+    
     private void Start()
     {
         

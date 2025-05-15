@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public FlowController FlowController;
+    public DialogueData lightOnDialogue; 
+    public bool isInvOpen;
     public LighControlScript lighControlScript;
     public AudioClip dreamBgm;
     public AudioClip realityBgm;
@@ -14,6 +17,7 @@ public class GameManager : MonoBehaviour
     private AudioClip _clickSFX;
     private SoundControllerScript _soundControllerScript;
     private bool _isZoomIn;
+    private bool _isLightOn;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
 
@@ -48,8 +52,12 @@ public class GameManager : MonoBehaviour
     public void SwitchWorld()
     {
         
-        if (!_isZoomIn&&!DialogueController.Instance.isUsed)//줌인이 되어있지 않다면
+        if (!_isZoomIn&&!DialogueController.Instance.isUsed&&!isInvOpen)//줌인이 되어있지 않다면
         {
+       
+           
+
+            FlowController.CheckSwitch();
             IsInDream = !IsInDream;
             _dreamObjects.SetActive(IsInDream);
             _realityObjects.SetActive(!IsInDream);
@@ -57,6 +65,7 @@ public class GameManager : MonoBehaviour
             _switchMusic();
             if (isLightOn)
             {
+                DialogueController.Instance.PlayDialogue(lightOnDialogue);
                 lighControlScript.LightOn();
                 isLightOn = false;
             }

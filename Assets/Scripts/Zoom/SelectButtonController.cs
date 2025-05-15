@@ -199,6 +199,7 @@ public class SelectButtonController : MonoBehaviour
                     }
                     else//챙기냐 
                     {
+                        Debug.Log("get");
                         //어딘가~~
                         DialogueController.Instance.PlayDialogue(dialogueDatas[5]);
                         realityBottleScript.PlayerSelectGetBottle();

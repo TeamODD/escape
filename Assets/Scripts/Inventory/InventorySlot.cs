@@ -159,6 +159,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
+        
         _targetHighlighter.OffHighliter();
         _buttonHighlighter.OffHighliter();
         if (isZoomMode && _item != null)
@@ -182,7 +183,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
+        _targetHighlighter.OffHighliter();
+        _buttonHighlighter.OffHighliter();
         if (isZoomMode && _item != null)
         {
             _iconImage.maskable = true;
@@ -248,9 +250,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _targetHighlighter.OffHighliter();
         _buttonHighlighter.OffHighliter();
-
+        
         if (_item != null)//만약 슬롯에 아이템이 들어있는 경우에
         {
+            Debug.Log(_item.GetDreamGameObject().name);
             if (_item.GetDreamGameObject().name == "RealityBottle(Get)")//물병 클릭일때
             {
                 if (_item.GetItemStatus() == true) //꿈 아이템이라면 
@@ -313,7 +316,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 {
                     DialogueController.Instance.PlayDialogue(DialogueDatas[11]); // 대화출력
                 }
-            }else if (_item.GetDreamGameObject().name == "DreamBrouch1")
+            }else if (_item.GetDreamGameObject().name == "DreamBroch1")
             {
                 if (_item.GetItemStatus() == true) //꿈 아이템이라면 
                 {
@@ -341,6 +344,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public bool isSlotConsist(GameObject input)
     {
+        
         if (input.name == "RealityPotImage") //만약 현재 input이 이거일때
         {
             if (_item.GetDreamGameObject().name == "DreamEmptyBottle")//아이템이 일치한다면 

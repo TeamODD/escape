@@ -4,13 +4,14 @@ using System.Collections;
 
 public class InvenAlarmScript : MonoBehaviour
 {
-    public Image alarmPanel; // 만약 배경 패널의 투명도도 조절하고 싶다면
+     // 만약 배경 패널의 투명도도 조절하고 싶다면
     public Text MainText;
-
+    public GameObject Panel;
     private Coroutine fadeCoroutine;
 
     void Start()
     {
+        Panel.SetActive(false);
         // 초기화 필요 시 여기에
     }
 
@@ -55,7 +56,7 @@ public class InvenAlarmScript : MonoBehaviour
     public void AlarmGetNewItem(GameObject input)
     {
         SwitchText(input);
-        
+        Panel.SetActive(true);
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine); // 이전 애니메이션 중단
@@ -71,7 +72,7 @@ public class InvenAlarmScript : MonoBehaviour
 
         // Fade-in
         float t = 0f;
-        while (t < 1f)
+        while (t < 0.7f)
         {
             t += Time.deltaTime;
             color.a = Mathf.Lerp(0f, 1f, t);
@@ -85,7 +86,7 @@ public class InvenAlarmScript : MonoBehaviour
 
         // Fade-out
         t = 0f;
-        while (t < 1f)
+        while (t < 0.7f)
         {
             t += Time.deltaTime;
             color.a = Mathf.Lerp(1f, 0f, t);
@@ -93,7 +94,7 @@ public class InvenAlarmScript : MonoBehaviour
             
             yield return null;
         }
-
+        Panel.SetActive(false);
         
     }
 }

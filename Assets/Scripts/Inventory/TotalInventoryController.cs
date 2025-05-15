@@ -1,13 +1,27 @@
 using NUnit.Framework.Internal.Commands;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 
 public class TotalInventoryController : MonoBehaviour
 {
-    
-
+    public Image InvOpenButtonImage;
+    public Image buttonImage;
+    public Image zoomInBackground;
+    public Image dialogueBackground;
+    public Image invBackground;
+    public List<GameObject> SelectButton;
+    public List<GameObject> ButtonUpDown;
+    public List<Sprite> UpdownSprite;
+    public List<Sprite> BackGroundSprite;
+    public List<Sprite> DialogueSprite;
+    public List<Sprite> ZoominSprite;
+    public List<Sprite> buttonSprite;
+    public List<Sprite> InvOpenButtonImageSprite;
+    public List<Sprite> SelectButtonImageSprite;
     public AudioClip itemPickSFX;
     public ItemMappingTable mappingTable;
     public GameObject itemForTest;
@@ -28,11 +42,7 @@ public class TotalInventoryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) // 숫자 키보드 '1' 키 (키패드 아님)
-        {
-            Debug.Log("input 1 key");
-            MakeItemForTest();
-        }
+        
     }
 
 
@@ -68,7 +78,7 @@ public class TotalInventoryController : MonoBehaviour
     {
         for (int i = 0; i <= 1; i++)
         {
-            
+            switchAppeareanceStatus(status);
             inventorys[i].SwitchInventoryStatus(status);
             
         }
@@ -80,6 +90,19 @@ public class TotalInventoryController : MonoBehaviour
         int idx = canInsertObjects.IndexOf(input); // 삽입되는 정보가 담긴 리스에 담긴 오브젝트라면 
         if (idx!=-1) // 만약 삽입 가능한 리스트에 들어가있는 오브젝트라면 
         {
+
+            if (GameManager.Instance.IsInDream)
+            {
+                InvOpenButtonImage.sprite = InvOpenButtonImageSprite[2];
+            }
+            else
+            {
+                InvOpenButtonImage.sprite = InvOpenButtonImageSprite[3];
+            }
+            
+            
+            
+            
             
             _soundControllerScript.StartEffectBgm(itemPickSFX);
             Item inputItem = new Item();
@@ -121,15 +144,7 @@ public class TotalInventoryController : MonoBehaviour
         
         return inventorys[1].CheckAllItemGet();
     }
-    public void MakeItemForTest()
-    {
-        if(itemForTest!=null)
-        {
-            CheckCanInsertObject(itemForTest);
-        }
-        
-       
-    }
+    
     public void SetRenderVisible(GameObject panel, bool visible)
     {
         CanvasGroup cg = panel.GetComponent<CanvasGroup>();
@@ -141,5 +156,48 @@ public class TotalInventoryController : MonoBehaviour
         cg.alpha = visible ? 1f : 0f;
         cg.interactable = visible;
         cg.blocksRaycasts = visible;
+    }
+
+    public void switchAppeareanceStatus(bool status)
+    {
+        
+            if (status)
+            {
+                InvOpenButtonImage.sprite = InvOpenButtonImageSprite[0];
+                buttonImage.sprite = buttonSprite[0];
+                zoomInBackground.sprite = ZoominSprite[0];
+                dialogueBackground.sprite = DialogueSprite[0];
+                invBackground.sprite = BackGroundSprite[0];
+                SelectButton[0].GetComponent<Image>().sprite = SelectButtonImageSprite[0];
+                SelectButton[1].GetComponent<Image>().sprite = SelectButtonImageSprite[0];
+                ButtonUpDown[0].GetComponent<Image>().sprite = UpdownSprite[0];
+                ButtonUpDown[1].GetComponent<Image>().sprite = UpdownSprite[0];
+            }
+            else
+            {
+                InvOpenButtonImage.sprite = InvOpenButtonImageSprite[1];
+                buttonImage.sprite = buttonSprite[1];
+                zoomInBackground.sprite = ZoominSprite[1];
+                dialogueBackground.sprite = DialogueSprite[1];
+                invBackground.sprite = BackGroundSprite[1];
+                SelectButton[0].GetComponent<Image>().sprite = SelectButtonImageSprite[1];
+                SelectButton[1].GetComponent<Image>().sprite = SelectButtonImageSprite[1];
+                ButtonUpDown[0].GetComponent<Image>().sprite = UpdownSprite[1];
+                ButtonUpDown[1].GetComponent<Image>().sprite = UpdownSprite[1];
+            }
+        
+    }
+
+    public void CheckOkay()
+    {
+        if (GameManager.Instance.IsInDream)
+        {
+            InvOpenButtonImage.sprite = InvOpenButtonImageSprite[0];
+        }
+        else
+        {
+            InvOpenButtonImage.sprite = InvOpenButtonImageSprite[1];
+        }
+
     }
 }

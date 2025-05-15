@@ -7,9 +7,9 @@ public class LighControlScript : MonoBehaviour
 {
     
     private Light2D Light2D;
-    public float targetIntensity = 0.5f;
+    public float targetIntensity = 5.0f;
     public float fadeDuration = 1.0f;
-  
+    public GameObject StainLight;
     void Start()
     {
         Light2D = GetComponent<Light2D>();
@@ -26,6 +26,7 @@ public class LighControlScript : MonoBehaviour
 
     public void LightOn()
     {
+        StainLight.SetActive(false);
         StartCoroutine(FadeInLight());
     }
 

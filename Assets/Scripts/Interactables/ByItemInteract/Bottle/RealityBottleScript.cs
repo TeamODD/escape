@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class RealityBottleScript : ClickHandler
 {
+    public GameObject ZoomImage;
+    
+    public ClickHandler dreamDrawer;
+    public DreamBolttleScript DreamBolttleScript;
     public bool isDrink=false;
     public bool isSelectEatOrGet = false;
     public override void DoToWork()
@@ -18,6 +22,8 @@ public class RealityBottleScript : ClickHandler
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
             DialogueController.Instance.applyButtonOn(4);
             _zoomTarget.ZoomRequset();
+            ZoomImage.SetActive(false);
+            
         }
         else if (flowIdx == 2)
         {
@@ -29,6 +35,9 @@ public class RealityBottleScript : ClickHandler
     public void RequestZoom()
     {
         _zoomTarget.ZoomRequset();
+        ZoomImage.SetActive(false);
+        
+
     }
 
     public void PlayerSelectDrinkPoison()
@@ -42,6 +51,8 @@ public class RealityBottleScript : ClickHandler
 
     public void PlayerSelectGetBottle()
     {
+        dreamDrawer.OneFlowPlus();
+       // DreamBolttleScript.OneFlowPlus();
         OneFlowPlus();
         flowController.CheckGameObject(gameObject);
     }
@@ -50,7 +61,7 @@ public class RealityBottleScript : ClickHandler
     {
         isSelectEatOrGet = true;
         RequestZoom();
-        Debug.Log("sellectdrink");
+    
         //아무래도 해골마크..
         
         DialogueController.Instance.PlayDialogue(dialogueData[2]);//자막이 꺼지기 전에 다시 시작해서 appyl button  안됨
