@@ -1,5 +1,6 @@
 using CodeMonkey.Utils;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Grid
@@ -38,8 +39,13 @@ public class Grid
 
                 GameObject cellGO = new GameObject($"Cell_{x}_{y}", typeof(SpriteRenderer));
                 cellGO.transform.position = cellPos;
-                cellGO.transform.localScale = Vector3.one * (cellSize * 0.9f); // 크기 조절
-                cellGO.transform.parent = parentTransform;
+                // cellGO.transform.parent = parentTransform;
+                // SpriteRenderer sr =  cellGO.GetComponent<SpriteRenderer>();
+                // sr.sprite = floorSprite;
+                // sr.transform.localPosition = new Vector3(0.8f, 0.8f, 1f);
+                
+                cellGO.transform.localScale = Vector3.one * (cellSize * 0.635f); // 크기 조절
+                //cellGO.transform.parent = parentTransform;
                 cellVisuals[x, y] = cellGO;
 
                 SetValue(x, y, 0); // 초기값: floor
