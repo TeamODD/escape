@@ -17,6 +17,8 @@ public class Grid
     private Sprite wallSprite;
     private Sprite goalSprite;
 
+    private bool isVisualActive = false;
+
     public Grid(int width, int height, float cellSize, Vector3 originPosition, Sprite floorSprite, Sprite wallSprite, Sprite goalSprite)
     {
         this.width = width;
@@ -76,25 +78,11 @@ public class Grid
         }
     }
 
-    public void SetValue(Vector3 worldPosition, int value)
-    {
-        int x, y;
-        GetXY(worldPosition, out x, out y);
-        SetValue(x, y, value);
-    }
-
     public int GetValue(int x, int y)
     {
         if (x >= 0 && x < width && y >= 0 && y < height)
             return gridArray[x, y];
         return 0;
-    }
-
-    public int GetValue(Vector3 worldPosition)
-    {
-        int x, y;
-        GetXY(worldPosition, out x, out y);
-        return GetValue(x, y);
     }
 
     private void UpdateSprite(int x, int y)
@@ -123,6 +111,11 @@ public class Grid
     public void HighlightAvailableTiles(int x, int y)
     {
         ClearHighLights();
+        if (!isVisualActive)
+        {
+            return;
+        }
+        
         Vector2Int[] directions = {
             Vector2Int.up, Vector2Int.down,
             Vector2Int.left, Vector2Int.right
@@ -156,6 +149,7 @@ public class Grid
     }
     public void HideGridVisuals()
     {
+        isVisualActive = false;
         if (parentTransform != null)
         {
             parentTransform.gameObject.SetActive(false);
@@ -163,9 +157,15 @@ public class Grid
     }
     public void ShowGridVisuals()
     {
+        isVisualActive = true;
         if (parentTransform != null)
         {
             parentTransform.gameObject.SetActive(true);
         }
+    }
+
+    public bool IsVisualActive()
+    {
+        return isVisualActive;
     }
 }

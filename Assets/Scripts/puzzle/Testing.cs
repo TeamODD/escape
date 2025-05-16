@@ -90,11 +90,11 @@ public class Testing : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            currentPatternIndex = (currentPatternIndex + 1) % patterns.Length;
-            ApplyPattern(currentPatternIndex);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     currentPatternIndex = (currentPatternIndex + 1) % patterns.Length;
+        //     ApplyPattern(currentPatternIndex);
+        // }
     }
 
     private bool IsAdjacent(Vector2Int a, Vector2Int b)//두위치가 상하좌우 인전한지 확인
@@ -119,7 +119,7 @@ public class Testing : MonoBehaviour
         }
         
         // 공이 벽 위에 있는지 확인
-        if (pattern[ballPosition.y, ballPosition.x] == 2)
+        if (pattern[ballPosition.y, ballPosition.x] == 2 && grid.IsVisualActive())
         {
             MoveBallToPosition(startBallPosition);
         }
@@ -172,7 +172,6 @@ public class Testing : MonoBehaviour
         {
             if (!input)
             {
-            
                 grid.HideGridVisuals();
             }
             else

@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-       
         // 싱글톤 패턴
         if (Instance != null && Instance != this)
         {
@@ -63,11 +62,7 @@ public class GameManager : MonoBehaviour
         if (!_isZoomIn&&!DialogueController.Instance.isUsed&&!isInvOpen)//줌인이 되어있지 않다면
         {
             OnFade.Invoke();
-           
-
-            
         }
-        
     }
 
     public void ApplySwitch()
