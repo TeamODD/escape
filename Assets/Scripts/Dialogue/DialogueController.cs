@@ -29,8 +29,9 @@ namespace Assets.Scripts.Dialogue
         [field:SerializeField] public DialogueData Data { get; private set; }
         [field:SerializeField] public UnityEvent OnPlayDialogue { get; private set; }
         [field:SerializeField] public UnityEvent OnNextDialogue { get; private set; }
-        
+        [field:SerializeField] public UnityEvent OnLastString { get; private set; }
         [field:SerializeField] public UnityEvent OnCompleted{ get; private set; }
+        [field:SerializeField] public UnityEvent OnHide{ get; private set; }
         private int _contentIndex;
 
         public bool _isApplySfx;
@@ -65,7 +66,6 @@ namespace Assets.Scripts.Dialogue
         }
         public void NextDialogue()
         {
-            
             if (_isApplyButtonOn&&_isApplyedIdx==_contentIndex)//버튼키기 신청이 되있다면 또한 버튼설정된것과 일치한다묜
             {
                 SelectButtonController.SwithchAllButtonStatus(true);//그때 버튼을켜라
@@ -85,6 +85,7 @@ namespace Assets.Scripts.Dialogue
             if(_contentIndex==Data.Contents.Length)
             {
                 Animator.CompleteAnimation();
+                OnLastString.Invoke();
                 _contentIndex++;
                 //Data.OnCompleted.Invoke();
                 if (_isApplyDialogueDontOut) //선택버튼은 필요없지만 나가면안될때
@@ -99,13 +100,11 @@ namespace Assets.Scripts.Dialogue
                 }
 
                 OnCompleted.Invoke();
-              
-                
-               
                 return;
             }
             else if(_contentIndex>Data.Contents.Length)
             {
+                OnLastString.Invoke();
                 return;
             }
             Text.text = Data.Contents[_contentIndex++];

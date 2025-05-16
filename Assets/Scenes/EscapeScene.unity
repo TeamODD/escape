@@ -5248,8 +5248,8 @@ MonoBehaviour:
   _applyInitialValue: 0
   _initialValue: 1
   _endValue: 0
-  _duration: 0.1
-  _ease: 1
+  _duration: 1.5
+  _ease: 5
 --- !u!114 &831376644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5330,8 +5330,8 @@ MonoBehaviour:
   _applyInitialValue: 0
   _initialValue: 0
   _endValue: 1
-  _duration: 0.1
-  _ease: 1
+  _duration: 1.5
+  _ease: 6
 --- !u!114 &831376645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14934,9 +14934,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 965548168}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   <OnNextDialogue>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  <OnLastString>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 965548168}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -15048,6 +15075,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnHide>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   _isApplySfx: 0
   _isApplyButtonOn: 0
   _isApplyDialogueDontOut: 0
