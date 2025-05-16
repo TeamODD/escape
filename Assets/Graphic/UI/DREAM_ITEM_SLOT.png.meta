@@ -260,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DREAM_ITEM_SLOT_0: 1191303254347674446
+      DREAM_ITEM_SLOT_1: 1369931320387812426
+      DREAM_ITEM_SLOT_2: 6115103608953521197
+      DREAM_ITEM_SLOT_3: -3650398540249300500
+      DREAM_ITEM_SLOT_4: 5668862580213311288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

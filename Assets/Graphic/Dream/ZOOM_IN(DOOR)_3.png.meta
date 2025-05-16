@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ZOOM_IN(DOOR)_3_0: 563533561769318922
+      ZOOM_IN(DOOR)_3_1: -8121149472869876770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

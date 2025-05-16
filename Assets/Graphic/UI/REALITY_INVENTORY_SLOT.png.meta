@@ -260,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      REALITY_INVENTORY_SLOT_0: 5853493682977631821
+      REALITY_INVENTORY_SLOT_1: 5129700964565924713
+      REALITY_INVENTORY_SLOT_2: 1176218748544755744
+      REALITY_INVENTORY_SLOT_3: 229190553538062908
+      REALITY_INVENTORY_SLOT_4: 573117241147843627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

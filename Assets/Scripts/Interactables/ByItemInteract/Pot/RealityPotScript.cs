@@ -1,9 +1,11 @@
 using Assets.Scripts.Dialogue;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RealityPotScript : ClickHandler
 {
+    [field:SerializeField] public UnityEvent Shaking { get; private set; }
     public ZoomTarget secondZoomTarget;
     public AudioClip WaterSFX;
     public ZoomImage ZoomImage;
@@ -20,7 +22,7 @@ public class RealityPotScript : ClickHandler
 
             if (_timer >= 2f) // 2초 지났으면
             {
-               
+                Shaking.Invoke();
                 //흔들흔들 애니메이션 추가
                 _timer = 0f; // 타이머 초기화
             }

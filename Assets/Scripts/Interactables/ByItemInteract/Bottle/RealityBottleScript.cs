@@ -22,7 +22,7 @@ public class RealityBottleScript : ClickHandler
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
             DialogueController.Instance.applyButtonOn(4);
             _zoomTarget.ZoomRequset();
-            ZoomImage.SetActive(false);
+            
             
         }
         else if (flowIdx == 2)
@@ -35,7 +35,7 @@ public class RealityBottleScript : ClickHandler
     public void RequestZoom()
     {
         _zoomTarget.ZoomRequset();
-        ZoomImage.SetActive(false);
+       
         
 
     }

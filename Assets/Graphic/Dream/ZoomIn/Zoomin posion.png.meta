@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 85397161b0d261145aa98c7a63674c9d
+guid: 6fadd1cc903071f4eaf8796c85131457
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9024845164238032432
-    second: 5.15 setting bar off_0
+      213: -6598313597283294121
+    second: Zoomin posion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 5.15 setting bar off_0
+      name: Zoomin posion_0
       rect:
         serializedVersion: 2
-        x: 737
-        y: 729
-        width: 534
-        height: 163
+        x: 309
+        y: 346
+        width: 1279
+        height: 721
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d1b0b8832f41c280800000000000000
-      internalID: -9024845164238032432
+      spriteID: 754ac4d1eb41e64a0800000000000000
+      internalID: -6598313597283294121
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      5.15 setting bar off_0: -9024845164238032432
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

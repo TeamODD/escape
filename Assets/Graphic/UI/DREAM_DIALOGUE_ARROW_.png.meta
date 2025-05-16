@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DREAM_DIALOGUE_ARROW__0: 4351739090028467660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

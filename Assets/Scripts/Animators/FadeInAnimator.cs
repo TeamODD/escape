@@ -36,6 +36,7 @@ namespace Assets.Scripts.Animators
         /// <returns>애니메이션 시퀀스</returns>
         protected override Sequence CreateAnimationSequence()
         {
+            Debug.Log(_fadable.Value);
             return DOTween.Sequence()
             .Append(DOTween.To(()=>_fadable.Value, x => _fadable.Value = x, _endValue, _duration).SetEase(_ease));
         }

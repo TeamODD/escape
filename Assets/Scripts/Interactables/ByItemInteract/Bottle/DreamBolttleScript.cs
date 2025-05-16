@@ -5,7 +5,7 @@ public class DreamBolttleScript : ClickHandler
 {
     public AudioClip drinkSFX;
     public ZoomImage ZoomImage;
-   
+    public ZoomTarget secondZoomTarget;
     public bool isDrink=false;
     public RealityBottleScript realityBottleScript;
     private bool _isRequestItem;
@@ -33,10 +33,10 @@ public class DreamBolttleScript : ClickHandler
     {
         
         _soundController.StartEffectBgm(drinkSFX);
-        SwitchisEnableZoom(false);
+        //SwitchisEnableZoom(false);
         OneFlowPlus();
         realityBottleScript.OneFlowPlus();
-        
+        secondZoomTarget.ZoomRequset();
         _isRequestItem = true;
     }
 

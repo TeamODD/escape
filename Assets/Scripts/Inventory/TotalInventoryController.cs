@@ -160,7 +160,7 @@ public class TotalInventoryController : MonoBehaviour
 
     public void switchAppeareanceStatus(bool status)
     {
-        
+        //옵션창 스프라이트 변회
             if (status)
             {
                 InvOpenButtonImage.sprite = InvOpenButtonImageSprite[0];

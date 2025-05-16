@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Dialogue;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FlowController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class FlowController : MonoBehaviour
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
     private GameObject _previousObject;
+    
+    [field:SerializeField] public UnityEvent OnHiddenStart { get; private set; }
+    [field:SerializeField] public UnityEvent OnBedStart { get; private set; }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,19 +40,28 @@ public class FlowController : MonoBehaviour
     public void CheckSwitch()
     {
         _gameSwitchCount++;
-        Debug.Log(_gameSwitchCount);
+        
         if (_flowIndex==0&&_gameSwitchCount >= 8) // 아직 히든앤딩이 가능하고 꿈 현실 변환도 4번 이상하면 
         {
             //히든 앤딩
-            DialogueController.Instance.PlayDialogue(DialogueDatas[0]);
-            EndingScript.Instance.RequsetEnding(0);
+            OnHiddenStart.Invoke();
         }
         else if (_gameSwitchCount >= 15) // 히든엔딩이 안되지만 4번이상
         {
             //배드엔딩
-            DialogueController.Instance.PlayDialogue(DialogueDatas[1]);
-            EndingScript.Instance.RequsetEnding(1);
+            OnBedStart.Invoke();
         }
+    }
+    
+    public void StartHiddenEnding()
+    {
+        DialogueController.Instance.PlayDialogue(DialogueDatas[0]);
+        EndingScript.Instance.RequsetEnding(0);
+    }
+    public void StartBedEnding()
+    {
+        DialogueController.Instance.PlayDialogue(DialogueDatas[1]);
+        EndingScript.Instance.RequsetEnding(1);
     }
     public void CheckGameObject(GameObject input)
     {

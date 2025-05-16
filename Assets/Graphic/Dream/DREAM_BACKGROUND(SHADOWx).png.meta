@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DREAM_BACKGROUND(SHADOWx)_0: -2078844609411753496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

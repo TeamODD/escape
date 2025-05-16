@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DREAM_INVENTORY_ARROW_0: 6129776783216929694
+      DREAM_INVENTORY_ARROW_1: -6453953267700054174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

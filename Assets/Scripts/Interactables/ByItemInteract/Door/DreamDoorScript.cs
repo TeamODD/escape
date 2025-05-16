@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Assets.Scripts.Dialogue;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DreamDoorScript : ClickHandler
 {
@@ -13,7 +14,7 @@ public class DreamDoorScript : ClickHandler
     public List<SpriteRenderer> Brouchs;
     private bool[] _isOpen=new bool[5];
 
-    
+    [field:SerializeField] public UnityEvent OnFade { get; private set; }
     public override void DoToWork()
     {
         if (TotalInventoryController.CheckAllBrouchGet())
@@ -37,15 +38,19 @@ public class DreamDoorScript : ClickHandler
         else
         {
             //나비모양~
-            DialogueController.Instance.PlayDialogue(dialogueData[1]);
-            EndingScript.Instance.RequsetEnding(1);
+            OnFade.Invoke();
             
         }
             
 
         
     }
-    
+
+    public void StartEnding()
+    {
+        DialogueController.Instance.PlayDialogue(dialogueData[1]);
+        EndingScript.Instance.RequsetEnding(1);
+    }
     
     public void GetBrouchToDoor(GameObject input)
     {
