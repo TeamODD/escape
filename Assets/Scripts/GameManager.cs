@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Assets.Scripts.Dialogue;
+using Assets.Scripts.UI.Options;
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void ApplySwitch()
     {
+        OptionManager.Instance.ChangeSprites();
         FlowController.CheckSwitch();
         IsInDream = !IsInDream;
         _dreamObjects.SetActive(IsInDream);

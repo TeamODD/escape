@@ -4609,6 +4609,8 @@ GameObject:
   - component: {fileID: 2085146722}
   - component: {fileID: 2085146723}
   - component: {fileID: 2085146724}
+  - component: {fileID: 2085146726}
+  - component: {fileID: 2085146725}
   m_Layer: 5
   m_Name: Option Canvas
   m_TagString: Untagged
@@ -4774,6 +4776,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 2085146719}
+--- !u!114 &2085146725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085146716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3384ef7c7664b24a8b70139591c222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _optionManager: {fileID: 2085146722}
+--- !u!114 &2085146726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085146716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a252ac08fd54bc7bd67eae88f3c3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <OnSceneLoadedEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2085146725}
+        m_TargetAssemblyTypeName: Assets.Scripts.UI.Options.OptionInitializer, Assembly-CSharp
+        m_MethodName: InitializeOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &189586664430014145
 GameObject:
   m_ObjectHideFlags: 0

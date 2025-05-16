@@ -6,6 +6,18 @@ namespace Assets.Scripts.UI.Options
     {
         [field:SerializeField] private Sprite[] RealitySprites;
         [field:SerializeField] private Sprite[] DreamSprites;
+        public override void ChangeSprite(int index)
+        {
+            if(index == 0)
+            {
+                Sprites = RealitySprites;
+            }
+            else
+            {
+                Sprites = DreamSprites;
+            }
+            _image.sprite = Sprites[0];
+        }
         public override void ChangeNextSprite()
         {
             if(Sprites == RealitySprites)
