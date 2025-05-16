@@ -6,6 +6,8 @@ public class RealityBoxScript : ClickHandler
 {
     [field:SerializeField] public UnityEvent OnStartPuzzle { get; private set; }
     public AudioClip openSFX;
+
+    public DreamButtonScript DreamButtonScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void DoToWork()
     {
@@ -14,7 +16,7 @@ public class RealityBoxScript : ClickHandler
             //바닥의판자
             DialogueController.Instance.PlayDialogue(dialogueData[0]);
            
-            
+            DreamButtonScript.isBoxOpened=true; 
             OnStartPuzzle.Invoke();
             //퍼즐 진행 
             //상자 퍼즐 진행 성공했다 치고
@@ -27,11 +29,16 @@ public class RealityBoxScript : ClickHandler
         else if (flowIdx == 3)
         {
             //상자가열렷다
-            DialogueController.Instance.PlayDialogue(dialogueData[1]);
-            _soundController.StartEffectBgm(openSFX);
-            ChangeSprite(flowIdx);
-            flowController.CheckGameObject(gameObject); 
+            
         }
         
+    }
+
+    public void BoxSolve()
+    {
+        DialogueController.Instance.PlayDialogue(dialogueData[1]);
+        _soundController.StartEffectBgm(openSFX);
+        ChangeSprite(flowIdx);
+        flowController.CheckGameObject(gameObject); 
     }
 }

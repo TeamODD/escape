@@ -56,7 +56,7 @@ public class ClickHandler : MonoBehaviour
         if(_clickSFX==null)
             Debug.Log("nosfx");
         _soundController.StartEffectBgm(_clickSFX);
-       
+        GameManager.Instance.FlowController._flowIndex++;
         CheckIsExsistDo();
         
     }

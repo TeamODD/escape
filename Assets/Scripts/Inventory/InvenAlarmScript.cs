@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class InvenAlarmScript : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class InvenAlarmScript : MonoBehaviour
     public Text MainText;
     public GameObject Panel;
     private Coroutine fadeCoroutine;
-
+    public List<Sprite> ImageLists;
+    public Image imageComponent;
     void Start()
     {
         Panel.SetActive(false);
@@ -19,34 +21,42 @@ public class InvenAlarmScript : MonoBehaviour
     {
         if (input.name == "DreamEmptyBottle")
         {
+            imageComponent.sprite=ImageLists[0];
             MainText.text = "무언가 차 있는병 을 획득했습니다";
         }
         else if (input.name == "DreamKnife")
         {
+            imageComponent.sprite=ImageLists[1];
             MainText.text = "만년필을 획득했습니다!";
         }
         else if (input.name == "JellyWarm")
         {
+            imageComponent.sprite=ImageLists[2];
             MainText.text = "애벌레를 획득했습니다!";
         }
         else if (input.name == "DreamBroch1")
         {
+            imageComponent.sprite=ImageLists[3];
             MainText.text = "유리조각을 획득했습니다!";
         }
         else if (input.name == "DreamBrouch2")
         {
+            imageComponent.sprite=ImageLists[4];
             MainText.text = "머리핀을 획득했습니다!";
         }
         else if (input.name == "DreamBrouch3")
         {
+            imageComponent.sprite=ImageLists[5];
             MainText.text = "나비 브로치를 획득했습니다!";
         }
         else if (input.name == "DreamBrouch4")
         {
+            imageComponent.sprite=ImageLists[6];
             MainText.text = "꽃잎을 획득했습니다!";
         }
         else if (input.name == "DreamBrouchMid")
         {
+            imageComponent.sprite=ImageLists[7];
             MainText.text = "나사못을 획득했습니다!";
         }
         
@@ -66,9 +76,9 @@ public class InvenAlarmScript : MonoBehaviour
 
     private IEnumerator FadeTextEffect()
     {
-        Color color = MainText.color;
+        Color color = imageComponent.color;
         color.a = 0f;
-        MainText.color = color;
+        imageComponent.color = color;
 
         // Fade-in
         float t = 0f;
@@ -76,7 +86,7 @@ public class InvenAlarmScript : MonoBehaviour
         {
             t += Time.deltaTime;
             color.a = Mathf.Lerp(0f, 1f, t);
-            MainText.color = color;
+            imageComponent.color = color;
             
             yield return null;
         }
@@ -86,11 +96,11 @@ public class InvenAlarmScript : MonoBehaviour
 
         // Fade-out
         t = 0f;
-        while (t < 0.7f)
+        while (t < 1.2f)
         {
             t += Time.deltaTime;
             color.a = Mathf.Lerp(1f, 0f, t);
-            MainText.color = color;
+            imageComponent.color = color;
             
             yield return null;
         }

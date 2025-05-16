@@ -38,10 +38,12 @@ public class DreamDoorScript : ClickHandler
         else
         {
             //나비모양~
-            OnFade.Invoke();
+            
             
         }
-            
+
+        
+        
 
         
     }
@@ -50,6 +52,7 @@ public class DreamDoorScript : ClickHandler
     {
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         EndingScript.Instance.RequsetEnding(1);
+        OnFade.Invoke();
     }
     
     public void GetBrouchToDoor(GameObject input)
@@ -91,6 +94,7 @@ public class DreamDoorScript : ClickHandler
     private void AllBrouchCollected()
     {
         //다꽃아넣
+      
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
         DialogueController.Instance.RequestSFX(1,Clips[0]);
         SecondZoomTarget.ZoomRequset();
@@ -123,6 +127,7 @@ public class DreamDoorScript : ClickHandler
             
             ZoomImage.OnHide();
             doorIsOpen = false;
+            
         }
         
     }

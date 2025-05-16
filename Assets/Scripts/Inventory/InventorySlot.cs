@@ -211,9 +211,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
                 foreach (RaycastResult result in results)
                 {
-                    Debug.Log(result);
-                    Debug.Log(targetUseItem.name);
-                    Debug.Log(_item.GetDreamGameObject().name );
+                    
                     if (isSlotConsist(result.gameObject))//슬롯에 지정값과 일치한다면
                     {
                         UseItem();

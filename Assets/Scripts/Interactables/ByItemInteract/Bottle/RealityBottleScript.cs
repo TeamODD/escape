@@ -46,7 +46,7 @@ public class RealityBottleScript : ClickHandler
         
         //죽음 엔딩 처리 
         
-        
+       
         OnFade.Invoke();
         flowIdx++;
         ChangeSprite(flowIdx);
@@ -56,6 +56,7 @@ public class RealityBottleScript : ClickHandler
     public void PlayerSelectGetBottle()
     {
         dreamDrawer.OneFlowPlus();
+        DreamBolttleScript.OneFlowPlus();
        // DreamBolttleScript.OneFlowPlus();
         OneFlowPlus();
         flowController.CheckGameObject(gameObject);

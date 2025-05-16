@@ -14,7 +14,7 @@ public class Testing : MonoBehaviour
     public Sprite floorSprite;
     public Sprite wallSprite;
     public Sprite goalSprite;
-    
+    public RealityBoxScript RealityBoxScript;
     private Vector2Int ballPosition;
     private bool isSelectingMove = false;
     private int currentPatternIndex = 0;
@@ -143,7 +143,8 @@ public class Testing : MonoBehaviour
         ballObject.transform.DOMove(worldPos,0.3f).SetEase(Ease.InOutSine).Play();
         if (grid.GetValue(gridPos.x, gridPos.y) == 3)
         {
-            Debug.Log("골인입니다.");
+           
+            RealityBoxScript.BoxSolve();
         }
     }
 

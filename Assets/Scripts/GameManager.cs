@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
             lighControlScript.LightOn();
             isLightOn = false;
             _isWindowEmpty = true;
+            setLight();
         }
 
         if (!_isFirstChange)
@@ -102,13 +103,18 @@ public class GameManager : MonoBehaviour
             else//창없을때
             {
                 lights[0].intensity = 0.8f;
-                lights[1].intensity = 0f;
+                lights[1].intensity = 0f; //마우스 끄기 
             }
             
         }
     }
-    
-    
+
+    public void setLight()
+    {
+        Debug.Log("SetLight");
+        lights[0].intensity = 5.0f;
+        lights[1].intensity = 0f;
+    }
     
     private void _switchMusic()
     {

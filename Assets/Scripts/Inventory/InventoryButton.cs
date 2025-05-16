@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class InventoryButton : MonoBehaviour
 {
+    public Image buttonimage;
     public AudioClip invOpenSFX;
     public GameObject targetInventory; // 펼쳐질 인벤토리 대상 
     public float buttonHeight;
@@ -36,10 +38,13 @@ public class InventoryButton : MonoBehaviour
         SoundControllerScript.StartEffectBgm(invOpenSFX);
         if (_isActive)
         {
+            buttonimage.color = new Color(0, 0, 0, 0);
+            
             GameManager.Instance.isInvOpen = true;
         }
         else
         {
+           
             GameManager.Instance.isInvOpen = false;
         }
         if (_animCoroutine != null) //이미 애니메이션이 실행중일때 
@@ -84,6 +89,12 @@ public class InventoryButton : MonoBehaviour
         Vector2 finalPos = _selfRt.anchoredPosition;
         finalPos.y = targetPosY;
         _selfRt.anchoredPosition = finalPos;
+
+        if (!_isActive)
+        {
+            buttonimage.color = new Color(255, 255, 255, 255);
+        }
+        
     }
     
     private bool IsPointerOverUI()

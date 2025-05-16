@@ -11,6 +11,7 @@ public class RealityPotScript : ClickHandler
     public ZoomImage ZoomImage;
     private float _timer = 0f;
     private bool _isRequestItem;
+    private bool _isCanGetWarm;
     void Update()
     {
        
@@ -60,6 +61,7 @@ public class RealityPotScript : ClickHandler
         {
             //흙밖에 없는~~
             DialogueController.Instance.PlayDialogue(dialogueData[3]);
+            _isRequestItem = true;
         }
         
         
@@ -69,7 +71,7 @@ public class RealityPotScript : ClickHandler
     public void GetPoison()
     {
         //물병의 액체~
-        _isRequestItem = true;
+        
         secondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         
@@ -80,7 +82,7 @@ public class RealityPotScript : ClickHandler
         flowIdx++;
         ChangeSprite(flowIdx);
     }
-
+    
     public void GetWarm()
     {
         if (_isRequestItem )
@@ -91,5 +93,14 @@ public class RealityPotScript : ClickHandler
             _isRequestItem = false;
         }
         
+    }
+
+    public void CanGetWarm()
+    {
+        if (_isCanGetWarm)
+        {
+            ZoomImage.OnHide();
+            _isCanGetWarm = false;
+        }
     }
 }

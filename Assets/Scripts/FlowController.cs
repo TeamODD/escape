@@ -7,14 +7,13 @@ using UnityEngine.Events;
 public class FlowController : MonoBehaviour
 {
     
-    public List<GameObject> flowObjects = new List<GameObject>();
-    public List<GameObject> lastDoors = new List<GameObject>();
+  
     
     public TotalInventoryController inventory;
 
 
     public List<DialogueData> DialogueDatas;
-    private int _flowIndex;
+    public int _flowIndex;
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
     private GameObject _previousObject;
@@ -40,16 +39,22 @@ public class FlowController : MonoBehaviour
     public void CheckSwitch()
     {
         _gameSwitchCount++;
-        
-        if (_flowIndex==0&&_gameSwitchCount >= 8) // 아직 히든앤딩이 가능하고 꿈 현실 변환도 4번 이상하면 
+        Debug.Log(_gameSwitchCount);
+        // 아무것도 안건들고
+        //꿈  현실 상태 변환 몇번 ?
+        //아무것도 좀 빡세 아이템획득이나 줌안하는거 이걸로 ㄱㄱ
+        //
+        if (_flowIndex==0&&_gameSwitchCount >= 2) // 아직 히든앤딩이 가능하고 꿈 현실 변환도 4번 이상하면 
         {
             //히든 앤딩
             OnHiddenStart.Invoke();
+            StartHiddenEnding();
         }
         else if (_gameSwitchCount >= 15) // 히든엔딩이 안되지만 4번이상
         {
             //배드엔딩
             OnBedStart.Invoke();
+            StartBedEnding();
         }
     }
     
