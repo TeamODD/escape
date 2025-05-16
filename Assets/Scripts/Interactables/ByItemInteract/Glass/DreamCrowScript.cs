@@ -63,6 +63,7 @@ public class DreamCrowScropt : ClickHandler
         if (_isCrowGone)
         {
             GameManager.Instance.isLightOn = true;
+            
             _isCrowGone = false;
             ZoomImage.OnHide();
         }

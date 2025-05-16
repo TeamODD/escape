@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private bool _isZoomIn;
     private bool _isFirstChange;
     private bool _isLightOn;
-    private bool _isWindowEmpty;
+    public bool _isWindowEmpty;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
     [field:SerializeField] public UnityEvent OnFade { get; private set; }
@@ -58,6 +58,9 @@ public class GameManager : MonoBehaviour
 
     public void SwitchWorld()
     {
+        Debug.Log(_isZoomIn);
+        Debug.Log(isInvOpen);
+        Debug.Log(DialogueController.Instance.isUsed);
         
         if (!_isZoomIn&&!DialogueController.Instance.isUsed&&!isInvOpen)//줌인이 되어있지 않다면
         {
@@ -78,7 +81,7 @@ public class GameManager : MonoBehaviour
             DialogueController.Instance.PlayDialogue(lightOnDialogue);
             lighControlScript.LightOn();
             isLightOn = false;
-            _isWindowEmpty = true;
+          
             setLight();
         }
 
@@ -92,26 +95,29 @@ public class GameManager : MonoBehaviour
         {
             lights[0].intensity = 1;
             lights[1].intensity = 0;
-        }
-        else//현실에서 
+        }else//현실에서 
         {
-            if (_isWindowEmpty) //창있을때
+            if (_isWindowEmpty) //창없을때
             {
-                lights[0].intensity = 0.4f;
-                lights[1].intensity = 1;
-            }
-            else//창없을때
-            {
+               
                 lights[0].intensity = 0.8f;
-                lights[1].intensity = 0f; //마우스 끄기 
+                lights[1].intensity = 0;
+            }
+            else
+            {
+               
+                lights[0].intensity =  0.4f;
+                lights[1].intensity = 1f; //마우스 끄기 
             }
             
         }
+      
     }
 
     public void setLight()
     {
-        Debug.Log("SetLight");
+       
+        _isWindowEmpty = true;
         lights[0].intensity = 5.0f;
         lights[1].intensity = 0f;
     }

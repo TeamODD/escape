@@ -236,11 +236,14 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         
         OnItemHighLight();
+        _targetHighlighter.OffHighliter();
+        _buttonHighlighter.OffHighliter();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        
+        _targetHighlighter.OffHighliter();
+        _buttonHighlighter.OffHighliter();
         UpdateSlot();
     }
 

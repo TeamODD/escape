@@ -16,7 +16,7 @@ public class RealiryDoorScript : ClickHandler
             if (flowIdx == 0)
             {
                 DialogueController.Instance.PlayDialogue(dialogueData[0]);
-                DialogueController.Instance.applyDialogueOn();
+                
                 
                 
             }

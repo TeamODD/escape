@@ -77,7 +77,7 @@ public class RealityPotScript : ClickHandler
         
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
         SoundControllerScript.Instance.StartEffectBgm(WaterSFX);
-        
+        _isCanGetWarm = true;
         //ZoomImage.OnHide();
         
         flowIdx++;

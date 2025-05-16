@@ -13,11 +13,16 @@ public class DreamDoorScript : ClickHandler
     public TotalInventoryController TotalInventoryController;
     public List<SpriteRenderer> Brouchs;
     private bool[] _isOpen=new bool[5];
-
+    private bool isClosed;
     [field:SerializeField] public UnityEvent OnFade { get; private set; }
     public override void DoToWork()
     {
-        if (TotalInventoryController.CheckAllBrouchGet())
+       
+        if (flowIdx==1)
+        {
+            StartEnding();
+        }
+        else if (TotalInventoryController.CheckAllBrouchGet())
         {
             
             
@@ -28,7 +33,7 @@ public class DreamDoorScript : ClickHandler
             _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
             for (int i = 0; i < Brouchs.Count; i++)
             {
-                Brouchs[i].color = new Color(0, 0, 0, 255);
+                Brouchs[i].color = new Color(0, 0, 0, 0);
             }
             
             _zoomTarget.ZoomRequset();
@@ -101,7 +106,7 @@ public class DreamDoorScript : ClickHandler
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         RealiryDoorScript.OneFlowPlus();
         doorIsOpen = true;
-
+        isClosed = true;
     }
     
     private bool CheckAllBrouchInserted() //모든 브로치가 다모였는지확인 
@@ -125,10 +130,22 @@ public class DreamDoorScript : ClickHandler
                 Brouchs[i].color=new Color32(0, 0, 0, 0);
             }
             
-            ZoomImage.OnHide();
+          
             doorIsOpen = false;
             
         }
+        
+    }
+
+    public void DoorOpenComplete()
+    {
+        if (isClosed)
+        {
+            isClosed = false;
+            OneFlowPlus();
+            ZoomImage.OnHide();
+        }
+      
         
     }
 }

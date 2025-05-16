@@ -6,8 +6,9 @@ public class RealityBoxScript : ClickHandler
 {
     [field:SerializeField] public UnityEvent OnStartPuzzle { get; private set; }
     public AudioClip openSFX;
-
     public DreamButtonScript DreamButtonScript;
+    [field:SerializeField] public UnityEvent OnCompletePuzzle { get; private set; }
+    private bool _isCanGetKey;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void DoToWork()
     {
@@ -38,8 +39,21 @@ public class RealityBoxScript : ClickHandler
     {
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         SoundControllerScript.Instance.StartEffectBgm(openSFX);
+        OneFlowPlus();
         
-        ChangeSprite(flowIdx);
-        flowController.CheckGameObject(gameObject); 
+        _isCanGetKey = true;
+    }
+
+
+    public void GetKey()
+    {
+        if (_isCanGetKey)
+        {
+            _isCanGetKey=false;
+            flowController.CheckGameObject(gameObject); 
+            //퍼즐 비활성화
+            OnCompletePuzzle.Invoke();
+        }
+        
     }
 }
