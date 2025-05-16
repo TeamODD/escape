@@ -42,7 +42,7 @@ public class Grid
                 cellGO.transform.parent = parentTransform;
                 
                 cellGO.transform.localScale = Vector3.one*0.5f;
-                
+                cellGO.GetComponent<SpriteRenderer>().sortingOrder = 2000;
                 // SpriteRenderer sr =  cellGO.GetComponent<SpriteRenderer>();
                 // sr.sprite = floorSprite;
                 // sr.transform.localPosition = new Vector3(0.8f, 0.8f, 1f);
@@ -153,5 +153,19 @@ public class Grid
     public float GetCellSize()
     {
         return cellSize;
+    }
+    public void HideGridVisuals()
+    {
+        if (parentTransform != null)
+        {
+            parentTransform.gameObject.SetActive(false);
+        }
+    }
+    public void ShowGridVisuals()
+    {
+        if (parentTransform != null)
+        {
+            parentTransform.gameObject.SetActive(true);
+        }
     }
 }

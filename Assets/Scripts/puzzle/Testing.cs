@@ -31,7 +31,7 @@ public class Testing : MonoBehaviour
     private int puzzleState = 0;
     public void Start()
     {
-        grid = new Grid(4,4,1.5f, new Vector3(-3,-3),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
+        grid = new Grid(4,4,1.5f, new Vector3(-3,-2),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
         patterns = new int[][,]
         {
             new int[,] {
@@ -164,5 +164,23 @@ public class Testing : MonoBehaviour
                 purpleObject.SetActive(true);
                 break;
         }
+    }
+
+    public void SwitchGridStatus(bool input)
+    {
+        if (grid != null)
+        {
+            if (!input)
+            {
+            
+                grid.HideGridVisuals();
+            }
+            else
+            {
+                grid.ShowGridVisuals();
+            }
+        }
+        
+        
     }
 }

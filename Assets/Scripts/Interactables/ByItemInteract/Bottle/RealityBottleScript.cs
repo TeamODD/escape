@@ -1,10 +1,11 @@
 using Assets.Scripts.Dialogue;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RealityBottleScript : ClickHandler
 {
     public GameObject ZoomImage;
-    
+    [field:SerializeField] public UnityEvent OnFade { get; private set; }
     public ClickHandler dreamDrawer;
     public DreamBolttleScript DreamBolttleScript;
     public bool isDrink=false;
@@ -44,6 +45,9 @@ public class RealityBottleScript : ClickHandler
     {
         
         //죽음 엔딩 처리 
+        
+        
+        OnFade.Invoke();
         flowIdx++;
         ChangeSprite(flowIdx);
         CheckFlowIsFinish();

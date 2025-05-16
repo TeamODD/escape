@@ -1,10 +1,13 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PatternButton : MonoBehaviour
 {
     public Testing testingScript;
 
-    private void OnMouseDown()
+   
+
+    public void SwitchPattern()
     {
         testingScript.NextPattern();
     }

@@ -1,12 +1,17 @@
 using System;
+using System.Collections.Generic;
 using Assets.Scripts.Dialogue;
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
+    public List<Light2D> lights;
     public FlowController FlowController;
+    public DialogueData firstchange;
     public DialogueData lightOnDialogue; 
     public bool isInvOpen;
     public LighControlScript lighControlScript;
@@ -18,7 +23,9 @@ public class GameManager : MonoBehaviour
     private AudioClip _clickSFX;
     private SoundControllerScript _soundControllerScript;
     private bool _isZoomIn;
+    private bool _isFirstChange;
     private bool _isLightOn;
+    private bool _isWindowEmpty;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
     [field:SerializeField] public UnityEvent OnFade { get; private set; }
@@ -76,6 +83,33 @@ public class GameManager : MonoBehaviour
             DialogueController.Instance.PlayDialogue(lightOnDialogue);
             lighControlScript.LightOn();
             isLightOn = false;
+            _isWindowEmpty = true;
+        }
+
+        if (!_isFirstChange)
+        {
+            _isFirstChange = true;
+            DialogueController.Instance.PlayDialogue(firstchange);
+        }
+
+        if (IsInDream) //꿈으로 간다면
+        {
+            lights[0].intensity = 1;
+            lights[1].intensity = 0;
+        }
+        else//현실에서 
+        {
+            if (_isWindowEmpty) //창있을때
+            {
+                lights[0].intensity = 0.4f;
+                lights[1].intensity = 1;
+            }
+            else//창없을때
+            {
+                lights[0].intensity = 0.8f;
+                lights[1].intensity = 0f;
+            }
+            
         }
     }
     
