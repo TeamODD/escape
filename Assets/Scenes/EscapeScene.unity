@@ -12905,7 +12905,7 @@ PrefabInstance:
     - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: 'DialogueSprite.Array.data[0]'
       value: 
-      objectReference: {fileID: -7146698953419899620, guid: b0b1c487ad18e7e43a1b49d6fcf9a79f, type: 3}
+      objectReference: {fileID: -6753021283734291539, guid: 843d0e5550f1ca247827ab34652ba442, type: 3}
     - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: 'DialogueSprite.Array.data[1]'
       value: 
