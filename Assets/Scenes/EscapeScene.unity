@@ -807,6 +807,9 @@ MonoBehaviour:
         m_CallState: 2
   openSFX: {fileID: 8300000, guid: c5989df8ae624434185c8d338e1bd765, type: 3}
   DreamButtonScript: {fileID: 379343697}
+  <OnCompletePuzzle>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &143389122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5318,6 +5321,7 @@ MonoBehaviour:
   realityBgm: {fileID: 8300000, guid: 9045a1a6f9a5d564981be1364858f129, type: 3}
   isLightOn: 0
   totalInventoryController: {fileID: 1452035976}
+  _isWindowEmpty: 0
   _dreamObjects: {fileID: 1301277115}
   _realityObjects: {fileID: 1726153631}
   <OnFade>k__BackingField:
@@ -10526,6 +10530,7 @@ MonoBehaviour:
   - {fileID: -5448039345518740641, guid: 8c5271cf01a6af943ae23d4bc5759812, type: 3}
   - {fileID: -8417892991925607441, guid: 0ac900ac9dda67b46826a5b7ad4562aa, type: 3}
   - {fileID: 5122646591814660252, guid: 465df89d379dd9748949843233ccb3db, type: 3}
+  - {fileID: 8457794309609929, guid: 1e073881edd087244ba3ee74ebec0558, type: 3}
   - {fileID: 8457794309609929, guid: 1e073881edd087244ba3ee74ebec0558, type: 3}
   imageComponent: {fileID: 1333296855}
 --- !u!1 &1611617617
