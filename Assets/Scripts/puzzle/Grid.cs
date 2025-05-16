@@ -19,7 +19,8 @@ public class Grid
 
     private bool isVisualActive = false;
 
-    public Grid(int width, int height, float cellSize, Vector3 originPosition, Sprite floorSprite, Sprite wallSprite, Sprite goalSprite)
+    public Grid(int width, int height, float cellSize, Vector3 originPosition, Sprite floorSprite, Sprite wallSprite,
+        Sprite goalSprite)
     {
         this.width = width;
         this.height = height;
@@ -42,13 +43,13 @@ public class Grid
                 GameObject cellGO = new GameObject($"Cell_{x}_{y}", typeof(SpriteRenderer));
                 cellGO.transform.position = cellPos;
                 cellGO.transform.parent = parentTransform;
-                
-                cellGO.transform.localScale = Vector3.one*0.5f;
+
+                cellGO.transform.localScale = Vector3.one * 0.5f;
                 cellGO.GetComponent<SpriteRenderer>().sortingOrder = 2000;
                 // SpriteRenderer sr =  cellGO.GetComponent<SpriteRenderer>();
                 // sr.sprite = floorSprite;
                 // sr.transform.localPosition = new Vector3(0.8f, 0.8f, 1f);
-                
+
                 cellGO.transform.localScale = Vector3.one * (cellSize * 0.635f); // 크기 조절
                 //cellGO.transform.parent = parentTransform;
                 cellVisuals[x, y] = cellGO;
@@ -111,12 +112,9 @@ public class Grid
     public void HighlightAvailableTiles(int x, int y)
     {
         ClearHighLights();
-        if (!isVisualActive)
+
+        Vector2Int[] directions =
         {
-            return;
-        }
-        
-        Vector2Int[] directions = {
             Vector2Int.up, Vector2Int.down,
             Vector2Int.left, Vector2Int.right
         };
@@ -139,14 +137,15 @@ public class Grid
     public void ClearHighLights()
     {
         for (int x = 0; x < width; x++)
-            for (int y = 0; y < height; y++)
-                UpdateSprite(x, y);
+        for (int y = 0; y < height; y++)
+            UpdateSprite(x, y);
     }
 
     public float GetCellSize()
     {
         return cellSize;
     }
+
     public void HideGridVisuals()
     {
         isVisualActive = false;
@@ -155,6 +154,7 @@ public class Grid
             parentTransform.gameObject.SetActive(false);
         }
     }
+
     public void ShowGridVisuals()
     {
         isVisualActive = true;
@@ -167,5 +167,10 @@ public class Grid
     public bool IsVisualActive()
     {
         return isVisualActive;
+    }
+
+    public bool IsValidPosition(int x, int y)
+    {
+        return x >= 0 && x < width && y >= 0 && y < height;
     }
 }

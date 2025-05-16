@@ -118,6 +118,8 @@ public class Testing : MonoBehaviour
             }
         }
         
+        //bool isInsideGrid = ballPosition.x >= 0 && ballPosition.x < 4 && ballPosition.y >= 0 && ballPosition.y < 4;
+        
         // 공이 벽 위에 있는지 확인
         if (pattern[ballPosition.y, ballPosition.x] == 2 && grid.IsVisualActive())
         {
@@ -131,6 +133,10 @@ public class Testing : MonoBehaviour
 
     private void MoveBallToPosition(Vector2Int gridPos)
     {
+        if (!grid.IsValidPosition(gridPos.x, gridPos.y))
+        {
+            return;
+        }
         ballPosition = gridPos;
         Vector3 worldPos = grid.GetWorldPosition(gridPos.x, gridPos.y) + new Vector3(grid.GetCellSize(), grid.GetCellSize())*0.5f;
         worldPos.z = -5f;
