@@ -3,6 +3,7 @@ using UnityEngine;
 using CodeMonkey.Utils;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine.Rendering;
 
@@ -22,7 +23,12 @@ public class Testing : MonoBehaviour
     private int[][,] patterns;
     //private BallMover ballMover;
     private bool isMoving = false;
-    private BallMover ballMover;        
+    private BallMover ballMover;
+
+    public GameObject redObejct;
+    public GameObject blueObejct;
+    public GameObject purpleObject;
+    private int puzzleState = 0;
     public void Start()
     {
         grid = new Grid(4,4,1.5f, new Vector3(-3,-3),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
@@ -50,6 +56,9 @@ public class Testing : MonoBehaviour
         ApplyPattern(0);
         MoveBallToPosition(startBallPosition);
         ballMover = ballObject.GetComponent<BallMover>();
+        redObejct.SetActive(true);
+        blueObejct.SetActive(false);
+        purpleObject.SetActive(false);
     }
 
     private void Update()
@@ -136,5 +145,24 @@ public class Testing : MonoBehaviour
     {
         currentPatternIndex = (currentPatternIndex + 1) % patterns.Length;
         ApplyPattern(currentPatternIndex);
+        puzzleState = (puzzleState + 1) % 3;
+        switch (puzzleState)
+        {
+            case 0:
+                redObejct.SetActive(true);
+                blueObejct.SetActive(false);
+                purpleObject.SetActive(false);
+                break;
+            case 1:
+                redObejct.SetActive(false);
+                blueObejct.SetActive(true);
+                purpleObject.SetActive(false);
+                break;
+            case 2:
+                redObejct.SetActive(false);
+                blueObejct.SetActive(false);
+                purpleObject.SetActive(true);
+                break;
+        }
     }
 }
