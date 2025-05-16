@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
         {
             MainAudio = realityBgm;
         }
-        SoundControllerScript.Instance.StartEffectBgm(MainAudio);
+        SoundControllerScript.Instance.StartMainBgm(MainAudio);
         
     }
 
