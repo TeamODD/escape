@@ -12258,6 +12258,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268163978463106945, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268163978463106945, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268163978463106945, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268163978463106945, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268163978463106945, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 4332071407262872594, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12966,6 +12986,34 @@ PrefabInstance:
       propertyPath: 'InvOpenButtonImageSprite.Array.data[3]'
       value: 
       objectReference: {fileID: 897924137689324968, guid: 55a9de69dc7e8014db1c2d8d364fb62e, type: 3}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124001366620745182, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6131749650045134661, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: invOpenSFX
       value: 
@@ -13230,7 +13278,8 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5368517175014084195, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4332071407262872594, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
