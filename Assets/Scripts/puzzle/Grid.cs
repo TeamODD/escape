@@ -39,7 +39,10 @@ public class Grid
 
                 GameObject cellGO = new GameObject($"Cell_{x}_{y}", typeof(SpriteRenderer));
                 cellGO.transform.position = cellPos;
-                // cellGO.transform.parent = parentTransform;
+                cellGO.transform.parent = parentTransform;
+                
+                cellGO.transform.localScale = Vector3.one*0.5f;
+                
                 // SpriteRenderer sr =  cellGO.GetComponent<SpriteRenderer>();
                 // sr.sprite = floorSprite;
                 // sr.transform.localPosition = new Vector3(0.8f, 0.8f, 1f);

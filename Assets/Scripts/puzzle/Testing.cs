@@ -25,7 +25,7 @@ public class Testing : MonoBehaviour
     private BallMover ballMover;        
     public void Start()
     {
-        grid = new Grid(4,4,10f, new Vector3(-10,-10),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
+        grid = new Grid(4,4,1.5f, new Vector3(-3,-3),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
         patterns = new int[][,]
         {
             new int[,] {
