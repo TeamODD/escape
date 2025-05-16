@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dream_Inventory_button_y_0: 897924137689324968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

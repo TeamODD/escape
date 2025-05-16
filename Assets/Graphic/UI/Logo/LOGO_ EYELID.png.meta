@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LOGO_ EYELID_0: -104828057231533522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

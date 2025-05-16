@@ -76,7 +76,8 @@ public class RealityPotScript : ClickHandler
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         
         DialogueController.Instance.PlayDialogue(dialogueData[2]);
-        _soundController.StartEffectBgm(WaterSFX);
+        SoundControllerScript.Instance.StartEffectBgm(WaterSFX);
+        
         //ZoomImage.OnHide();
         
         flowIdx++;

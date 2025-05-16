@@ -37,7 +37,8 @@ public class RealityBoxScript : ClickHandler
     public void BoxSolve()
     {
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
-        _soundController.StartEffectBgm(openSFX);
+        SoundControllerScript.Instance.StartEffectBgm(openSFX);
+        
         ChangeSprite(flowIdx);
         flowController.CheckGameObject(gameObject); 
     }

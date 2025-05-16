@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance{get; private set;}
     public TotalInventoryController totalInventoryController;
     private AudioClip _clickSFX;
-    private SoundControllerScript _soundControllerScript;
+    
     private bool _isZoomIn;
     private bool _isFirstChange;
     private bool _isLightOn;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
-        _soundControllerScript=SoundControllerScript.Instance;
+        
         _clickSFX=Resources.Load<AudioClip>("SFX/CLICK");
     }
 
@@ -127,7 +127,8 @@ public class GameManager : MonoBehaviour
         {
             MainAudio = realityBgm;
         }
-        _soundControllerScript.StartMainBgm(MainAudio);
+        SoundControllerScript.Instance.StartEffectBgm(MainAudio);
+        
     }
 
     public void SwitchZoomInStatus(bool input)

@@ -10,7 +10,7 @@ namespace Assets.Scripts.Dialogue
 
     public class DialogueController : SerializedMonoBehaviour
     {
-        public SoundControllerScript soundControllerScript;
+        
         private AudioClip _clip;
         public bool isUsed;
         public GameObject QuitButton;
@@ -74,7 +74,8 @@ namespace Assets.Scripts.Dialogue
 
             if (_isApplySfx && _sfxAppledIdx == _contentIndex)//음이 신청되있는 상태라면
             {
-                soundControllerScript.StartEffectBgm(_clip);
+                SoundControllerScript.Instance.StartEffectBgm(_clip);
+               
             }
             if(Animator.IsPlaying)
             {

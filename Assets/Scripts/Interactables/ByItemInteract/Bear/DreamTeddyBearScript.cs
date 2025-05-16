@@ -35,8 +35,8 @@ public class DreamTeddyBearScript : ClickHandler
         secondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         
-       
-        _soundController.StartEffectBgm(KnifeSFX);
+       SoundControllerScript.Instance.StartEffectBgm(KnifeSFX);
+      
         OneFlowPlus();
         trashWarm.OneFlowPlus();
        

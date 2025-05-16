@@ -43,7 +43,8 @@ public class DreamCrowScropt : ClickHandler
         secondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         _isCrowGone = true;
-        _soundController.StartEffectBgm(eatSFX);
+        SoundControllerScript.Instance.StartEffectBgm(eatSFX);
+       
         OneFlowPlus();
         dreamPotScript.OneFlowPlus();
         realityStainGlass.OneFlowPlus();

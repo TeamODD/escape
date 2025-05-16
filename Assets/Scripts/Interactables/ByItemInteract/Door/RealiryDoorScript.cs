@@ -17,9 +17,8 @@ public class RealiryDoorScript : ClickHandler
             {
                 DialogueController.Instance.PlayDialogue(dialogueData[0]);
                 DialogueController.Instance.applyDialogueOn();
-                _zoomTarget.ZoomRequset();
-                _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
-                _zoomTarget.SwitchHitImageName("ReailtyDoor");
+                
+                
             }
             else if (flowIdx==1)
             {

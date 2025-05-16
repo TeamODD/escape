@@ -31,8 +31,8 @@ public class DreamBolttleScript : ClickHandler
 
     public void DrinkDreamBottle()
     {
+        SoundControllerScript.Instance.StartEffectBgm(drinkSFX);
         
-        _soundController.StartEffectBgm(drinkSFX);
         //SwitchisEnableZoom(false);
         OneFlowPlus();
         realityBottleScript.OneFlowPlus();

@@ -14,7 +14,7 @@ public class InventoryButton : MonoBehaviour
     private RectTransform _selfRt; // 사용될 자신의 Rt변수
     private Coroutine _animCoroutine; // 코루틴 애니메이션변수
 
-    public SoundControllerScript SoundControllerScript;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,7 +35,8 @@ public class InventoryButton : MonoBehaviour
     {
         
         _isActive = !_isActive; // 상태변경 
-        SoundControllerScript.StartEffectBgm(invOpenSFX);
+        SoundControllerScript.Instance.StartEffectBgm(invOpenSFX);
+       
         if (_isActive)
         {
             buttonimage.color = new Color(0, 0, 0, 0);

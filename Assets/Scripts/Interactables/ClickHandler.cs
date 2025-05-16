@@ -13,7 +13,6 @@ public class ClickHandler : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private AudioClip _clickSFX;
     protected ZoomTarget _zoomTarget;
-    protected SoundControllerScript _soundController;
     protected int flowIdx;
     protected bool isEnableZoom = true;
     
@@ -44,7 +43,7 @@ public class ClickHandler : MonoBehaviour
         // 트리거에 이벤트 추가
         trigger.triggers.Add(entry);
 
-        _soundController = SoundControllerScript.Instance;
+      
         
         //상호작용 가능한 객체를 대상으로 
         _clickSFX=Resources.Load<AudioClip>("SFX/CLICK");
@@ -55,7 +54,8 @@ public class ClickHandler : MonoBehaviour
         PointerEventData pointerData = (PointerEventData)data;
         if(_clickSFX==null)
             Debug.Log("nosfx");
-        _soundController.StartEffectBgm(_clickSFX);
+        SoundControllerScript.Instance.StartEffectBgm(_clickSFX);
+        
         GameManager.Instance.FlowController._flowIndex++;
         CheckIsExsistDo();
         

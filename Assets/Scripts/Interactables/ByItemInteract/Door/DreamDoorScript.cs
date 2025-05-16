@@ -57,7 +57,7 @@ public class DreamDoorScript : ClickHandler
     
     public void GetBrouchToDoor(GameObject input)
     {
-        Debug.Log(input.name);
+        
         
         if (input.name == "DreamBroch1")
         {

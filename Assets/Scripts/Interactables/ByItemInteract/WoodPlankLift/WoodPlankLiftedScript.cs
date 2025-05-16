@@ -11,7 +11,8 @@ public class WoodPlankLiftedScript : ClickHandler
         
         if (flowIdx <= 3)
         {
-            _soundController.StartEffectBgm(shakeSFX);
+            SoundControllerScript.Instance.StartEffectBgm(shakeSFX);
+           
             
             
             
@@ -28,7 +29,8 @@ public class WoodPlankLiftedScript : ClickHandler
             realityBoxScript.OneFlowPlus();
             realityBoxScript.GetComponent<SpriteRenderer>().sortingOrder = 4;
             ChangeSprite(flowIdx);
-            _soundController.StartEffectBgm(crackSFX);
+            SoundControllerScript.Instance.StartEffectBgm(crackSFX);
+            
             flowIdx++;
         }
     }
