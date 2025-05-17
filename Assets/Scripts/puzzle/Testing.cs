@@ -3,6 +3,7 @@ using UnityEngine;
 using CodeMonkey.Utils;
 using System.Collections.Generic;
 using DG.Tweening;
+using Mono.Cecil.Cil;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine.Rendering;
@@ -17,12 +18,13 @@ public class Testing : MonoBehaviour
     public RealityBoxScript RealityBoxScript;
     private Vector2Int ballPosition;
     private bool isSelectingMove = false;
-    
+    public AudioClip moveSound;
+    public AudioClip goalSource;
     
     private Vector2Int startBallPosition = new Vector2Int(0, 0);
     private int[][,] patterns;
     //private BallMover ballMover;
-    private bool isMoving = false;
+    private bool isMoving = true;
     private BallMover ballMover;
 
     public GameObject redObejct;
@@ -133,10 +135,14 @@ public class Testing : MonoBehaviour
         Vector3 worldPos = grid.GetWorldPosition(gridPos.x, gridPos.y) + new Vector3(grid.GetCellSize(), grid.GetCellSize())*0.5f;
         worldPos.z = -5f;
         ballObject.transform.DOMove(worldPos,0.3f).SetEase(Ease.InOutSine).Play();
+        if (isMoving)//스위치가 꺼져있으면
+        {
+            SoundControllerScript.Instance.StartEffectBgm(moveSound);
+        }
         if (grid.GetValue(gridPos.x, gridPos.y) == 3)//막야 도착했다면
         {
             RealityBoxScript.BoxSolve();
-           
+            SoundControllerScript.Instance.StartEffectBgm(goalSource);
         }
     }
 
@@ -171,11 +177,14 @@ public class Testing : MonoBehaviour
         
         if (!input)
         {
+            isMoving = false;
             grid.HideGridVisuals();
         }
         else {
+            isMoving = true;
             if (patterns[currentPatternIndex][ballPosition.y, ballPosition.x] == 2)
             {
+                
                 MoveBallToPosition(startBallPosition);
             }
             grid.ShowGridVisuals();
