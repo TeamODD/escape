@@ -18,7 +18,6 @@ namespace Assets.Scripts.Escape.Choices
             {
                 Destroy(gameObject);
             }
-            DontDestroyOnLoad(gameObject);
             Instance = this;
         }
         public void ApplyChoiceData(ChoiceData data)
