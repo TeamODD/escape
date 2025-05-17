@@ -63,10 +63,6 @@ public class RealityPotScript : ClickHandler
             DialogueController.Instance.PlayDialogue(dialogueData[3]);
             _isRequestItem = true;
         }
-        else if (flowIdx == 3)
-        {
-            
-        }
         
         
         
@@ -94,7 +90,6 @@ public class RealityPotScript : ClickHandler
         {
             
             ZoomImage.OnHide();
-            flowIdx++;
             flowController.CheckGameObject(gameObject);
             _isRequestItem = false;
         }
