@@ -20,6 +20,7 @@ public class DreamDoorScript : ClickHandler
        
         if (flowIdx==1)
         {
+            flowIdx++;
             StartEnding();
         }
         else if (TotalInventoryController.CheckAllBrouchGet())
@@ -39,6 +40,7 @@ public class DreamDoorScript : ClickHandler
             _zoomTarget.ZoomRequset();
             _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
             _zoomTarget.SwitchHitImageName("DreamDoorImage");
+            //브로치 설정부분
         }
         else
         {
@@ -55,11 +57,14 @@ public class DreamDoorScript : ClickHandler
 
     public void StartEnding()
     {
-        DialogueController.Instance.PlayDialogue(dialogueData[1]);
-        EndingScript.Instance.RequsetEnding(1);
         OnFade.Invoke();
     }
-    
+
+    public void Ending()
+    {
+        DialogueController.Instance.PlayDialogue(dialogueData[1]);
+        EndingScript.Instance.RequsetEnding(2);
+    }
     public void GetBrouchToDoor(GameObject input)
     {
         
@@ -105,6 +110,10 @@ public class DreamDoorScript : ClickHandler
         SecondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         RealiryDoorScript.OneFlowPlus();
+        for (int i = 0; i <= 4; i++)
+        {
+            Brouchs[i].color=new Color32(0, 0, 0, 0);
+        }
         doorIsOpen = true;
         isClosed = true;
     }

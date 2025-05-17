@@ -14,7 +14,7 @@ public class DreamButtonScript : ClickHandler
         {
             flowIdx = 0;
         }
-
+        
         if (isBoxOpened)
         {
             SoundControllerScript.Instance.StartEffectBgm(changeSFX);

@@ -32,7 +32,7 @@ public class RealiryDoorScript : ClickHandler
     public void EndingStart()
     {
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
-        EndingScript.Instance.RequsetEnding(2);
+        EndingScript.Instance.RequsetEnding(3);
     }
 
     
