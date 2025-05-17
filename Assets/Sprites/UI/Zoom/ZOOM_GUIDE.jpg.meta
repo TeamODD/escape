@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f828034537134204849f7fc20fff451
+guid: f8a54bf62263d4a03a878991c9bae8ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2969602394184976391
-    second: DREAM_INVENTORY_0
+      213: -714873260702321828
+    second: ZOOM_GUIDE_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DREAM_INVENTORY_0
+      name: ZOOM_GUIDE_0
       rect:
         serializedVersion: 2
-        x: 1628
-        y: 38
-        width: 263
-        height: 1018
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7088b85d4a5263920800000000000000
-      internalID: 2969602394184976391
+      spriteID: c53b9649e824416f0800000000000000
+      internalID: -714873260702321828
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f0e8b2ffff16e4759a3e15dc29714761
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DREAM_INVENTORY_0: 2969602394184976391
+      ZOOM_GUIDE_0: -714873260702321828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
