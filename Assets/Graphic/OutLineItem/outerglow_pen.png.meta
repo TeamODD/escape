@@ -116,10 +116,10 @@ TextureImporter:
       name: outerglow_pen_0
       rect:
         serializedVersion: 2
-        x: 1694
-        y: 861
-        width: 128
-        height: 144
+        x: 1692
+        y: 864
+        width: 131
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

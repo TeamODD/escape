@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 283b54c88110941419beb978b0a70ac8
+guid: 243b4b251d6e5c94ea929588cb4a5086
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4086431548864640535
-    second: 6-_0
+      213: -1837931894811579120
+    second: Ending_door_shadow_0
+  - first:
+      213: -6610709710950231563
+    second: Ending_door_shadow_1
+  - first:
+      213: 3776203691432969130
+    second: Ending_door_shadow_2
+  - first:
+      213: 5462464627606995948
+    second: Ending_door_shadow_3
+  - first:
+      213: -1255433005876079646
+    second: Ending_door_shadow_4
+  - first:
+      213: 465376253419495266
+    second: Ending_door_shadow_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,45 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 6-_0
+      name: Ending_door_shadow_0
       rect:
         serializedVersion: 2
-        x: 1721
-        y: 832
-        width: 75
-        height: 144
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e949fa38241a47c0800000000000000
-      internalID: -4086431548864640535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MID_BROUCH_INV_H_0
-      rect:
-        serializedVersion: 2
-        x: 1608
-        y: 875
-        width: 3
-        height: 3
+        x: 301
+        y: 417
+        width: 304
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9981ee8f260e75f4f96f8119a52edc7a
-      internalID: 209736398
+      spriteID: 01d2560fdaa5e76e0800000000000000
+      internalID: -1837931894811579120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ending_door_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 736
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1169dfa8a0244a0800000000000000
+      internalID: -6610709710950231563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ending_door_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 480
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3816b0045c76430800000000000000
+      internalID: 3776203691432969130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ending_door_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 403
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3c6ae23a29ecb40800000000000000
+      internalID: 5462464627606995948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ending_door_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 282
+        width: 7
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3947d255ec39ee0800000000000000
+      internalID: -1255433005876079646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ending_door_shadow_5
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 252
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f98ff9c39557600800000000000000
+      internalID: 465376253419495266
       vertices: []
       indices: 
       edges: []
@@ -160,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b9bdadcdb6305c74a84a504c8ca88077
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -169,9 +272,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      6-_0: -4086431548864640535
-      MID_BROUCH_INV_H_0: 209736398
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

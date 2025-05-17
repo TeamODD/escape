@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 0921f16ed03b72f4bb774615157bbf5c
+guid: d6b68e5306716174680253ee44348602
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7218158178624494077
-    second: 5.15 flowerpot 1_0
+      213: -459178454184186197
+    second: zoomin(door)_1_0
+  - first:
+      213: 3075829036552849642
+    second: zoomin(door)_1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,40 +112,49 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 5.15 flowerpot 1_0
+      name: zoomin(door)_1_0
       rect:
         serializedVersion: 2
-        x: 246
-        y: 346
-        width: 1394
-        height: 721
+        x: 316
+        y: 348
+        width: 1276
+        height: 713
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df95e79be9c0c2460800000000000000
-      internalID: 7218158178624494077
+      spriteID: baea6d5f0aba0a9f0800000000000000
+      internalID: -459178454184186197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zoomin(door)_1_1
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1025
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae88099563a8faa20800000000000000
+      internalID: 3075829036552849642
       vertices: []
       indices: 
       edges: []
@@ -151,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3571293f4da2aa54d8d3a27427e6f098
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +172,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      5.15 flowerpot 1_0: 7218158178624494077
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

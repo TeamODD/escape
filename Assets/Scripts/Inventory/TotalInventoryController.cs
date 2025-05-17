@@ -23,7 +23,7 @@ public class TotalInventoryController : MonoBehaviour
     public GameObject itemForTest;
     public List<Inventory> inventorys=new List<Inventory>();
     public List<GameObject> canInsertObjects = new List<GameObject>();
-    private SoundControllerScript _soundControllerScript;
+    
     private bool _isInventoryFirst;
 
     private InvenAlarmScript _invenAlarm;
@@ -31,7 +31,7 @@ public class TotalInventoryController : MonoBehaviour
     void Start()
     {
         _initSetting();
-        _soundControllerScript = SoundControllerScript.Instance;
+      
         _invenAlarm = GetComponent<InvenAlarmScript>();
     }
 
@@ -95,12 +95,12 @@ public class TotalInventoryController : MonoBehaviour
             {
                 InvOpenButtonImage.sprite = InvOpenButtonImageSprite[3];
             }
-            
-            
-            
-            
-            
-            _soundControllerScript.StartEffectBgm(itemPickSFX);
+
+
+
+
+            SoundControllerScript.Instance.StartEffectBgm(itemPickSFX);
+          
             Item inputItem = new Item();
             GameObject dreamObject = mappingTable.GetInvenDreamIcon(input);
             GameObject realObject = mappingTable.GetInvenRealIcon(input);

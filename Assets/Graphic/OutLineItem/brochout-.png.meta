@@ -116,12 +116,12 @@ TextureImporter:
       name: brochout-_0
       rect:
         serializedVersion: 2
-        x: 1679
-        y: 277
-        width: 165
-        height: 166
+        x: 1689
+        y: 290
+        width: 147
+        height: 143
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6dc8fb38258056445a72e4141743e3da
     internalID: 0
     vertices: []
     indices: 

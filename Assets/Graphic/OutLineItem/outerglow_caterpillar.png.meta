@@ -142,12 +142,12 @@ TextureImporter:
       name: outerglow_caterpillar_0
       rect:
         serializedVersion: 2
-        x: 1655
-        y: 71
-        width: 189
-        height: 195
+        x: 1684
+        y: 99
+        width: 137
+        height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d2e24e189a8184542a8df9459ba5aafe
     internalID: 0
     vertices: []
     indices: 

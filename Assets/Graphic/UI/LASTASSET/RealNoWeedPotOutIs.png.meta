@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0921f16ed03b72f4bb774615157bbf5c
+guid: 60197d4c5090d2348a375964e244a72f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7218158178624494077
-    second: 5.15 flowerpot 1_0
+      213: -6569652096821610389
+    second: RealNoWeedPotOutIs_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 5.15 flowerpot 1_0
+      name: RealNoWeedPotOutIs_0
       rect:
         serializedVersion: 2
-        x: 246
-        y: 346
-        width: 1394
-        height: 721
+        x: 310
+        y: 347
+        width: 1277
+        height: 719
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df95e79be9c0c2460800000000000000
-      internalID: 7218158178624494077
+      spriteID: b683c07b938e3d4a0800000000000000
+      internalID: -6569652096821610389
       vertices: []
       indices: 
       edges: []
@@ -151,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3571293f4da2aa54d8d3a27427e6f098
+    spriteID: 2ebb28cab67a73d4a86bf7d2fee6a41f
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      5.15 flowerpot 1_0: 7218158178624494077
+      RealNoWeedPotOutIs_0: -6569652096821610389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

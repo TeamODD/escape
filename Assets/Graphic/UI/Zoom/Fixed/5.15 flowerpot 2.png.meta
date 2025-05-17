@@ -129,12 +129,12 @@ TextureImporter:
       name: 5.15 flowerpot 2_0
       rect:
         serializedVersion: 2
-        x: 309
+        x: 226
         y: 346
-        width: 1279
+        width: 1464
         height: 721
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c954eb6ba8c421b4ca016acd087bb913
     internalID: 0
     vertices: []
     indices: 

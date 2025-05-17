@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance{get; private set;}
     public TotalInventoryController totalInventoryController;
     private AudioClip _clickSFX;
-    
+    public GameObject Inventorycanvas;
     private bool _isZoomIn;
     private bool _isFirstChange;
     private bool _isLightOn;
@@ -62,11 +62,9 @@ public class GameManager : MonoBehaviour
 
     public void SwitchWorld()
     {
-        Debug.Log(_isZoomIn);
-        Debug.Log(isInvOpen);
-        Debug.Log(DialogueController.Instance.isUsed);
-        
-        if (!_isZoomIn&&!DialogueController.Instance.isUsed&&!isInvOpen)//줌인이 되어있지 않다면
+       
+        //&&!isInvOpen
+        if (!_isZoomIn&&!DialogueController.Instance.isUsed)//줌인이 되어있지 않다면
         {
             OnFade.Invoke();
         }
@@ -150,6 +148,8 @@ public class GameManager : MonoBehaviour
    
     public void LoadScene()
     {
+        Inventorycanvas.SetActive(false);
+        
         SceneManager.LoadScene(0);
     }
  

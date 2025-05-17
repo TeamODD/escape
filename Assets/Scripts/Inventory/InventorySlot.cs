@@ -65,7 +65,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void UseItem()  //아이템을 사용한다면 slot에서 일어나는함수 
     {
         
-        
+       
         //아이템 사용 상호작용 
         
         if (targetUseItem.name == "RealityPotImage")
@@ -90,6 +90,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _item = null;
         _icon.GetComponent<Image>().sprite = null;
         _icon.SetActive(false);
+        _targetHighlighter.OnHighlighter();
+        _buttonHighlighter.OnHighlighter();
         
     }
 
@@ -99,7 +101,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             
             _icon.GetComponent<Image>().sprite = _item.GetItemIcon(); // 현재 아이템의  아이콘을 가져와서 아이콘 에 저장 
-            
+            _icon.GetComponent<Image>().SetNativeSize();
         }
        
     }
