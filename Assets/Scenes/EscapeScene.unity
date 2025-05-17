@@ -13668,6 +13668,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 509160018}
     - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: DreamQuitButton
+      value: 
+      objectReference: {fileID: 1817370835}
+    - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: zoomInBackground
       value: 
       objectReference: {fileID: 1821153113}
@@ -13711,6 +13715,10 @@ PrefabInstance:
       propertyPath: 'ButtonUpDown.Array.data[1]'
       value: 
       objectReference: {fileID: 416777917}
+    - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: DreamQuitSprite.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: 'SelectButton.Array.data[0]'
       value: 
@@ -13759,6 +13767,14 @@ PrefabInstance:
       propertyPath: 'DialogueSprite.Array.data[1]'
       value: 
       objectReference: {fileID: 8192656925859728942, guid: 296a0ff42b7a7e044b0a76ffa9e7c719, type: 3}
+    - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: 'DreamQuitSprite.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7383997472477643981, guid: 5a8122c9ae754754ea48b78189c2cfc1, type: 3}
+    - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
+      propertyPath: 'DreamQuitSprite.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8614330122721001765, guid: 6396921f3660a497fa55f1dd805a6ec6, type: 3}
     - target: {fileID: 6004093956465692955, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: 'BackGroundSprite.Array.data[0]'
       value: 

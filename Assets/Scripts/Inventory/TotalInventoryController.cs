@@ -9,8 +9,10 @@ public class TotalInventoryController : MonoBehaviour
     public Image zoomInBackground;
     public Image dialogueBackground;
     public Image invBackground;
+    public Image DreamQuitButton;
     public List<GameObject> SelectButton;
     public List<GameObject> ButtonUpDown;
+    public List<Sprite> DreamQuitSprite;
     public List<Sprite> UpdownSprite;
     public List<Sprite> BackGroundSprite;
     public List<Sprite> DialogueSprite;
@@ -159,6 +161,7 @@ public class TotalInventoryController : MonoBehaviour
         //옵션창 스프라이트 변회
             if (status)
             {
+                DreamQuitButton.sprite = DreamQuitSprite[0];
                 InvOpenButtonImage.sprite = InvOpenButtonImageSprite[0];
                 buttonImage.sprite = buttonSprite[0];
                 zoomInBackground.sprite = ZoominSprite[0];
@@ -171,6 +174,7 @@ public class TotalInventoryController : MonoBehaviour
             }
             else
             {
+                DreamQuitButton.sprite = DreamQuitSprite[1];
                 InvOpenButtonImage.sprite = InvOpenButtonImageSprite[1];
                 buttonImage.sprite = buttonSprite[1];
                 zoomInBackground.sprite = ZoominSprite[1];
