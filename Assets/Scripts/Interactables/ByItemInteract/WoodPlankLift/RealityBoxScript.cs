@@ -42,7 +42,7 @@ public class RealityBoxScript : ClickHandler
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         SoundControllerScript.Instance.StartEffectBgm(openSFX);
         OneFlowPlus();
-        
+        Debug.Log("solve");
         _isCanGetKey = true;
     }
 

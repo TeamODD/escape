@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void ApplySwitch()
     {
-        OptionManager.Instance.ChangeSprites();
+        //OptionManager.Instance.ChangeSprites();
         FlowController.CheckSwitch();
         IsInDream = !IsInDream;
         _dreamObjects.SetActive(IsInDream);

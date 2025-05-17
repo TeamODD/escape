@@ -291,6 +291,7 @@ MonoBehaviour:
   floorSprite: {fileID: 1081733981236255232, guid: aa57b7b92be257a47924c0f6324d7660, type: 3}
   wallSprite: {fileID: -6209249647068224318, guid: d2e362ba7b57c8744bbd393f7178c652, type: 3}
   goalSprite: {fileID: -7766556133328041569, guid: 057bd641bfa05164294a6718d2f838cd, type: 3}
+  RealityBoxScript: {fileID: 0}
   redObejct: {fileID: 0}
   blueObejct: {fileID: 0}
   purpleObject: {fileID: 0}
@@ -619,8 +620,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8415563235517772237}
   - {fileID: 3683647279989672416}
+  - {fileID: 8415563235517772237}
   m_Father: {fileID: 418335394041551705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
