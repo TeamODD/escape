@@ -116,10 +116,10 @@ TextureImporter:
       name: "\u1112\u1167\u11AB\u1109\u1175\u11AF \u1106\u1161\u11AB\u1102\u1167\u11AB\u1111\u1175\u11AF(\u1100\u1161\u1107\u1161\u11BC_0"
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 864
-        width: 131
-        height: 143
+        x: 1690
+        y: 860
+        width: 139
+        height: 151
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

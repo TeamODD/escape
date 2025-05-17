@@ -185,7 +185,7 @@ public class SelectButtonController : MonoBehaviour
                     else //마신다 
                     {
                         //아무맛도나지~~
-                        DialogueController.Instance.PlayDialogue(dialogueDatas[3]);
+                        //DialogueController.Instance.PlayDialogue(dialogueDatas[3]);
                         realityBottleScript.PlayerSelectDrinkPoison();
                     }
                 } // 안마실거냐 
