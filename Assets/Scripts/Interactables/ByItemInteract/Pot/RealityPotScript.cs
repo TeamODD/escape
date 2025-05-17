@@ -14,9 +14,6 @@ public class RealityPotScript : ClickHandler
     private bool _isCanGetWarm;
     void Update()
     {
-       
-        
-        
         if (flowIdx == 1)
         {
             _timer += Time.deltaTime; // 프레임당 경과시간 누적
@@ -48,7 +45,6 @@ public class RealityPotScript : ClickHandler
         }
         else if (flowIdx == 1)
         {
-            
             DialogueController.Instance.OnCompleted.Invoke();
             //아무것도 없을~~
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
@@ -68,14 +64,11 @@ public class RealityPotScript : ClickHandler
             
         }
         
-        
-        
     }
 
     public void GetPoison()
     {
         //물병의 액체~
-        
         secondZoomTarget.ZoomRequset();
         _zoomTarget._selectButtonController.SwithchAllButtonStatus(false);
         
@@ -92,7 +85,6 @@ public class RealityPotScript : ClickHandler
     {
         if (_isRequestItem )
         {
-            flowIdx++;
             ZoomImage.OnHide();
             flowController.CheckGameObject(gameObject);
             _isRequestItem = false;
