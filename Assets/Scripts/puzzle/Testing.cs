@@ -17,7 +17,7 @@ public class Testing : MonoBehaviour
     public RealityBoxScript RealityBoxScript;
     private Vector2Int ballPosition;
     private bool isSelectingMove = false;
-    private int currentPatternIndex = 0;
+    
     
     private Vector2Int startBallPosition = new Vector2Int(0, 0);
     private int[][,] patterns;
@@ -28,10 +28,11 @@ public class Testing : MonoBehaviour
     public GameObject redObejct;
     public GameObject blueObejct;
     public GameObject purpleObject;
-    private int puzzleState = 0;
+    public int puzzleState = 0;
+    public int currentPatternIndex = 0;
     public void Start()
     {
-        grid = new Grid(4,4,1.5f, new Vector3(-3,-2),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
+        grid = new Grid(4,4,1.5f, new Vector3(-3,-1.8f),floorSprite,wallSprite,goalSprite);//위치 셀크기 위치 정하셈
         patterns = new int[][,]
         {
             new int[,] {
@@ -119,16 +120,7 @@ public class Testing : MonoBehaviour
         }
         
         //bool isInsideGrid = ballPosition.x >= 0 && ballPosition.x < 4 && ballPosition.y >= 0 && ballPosition.y < 4;
-        
-        // 공이 벽 위에 있는지 확인
-        if (pattern[ballPosition.y, ballPosition.x] == 2 && grid.IsVisualActive())
-        {
-            MoveBallToPosition(startBallPosition);
-        }
-        else
-        {
-            MoveBallToPosition(ballPosition);
-        }
+        MoveBallToPosition(ballPosition);
     }
 
     private void MoveBallToPosition(Vector2Int gridPos)
@@ -141,18 +133,18 @@ public class Testing : MonoBehaviour
         Vector3 worldPos = grid.GetWorldPosition(gridPos.x, gridPos.y) + new Vector3(grid.GetCellSize(), grid.GetCellSize())*0.5f;
         worldPos.z = -5f;
         ballObject.transform.DOMove(worldPos,0.3f).SetEase(Ease.InOutSine).Play();
-        if (grid.GetValue(gridPos.x, gridPos.y) == 3)
+        if (grid.GetValue(gridPos.x, gridPos.y) == 3)//막야 도착했다면
         {
-           
             RealityBoxScript.BoxSolve();
+            RealityBoxScript.GetKey();
         }
     }
 
     public void NextPattern()
     {
         currentPatternIndex = (currentPatternIndex + 1) % patterns.Length;
-        ApplyPattern(currentPatternIndex);
-        puzzleState = (puzzleState + 1) % 3;
+        puzzleState = puzzleState% 3;
+        ApplyPattern(puzzleState);
         switch (puzzleState)
         {
             case 0:
@@ -175,18 +167,18 @@ public class Testing : MonoBehaviour
 
     public void SwitchGridStatus(bool input)
     {
-        if (grid != null)
+        if (grid == null) return;
+        
+        if (!input)
         {
-            if (!input)
-            {
-                grid.HideGridVisuals();
-            }
-            else
-            {
-                grid.ShowGridVisuals();
-            }
+            grid.HideGridVisuals();
         }
-        
-        
+        else {
+            if (patterns[currentPatternIndex][ballPosition.y, ballPosition.x] == 2)
+            {
+                MoveBallToPosition(startBallPosition);
+            }
+            grid.ShowGridVisuals();
+        }
     }
 }
