@@ -9,6 +9,8 @@ public class RealityBoxScript : ClickHandler
     public DreamButtonScript DreamButtonScript;
     [field:SerializeField] public UnityEvent OnCompletePuzzle { get; private set; }
     private bool _isCanGetKey;
+    
+    private bool _isRequestItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void DoToWork()
     {

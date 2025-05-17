@@ -12,13 +12,6 @@ public class WoodPlankLiftedScript : ClickHandler
         if (flowIdx <= 3)
         {
             SoundControllerScript.Instance.StartEffectBgm(shakeSFX);
-           
-            
-            
-            
-            
-            
-            
             
             flowIdx++;
             
