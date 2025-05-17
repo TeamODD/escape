@@ -19,7 +19,7 @@ public class FlowController : MonoBehaviour
     private bool _isGetEnd;
     [field:SerializeField] public UnityEvent OnHiddenStart { get; private set; }
     [field:SerializeField] public UnityEvent OnBedStart { get; private set; }
-    
+    [field:SerializeField] public UnityEvent OnGameStart { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +27,10 @@ public class FlowController : MonoBehaviour
         _gameSwitchCount = 0;
         _currentSelectObject = null;
         _previousObject = null;
+        
+        OnGameStart.Invoke();
+        
+        
     }
     
     // Update is called once per frame

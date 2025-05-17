@@ -10,6 +10,7 @@ public class RealityBottleScript : ClickHandler
     public DreamBolttleScript DreamBolttleScript;
     public bool isDrink=false;
     public bool isSelectEatOrGet = false;
+    public bool isPlayerDeath;
     public override void DoToWork()
     {
         if (flowIdx == 0)
@@ -47,12 +48,29 @@ public class RealityBottleScript : ClickHandler
         //죽음 엔딩 처리 
         _isGetEnd = true;
        
+      
         OnFade.Invoke();
         flowIdx++;
         ChangeSprite(flowIdx);
         CheckFlowIsFinish();
     }
 
+    public void PlayerDie()
+    {
+        GameManager.Instance.Inventorycanvas.SetActive(false);
+        DialogueController.Instance.PlayDialogue(dialogueData[3]);
+        isPlayerDeath = true;
+    }
+
+    public void GotoLobby()
+    {
+        if (isPlayerDeath)
+        {
+            isPlayerDeath = false;
+            GameManager.Instance.LoadScene();
+        }
+    }
+    
     public void PlayerSelectGetBottle()
     {
         dreamDrawer.OneFlowPlus();
@@ -68,7 +86,7 @@ public class RealityBottleScript : ClickHandler
         RequestZoom();
     
         //아무래도 해골마크..
-        GameManager.Instance.Inventorycanvas.SetActive(false);
+        
         DialogueController.Instance.PlayDialogue(dialogueData[2]);//자막이 꺼지기 전에 다시 시작해서 appyl button  안됨
         DialogueController.Instance.applyButtonOn(1);
     }
