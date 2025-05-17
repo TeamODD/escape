@@ -3,6 +3,8 @@ namespace Assets.Scripts.Escape
     using UnityEngine;
     using Sirenix.OdinInspector;
     using System.Collections.Generic;
+    using Assets.Scripts.UI.Options;
+    using UnityEngine.Events;
 
     public class SceneManager : SerializedMonoBehaviour, ISceneStateHandler
     {
@@ -37,6 +39,10 @@ namespace Assets.Scripts.Escape
             else
             {
                 State = SceneState.Reality;
+            }
+            if (OptionManager.Instance != null)
+            {
+                OptionManager.Instance.ChangeSprites();
             }
         }
     }        
