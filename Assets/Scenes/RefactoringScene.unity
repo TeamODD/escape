@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 12086403}
   - component: {fileID: 12086402}
   m_Layer: 5
-  m_Name: Item Data (4)
+  m_Name: ' '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,9 +228,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: 
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 12086402}
   <Sprite>k__BackingField: {fileID: 0}
+  <MappingItemData>k__BackingField: {fileID: 0}
 --- !u!1 &15866770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1478,7 @@ GameObject:
   - component: {fileID: 204406221}
   - component: {fileID: 204406220}
   m_Layer: 5
-  m_Name: Item Data (4)
+  m_Name: "\uB098\uBE44 \uB0A0\uAC1C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1575,9 +1576,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uB098\uBE44 \uB0A0\uAC1C"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 204406220}
   <Sprite>k__BackingField: {fileID: 5736536807774500219, guid: e4e62a08406cdd04b9868aac6b05f6de, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1874560109}
 --- !u!1 &207158703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,6 +3497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348571494}
   - component: {fileID: 348571495}
+  - component: {fileID: 348571496}
   m_Layer: 5
   m_Name: Inventory Manager
   m_TagString: Untagged
@@ -3576,8 +3579,49 @@ MonoBehaviour:
   - {fileID: 527248212}
   - {fileID: 2086108226}
   - {fileID: 173967272}
+  _pageIndex: 0
   _prevPageButton: {fileID: 926250625}
   _nextPageButton: {fileID: 1329757081}
+--- !u!114 &348571496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348571493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a10234295b944b9c9315c268ce2cfad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <OnAwakeEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnStartEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 348571495}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Inventory.InventoryManager,
+          Assembly-CSharp
+        m_MethodName: SetItemSlots
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnEnableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDisableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDestroyEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &351728805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4347,7 @@ GameObject:
   - component: {fileID: 502437776}
   - component: {fileID: 502437775}
   m_Layer: 5
-  m_Name: Item Data (1)
+  m_Name: "\uBD80\uC11C\uC9C4 \uB9AC\uBCF8 \uBA38\uB9AC\uD540"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4400,9 +4444,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uBD80\uC11C\uC9C4 \uB9AC\uBCF8 \uBA38\uB9AC\uD540"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 502437775}
   <Sprite>k__BackingField: {fileID: 379855233435666825, guid: 2eaa7db6beae0d84da1c41b7c998510b, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1841896676}
 --- !u!1 &508313887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,7 +4932,7 @@ GameObject:
   - component: {fileID: 607231902}
   - component: {fileID: 607231901}
   m_Layer: 5
-  m_Name: Item Data (2)
+  m_Name: "\uD3B8\uC9C0\uCE7C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4985,9 +5030,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uD3B8\uC9C0\uCE7C"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 607231901}
   <Sprite>k__BackingField: {fileID: -3647958020439767616, guid: 1583afeaaae35434bb1f9c4d877e460f, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1450696490}
 --- !u!1 &628686826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5668,7 +5714,7 @@ GameObject:
   - component: {fileID: 690345661}
   - component: {fileID: 690345660}
   m_Layer: 5
-  m_Name: Item Data (3)
+  m_Name: "\uAF43\uC78E"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5765,9 +5811,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uAF43\uC78E"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 690345660}
   <Sprite>k__BackingField: {fileID: -6470460504253458178, guid: 0bf69a4bb7b4ece45a81ecf6aab67eac, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1015975746}
 --- !u!1 &692124381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6041,7 +6088,7 @@ GameObject:
   - component: {fileID: 743734467}
   - component: {fileID: 743734466}
   m_Layer: 5
-  m_Name: Item Data (0)
+  m_Name: "\uBB3C\uBCD1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6138,9 +6185,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uBB3C\uBCD1"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 743734466}
   <Sprite>k__BackingField: {fileID: 1813101010730345904, guid: 5f542e7c9f0816a438153b8b7040b70e, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1456301014}
 --- !u!1 &746419204
 GameObject:
   m_ObjectHideFlags: 0
@@ -8381,7 +8429,7 @@ GameObject:
   - component: {fileID: 1015975746}
   - component: {fileID: 1015975745}
   m_Layer: 5
-  m_Name: Item Data (3)
+  m_Name: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C 3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8477,10 +8525,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C4"
-  <IsAcquired>k__BackingField: 0
+  <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C3"
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1015975745}
   <Sprite>k__BackingField: {fileID: 7028616704906629411, guid: 375f88b8a83189c4aad3ce5cc7a41e82, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 690345661}
 --- !u!1 &1018700139
 GameObject:
   m_ObjectHideFlags: 0
@@ -10215,7 +10264,7 @@ GameObject:
   - component: {fileID: 1332145374}
   - component: {fileID: 1332145373}
   m_Layer: 5
-  m_Name: Item Data (4)
+  m_Name: ' '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10312,9 +10361,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: 
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1332145373}
   <Sprite>k__BackingField: {fileID: 0}
+  <MappingItemData>k__BackingField: {fileID: 0}
 --- !u!1 &1334117307
 GameObject:
   m_ObjectHideFlags: 0
@@ -10409,6 +10459,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1337833334}
   - component: {fileID: 1337833335}
+  - component: {fileID: 1337833337}
+  - component: {fileID: 1337833336}
   m_Layer: 0
   m_Name: Reality Fountainpen
   m_TagString: Untagged
@@ -10486,6 +10538,114 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1337833336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337833333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 348571495}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Inventory.InventoryManager,
+            Assembly-CSharp
+          m_MethodName: AcquireItem
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1450696490}
+            m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Inventory.ItemData,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1337833333}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!60 &1337833337
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337833333}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 0.55}
+    newSize: {x: 1.01, y: 0.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.475, y: -0.145}
+      - {x: 0.445, y: -0.074999996}
+      - {x: 0.185, y: -0.065}
+      - {x: 0.265, y: 0.035}
+      - {x: 0.125, y: 0.13499999}
+      - {x: -0.145, y: 0.275}
+      - {x: -0.205, y: 0.275}
+      - {x: -0.375, y: 0.225}
+      - {x: -0.465, y: 0.205}
+      - {x: -0.505, y: 0.16499999}
+      - {x: -0.505, y: 0.114999995}
+      - {x: -0.345, y: -0.105}
+      - {x: -0.185, y: -0.265}
+      - {x: -0.125, y: -0.265}
+      - {x: -0.015, y: -0.24499999}
+      - {x: 0.125, y: -0.21499999}
+      - {x: 0.445, y: -0.225}
+      - {x: 0.475, y: -0.21499999}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1346045672
 GameObject:
   m_ObjectHideFlags: 0
@@ -11338,7 +11498,7 @@ GameObject:
   - component: {fileID: 1450696490}
   - component: {fileID: 1450696489}
   m_Layer: 5
-  m_Name: Item Data (2)
+  m_Name: "\uB9CC\uB144\uD544"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11435,9 +11595,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uB9CC\uB144\uD544"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1450696489}
   <Sprite>k__BackingField: {fileID: -4574756606761463453, guid: c8a7f2981a87ec343ad8da47fd630065, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 607231902}
 --- !u!1 &1453341515
 GameObject:
   m_ObjectHideFlags: 0
@@ -11529,7 +11690,7 @@ GameObject:
   - component: {fileID: 1456301014}
   - component: {fileID: 1456301015}
   m_Layer: 5
-  m_Name: Item Data (0)
+  m_Name: "\uC6A9\uC561"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11576,9 +11737,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uC6A9\uC561"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1456301015}
   <Sprite>k__BackingField: {fileID: 4824826650516306740, guid: 22c05ebbe16b57c48b5dd06812af6a49, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 743734467}
 --- !u!114 &1456301015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11795,7 +11957,7 @@ GameObject:
   - component: {fileID: 1480031432}
   - component: {fileID: 1480031431}
   m_Layer: 5
-  m_Name: Item Data (3)
+  m_Name: ' '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11892,9 +12054,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: 
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1480031431}
   <Sprite>k__BackingField: {fileID: 0}
+  <MappingItemData>k__BackingField: {fileID: 0}
 --- !u!1 &1492224623
 GameObject:
   m_ObjectHideFlags: 0
@@ -12168,7 +12331,7 @@ GameObject:
   - component: {fileID: 1506413400}
   - component: {fileID: 1506413399}
   m_Layer: 5
-  m_Name: Item Data (1)
+  m_Name: "\uC560\uBC8C\uB808"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12265,9 +12428,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uC560\uBC8C\uB808"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1506413399}
   <Sprite>k__BackingField: {fileID: -1518430952910558801, guid: 0d0d6ac2377aa5644ac970219aae49a8, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1867235784}
 --- !u!1 &1523050364
 GameObject:
   m_ObjectHideFlags: 0
@@ -12413,7 +12577,7 @@ GameObject:
   - component: {fileID: 1554569270}
   - component: {fileID: 1554569269}
   m_Layer: 5
-  m_Name: Item Data (2)
+  m_Name: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uBAB8\uD1B5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12510,9 +12674,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uBAB8\uD1B5"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1554569269}
   <Sprite>k__BackingField: {fileID: 3465286685962602723, guid: 995f72d914f2a3e49b080701e76c2de6, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1709482776}
 --- !u!1 &1559927054
 GameObject:
   m_ObjectHideFlags: 0
@@ -12718,7 +12883,7 @@ GameObject:
   - component: {fileID: 1591893481}
   - component: {fileID: 1591893480}
   m_Layer: 5
-  m_Name: Item Data (0)
+  m_Name: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C 1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12816,9 +12981,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C 1"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1591893480}
   <Sprite>k__BackingField: {fileID: 4113829005332862926, guid: decb2ba6cc1529248b9b92f135f8d691, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1724512599}
 --- !u!1 &1598219757
 GameObject:
   m_ObjectHideFlags: 0
@@ -13584,7 +13750,7 @@ GameObject:
   - component: {fileID: 1709482776}
   - component: {fileID: 1709482775}
   m_Layer: 5
-  m_Name: Item Data (2)
+  m_Name: "\uB098\uC0AC\uBABB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13681,9 +13847,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uB098\uC0AC\uBABB"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1709482775}
   <Sprite>k__BackingField: {fileID: 6937817954938267909, guid: bfc4051ddb737c54fbdfe262d9202748, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1554569270}
 --- !u!224 &1721005975 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1934291277364037089, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
@@ -13712,7 +13879,7 @@ GameObject:
   - component: {fileID: 1724512599}
   - component: {fileID: 1724512598}
   m_Layer: 5
-  m_Name: Item Data (0)
+  m_Name: "\uC720\uB9AC\uC870\uAC01"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13809,9 +13976,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uC720\uB9AC\uC870\uAC01"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1724512598}
   <Sprite>k__BackingField: {fileID: -855298285791758126, guid: b843c9309c4fdb445afb86096bef2024, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1591893481}
 --- !u!1 &1728278507
 GameObject:
   m_ObjectHideFlags: 0
@@ -13824,7 +13992,7 @@ GameObject:
   - component: {fileID: 1728278510}
   - component: {fileID: 1728278509}
   m_Layer: 5
-  m_Name: Item Data (3)
+  m_Name: ' '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13921,9 +14089,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: 
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1728278509}
   <Sprite>k__BackingField: {fileID: 0}
+  <MappingItemData>k__BackingField: {fileID: 0}
 --- !u!1 &1742117265
 GameObject:
   m_ObjectHideFlags: 0
@@ -15267,7 +15436,7 @@ GameObject:
   - component: {fileID: 1841896676}
   - component: {fileID: 1841896675}
   m_Layer: 5
-  m_Name: Item Data (1)
+  m_Name: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15364,9 +15533,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C2"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1841896675}
   <Sprite>k__BackingField: {fileID: -5099292496197868168, guid: c4ed9f533d94c0342ae356bd0a7120e3, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 502437776}
 --- !u!1 &1842250748
 GameObject:
   m_ObjectHideFlags: 0
@@ -15604,7 +15774,7 @@ GameObject:
   - component: {fileID: 1867235784}
   - component: {fileID: 1867235783}
   m_Layer: 5
-  m_Name: Item Data (1)
+  m_Name: "\uC560\uBC8C\uB808 \uC824\uB9AC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15703,9 +15873,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Name>k__BackingField: "\uC560\uBC8C\uB808 \uC824\uB9AC"
-  <IsAcquired>k__BackingField: 0
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1867235783}
   <Sprite>k__BackingField: {fileID: 6745137483145456397, guid: 5baaefd078fef224ba8352689323f0fb, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 1506413400}
 --- !u!1 &1874560106
 GameObject:
   m_ObjectHideFlags: 0
@@ -15718,7 +15889,7 @@ GameObject:
   - component: {fileID: 1874560109}
   - component: {fileID: 1874560108}
   m_Layer: 5
-  m_Name: Item Data (4)
+  m_Name: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C 4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15814,10 +15985,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C3"
-  <IsAcquired>k__BackingField: 0
+  <Name>k__BackingField: "\uB098\uBE44 \uBE0C\uB85C\uCE58 \uB0A0\uAC1C4"
+  _isAcquired: 0
   <Description>k__BackingField: {fileID: 1874560108}
   <Sprite>k__BackingField: {fileID: 8288426215254106694, guid: 824f76d143075fa4686a94084e39a45d, type: 3}
+  <MappingItemData>k__BackingField: {fileID: 204406221}
 --- !u!1 &1919043425
 GameObject:
   m_ObjectHideFlags: 0
