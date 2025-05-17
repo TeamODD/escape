@@ -7,6 +7,7 @@ namespace Assets.Scripts.Escape.Choices
     public class ChoiceData : SerializedMonoBehaviour
     {
         [field: SerializeField] public UnityEvent OnCofirmed { get; private set; }
+        [field: SerializeField] public UnityEvent OnCancled { get; private set; }
         [field: SerializeField] public string ConfirmChoice { get; private set; }
         [field: SerializeField] public string CancelChoice { get; private set; }
     }

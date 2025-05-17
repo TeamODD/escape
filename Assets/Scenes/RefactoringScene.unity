@@ -3380,7 +3380,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   <Loop>k__BackingField: 0
-  _applyInitialValue: 1
+  _applyInitialValue: 0
   _initialValue: 0
   _endValue: 1
   _duration: 0.25
@@ -6550,7 +6550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &830145029
 Transform:
   m_ObjectHideFlags: 0
@@ -9504,7 +9504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1201521207
 Transform:
   m_ObjectHideFlags: 0
@@ -9563,7 +9563,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -7037024373877833590, guid: 15af4a300b762eb48b6604c12691ffe0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9802,6 +9802,18 @@ MonoBehaviour:
       - m_Target: {fileID: 346722028}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
         m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842250750}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Choices.ChoiceManager, Assembly-CSharp
+        m_MethodName: OnCancle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10949,6 +10961,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1363350452}
   - component: {fileID: 1363350453}
+  - component: {fileID: 1363350454}
+  - component: {fileID: 1363350458}
+  - component: {fileID: 1363350459}
+  - component: {fileID: 1363350455}
+  - component: {fileID: 1363350457}
+  - component: {fileID: 1363350456}
   m_Layer: 0
   m_Name: Dream Bottle
   m_TagString: Untagged
@@ -11026,6 +11044,314 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1363350454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363350451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1842250750}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Choices.ChoiceManager, Assembly-CSharp
+        m_MethodName: ApplyChoiceData
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1363350455}
+          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Choices.ChoiceData,
+            Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uB0B4 \uBC29\uC758 \uBCD1\uC740 \uBE44\uC5B4 \uC788\uB294\uB370 \uC5EC\uAE30\uC120
+    \uAC00\uB4DD \uCC28\uC788\uB2E4.         \\n\uCC38\u2026 \uBB18\uD55C \uC0C9\uC758
+    \uC561\uCCB4\uB2E4 \uB9C8\uCE58 \uBE68\uB824\uB4E4 \uAC83\uB9CC \uAC19\uC740\u2026"
+  - "\uB2EC\uCF64\uD55C \uB9DB\uC774 \uB0A0 \uAC83\uB9CC \uAC19\uB2E4...                     
+    \\n\uB9C8\uC154\uBCFC\uAE4C?"
+--- !u!114 &1363350455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363350451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e327bffb4246476d939c76ab4b196c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCofirmed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1201521206}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1363350451}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 922794499}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueController,
+          Assembly-CSharp
+        m_MethodName: PlayDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1363350458}
+          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueData,
+            Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnCancled>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 922794499}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueController,
+          Assembly-CSharp
+        m_MethodName: PlayDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1363350459}
+          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueData,
+            Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <ConfirmChoice>k__BackingField: "\uB9C8\uC2E0\uB2E4"
+  <CancelChoice>k__BackingField: "\uC548 \uB9C8\uC2E0\uB2E4"
+--- !u!114 &1363350456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363350451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 922794499}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueController,
+            Assembly-CSharp
+          m_MethodName: PlayDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1363350454}
+            m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueData,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!60 &1363350457
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363350451}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.08, y: 1.22}
+    newSize: {x: 1.08, y: 1.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.35, y: -0.19999999}
+      - {x: 0.38, y: -0.089999996}
+      - {x: 0.38, y: -0.01}
+      - {x: 0.35999998, y: 0.089999996}
+      - {x: 0.32, y: 0.26}
+      - {x: 0.29999998, y: 0.37}
+      - {x: 0.28, y: 0.5}
+      - {x: 0.089999996, y: 0.59999996}
+      - {x: 0.01, y: 0.61}
+      - {x: -0.16, y: 0.61}
+      - {x: -0.31, y: 0.59999996}
+      - {x: -0.41, y: 0.56}
+      - {x: -0.53999996, y: 0.42}
+      - {x: -0.53999996, y: 0.35}
+      - {x: -0.53, y: 0.31}
+      - {x: -0.53, y: 0.19999999}
+      - {x: -0.53999996, y: 0.16}
+      - {x: -0.53999996, y: 0.01}
+      - {x: -0.52, y: -0.04}
+      - {x: -0.52, y: -0.17}
+      - {x: -0.38, y: -0.48999998}
+      - {x: -0.22, y: -0.59}
+      - {x: -0.099999994, y: -0.59}
+      - {x: 0.08, y: -0.57}
+      - {x: 0.14999999, y: -0.53999996}
+      - {x: 0.25, y: -0.47}
+      - {x: 0.31, y: -0.34}
+  m_UseDelaunayMesh: 0
+--- !u!114 &1363350458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363350451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 346722028}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uB9C8\uCE58 \uAFC8\uC744 \uB9C8\uC2DC\uB294 \uB4EF\uD55C \uB290\uB08C\uC774\uB2E4.\\n\uC74C?
+    \uC774\uAC8C \uBB50\uC9C0?"
+  - "-\uBCD1 \uBC11\uBC14\uB2E5\uC5D0 \uB098\uBE44 \uBE0C\uB85C\uCE58 \uC870\uAC01\uC774
+    \uBC18\uC9DD\uC778\uB2E4.-"
+--- !u!114 &1363350459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363350451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 346722028}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uC74C\u2026 \uC5ED\uC2DC \uBA39\uAE34 \uAEBC\uB824\uC9C0\uB294\uAC78"
 --- !u!1 &1369642969
 GameObject:
   m_ObjectHideFlags: 0
@@ -12566,7 +12892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1541581682
 Transform:
   m_ObjectHideFlags: 0
@@ -12841,21 +13167,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 628686828}
-        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
-        m_MethodName: PlayAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 628686828}
-        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
-        m_MethodName: PlayAnimation
+      - m_Target: {fileID: 1842250750}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Choices.ChoiceManager, Assembly-CSharp
+        m_MethodName: OnConfirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
