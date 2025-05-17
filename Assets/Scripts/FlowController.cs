@@ -59,12 +59,14 @@ public class FlowController : MonoBehaviour
     
     public void StartHiddenEnding()
     {
+        GameManager.Instance.Inventorycanvas.SetActive(false);
         DialogueController.Instance.PlayDialogue(DialogueDatas[0]);
         EndingScript.Instance.RequsetEnding(0);
         _isGetEnd = true;
     }
     public void StartBedEnding()
     {
+        GameManager.Instance.Inventorycanvas.SetActive(false);
         DialogueController.Instance.PlayDialogue(DialogueDatas[1]);
         EndingScript.Instance.RequsetEnding(1);
         _isGetEnd = true;

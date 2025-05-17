@@ -68,7 +68,7 @@ public class RealityBottleScript : ClickHandler
         RequestZoom();
     
         //아무래도 해골마크..
-        
+        GameManager.Instance.Inventorycanvas.SetActive(false);
         DialogueController.Instance.PlayDialogue(dialogueData[2]);//자막이 꺼지기 전에 다시 시작해서 appyl button  안됨
         DialogueController.Instance.applyButtonOn(1);
     }

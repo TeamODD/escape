@@ -31,6 +31,7 @@ public class RealiryDoorScript : ClickHandler
     }
     public void EndingStart()
     {
+        GameManager.Instance.Inventorycanvas.SetActive(false);
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         EndingScript.Instance.RequsetEnding(3);
         _isGetEnd = true;

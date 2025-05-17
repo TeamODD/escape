@@ -62,6 +62,7 @@ public class DreamDoorScript : ClickHandler
 
     public void Ending()
     {
+        GameManager.Instance.Inventorycanvas.SetActive(false);
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         EndingScript.Instance.RequsetEnding(2);
         _isGetEnd = true;

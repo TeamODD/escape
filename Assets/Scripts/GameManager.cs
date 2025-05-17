@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
    
     public void LoadScene()
     {
-        Inventorycanvas.SetActive(false);
+        
         
         SceneManager.LoadScene(0);
     }

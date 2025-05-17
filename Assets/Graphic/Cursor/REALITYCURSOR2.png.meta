@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a1f3bf21e2e98c042921f03f8e169dcd
+guid: 0eeba090e5c50a046b242f7b499fdcb8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6470460504253458178
-    second: 3_0
+      213: 4146597717618131144
+    second: REALITYCURSOR2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_0
+      name: REALITYCURSOR2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 26
-        height: 35
+        y: 6
+        width: 40
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef817ce047e4436a0800000000000000
-      internalID: -6470460504253458178
+      spriteID: 8c0031197acab8930800000000000000
+      internalID: 4146597717618131144
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_0: -6470460504253458178
+      REALITYCURSOR2_0: 4146597717618131144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
