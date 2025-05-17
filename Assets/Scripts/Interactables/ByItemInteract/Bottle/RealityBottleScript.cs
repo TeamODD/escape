@@ -21,9 +21,19 @@ public class RealityBottleScript : ClickHandler
         else if (flowIdx == 1) //물이 채워진 상태에서 
         {
             //뭐지? 분명~~
-            DialogueController.Instance.PlayDialogue(dialogueData[1]);
-            DialogueController.Instance.applyButtonOn(4);
-            _zoomTarget.ZoomRequset();
+            if (isSelectEatOrGet)
+            {
+                DialogueController.Instance.PlayDialogue(dialogueData[4]);
+                DialogueController.Instance.applyDialogueOn();
+                _zoomTarget.ZoomRequset();
+                _zoomTarget._selectButtonController.SwithchAllButtonStatus(true);
+            }
+            else
+            {
+                DialogueController.Instance.PlayDialogue(dialogueData[1]);
+                DialogueController.Instance.applyButtonOn(4);
+                _zoomTarget.ZoomRequset();
+            }
             
             
         }

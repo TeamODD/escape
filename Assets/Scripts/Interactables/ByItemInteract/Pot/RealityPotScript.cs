@@ -12,6 +12,7 @@ public class RealityPotScript : ClickHandler
     private float _timer = 0f;
     private bool _isRequestItem;
     private bool _isCanGetWarm;
+    private bool crowbool = true;
     void Update()
     {
         if (flowIdx == 1)
@@ -83,13 +84,13 @@ public class RealityPotScript : ClickHandler
     
     public void GetWarm()
     {
-        if (_isRequestItem )
+        if (_isRequestItem && crowbool)
         {
             ZoomImage.OnHide();
             flowController.CheckGameObject(gameObject);
+            crowbool = false;
             _isRequestItem = false;
         }
-        
     }
 
     public void CanGetWarm()

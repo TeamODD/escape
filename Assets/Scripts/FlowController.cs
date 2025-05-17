@@ -85,8 +85,6 @@ public class FlowController : MonoBehaviour
         inventory.CheckCanInsertObject(_currentSelectObject);
         
             _flowIndex++; 
-            
-          
         
         
     }

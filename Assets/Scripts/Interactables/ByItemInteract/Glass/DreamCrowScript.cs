@@ -33,7 +33,6 @@ public class DreamCrowScropt : ClickHandler
             //아무것도
             DialogueController.Instance.PlayDialogue(dialogueData[1]);
         }
-
     }
 
     public void GetWarm()

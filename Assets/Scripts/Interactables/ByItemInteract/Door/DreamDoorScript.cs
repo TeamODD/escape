@@ -17,7 +17,6 @@ public class DreamDoorScript : ClickHandler
     [field:SerializeField] public UnityEvent OnFade { get; private set; }
     public override void DoToWork()
     {
-       
         if (flowIdx==1)
         {
             flowIdx++;
@@ -25,8 +24,6 @@ public class DreamDoorScript : ClickHandler
         }
         else if (TotalInventoryController.CheckAllBrouchGet())
         {
-            
-            
             //굳게 닫혀~~
             DialogueController.Instance.PlayDialogue(dialogueData[0]);
             DialogueController.Instance.applyDialogueOn();
