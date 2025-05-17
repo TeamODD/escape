@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a994c4e2-9bfe-45c6-b5db-3d552485d314" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/DreamCursor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/DreamCursor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/RealCursor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/RealCursor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MouseCursor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MouseCursor/CursorManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MouseCursor/CursorManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EscapeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EscapeScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

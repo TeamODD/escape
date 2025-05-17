@@ -82,8 +82,8 @@ public class GameManager : MonoBehaviour
         _switchMusic();
         if (isLightOn)
         {
-            DialogueController.Instance.PlayDialogue(lightOnDialogue);
-            lighControlScript.LightOn();
+            //DialogueController.Instance.PlayDialogue(lightOnDialogue);
+            lighControlScript.islighton=true;
             isLightOn = false;
           
             setLight();
@@ -150,8 +150,8 @@ public class GameManager : MonoBehaviour
     public void LoadScene()
     {
         
-        
         SceneManager.LoadScene(0);
+        
     }
  
 }
