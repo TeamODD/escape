@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a994c4e2-9bfe-45c6-b5db-3d552485d314" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/DreamCursor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/DreamCursor.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/RealCursor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphic/Cursor/RealCursor.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MouseCursor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MouseCursor/CursorManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MouseCursor/CursorManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EscapeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EscapeScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2wj7th2or4W0b91VPOJxfwvHIX5" />
   <component name="ProjectViewState">

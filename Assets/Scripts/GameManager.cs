@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        CursorManager.Instance.ChangeCursor(IsInDream);
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
         
@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
     {
         //OptionManager.Instance.ChangeSprites();
         FlowController.CheckSwitch();
+        CursorManager.Instance.ChangeCursor(IsInDream);
         IsInDream = !IsInDream;
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
