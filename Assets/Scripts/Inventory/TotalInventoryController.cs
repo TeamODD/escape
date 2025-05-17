@@ -193,6 +193,7 @@ public class TotalInventoryController : MonoBehaviour
         if (GameManager.Instance.IsInDream)
         {
             InvOpenButtonImage.sprite = InvOpenButtonImageSprite[0];
+            
         }
         else
         {
