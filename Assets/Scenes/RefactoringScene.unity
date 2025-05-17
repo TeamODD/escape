@@ -1360,6 +1360,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172541770}
     m_Modifications:
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 1861169909}
     - target: {fileID: 1218500452446639201, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
       propertyPath: m_Name
       value: Item Slot (4)
@@ -1596,7 +1600,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 207158704}
-  - component: {fileID: 207158705}
   - component: {fileID: 207158706}
   - component: {fileID: 207158707}
   m_Layer: 5
@@ -1626,20 +1629,6 @@ RectTransform:
   m_AnchoredPosition: {x: -160, y: -40}
   m_SizeDelta: {x: 250, y: 1000}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &207158705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207158703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
-  m_Softness: {x: 0, y: 0}
 --- !u!114 &207158706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,6 +3992,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &374140556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+  m_PrefabInstance: {fileID: 527248210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64669aa02550482794adffe946d68f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &374467969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,8 +4300,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1795350941}
-  - {fileID: 679547566}
   - {fileID: 1742117266}
+  - {fileID: 679547566}
   - {fileID: 1193452114}
   m_Father: {fileID: 1541581682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4732,6 +4732,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172541770}
     m_Modifications:
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 1861169909}
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: <OnEndDragEvent>k__BackingField.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: <OnEndDragEvent>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: <OnEndDragEvent>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 374140556}
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: <OnEndDragEvent>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1218500452446639201, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
       propertyPath: m_Name
       value: Item Slot (2)
@@ -8982,7 +9002,7 @@ GameObject:
   - component: {fileID: 1016449729}
   m_Layer: 5
   m_Name: Zoom Image
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16504,6 +16524,8 @@ GameObject:
   - component: {fileID: 1795350944}
   - component: {fileID: 1795350943}
   - component: {fileID: 1795350945}
+  - component: {fileID: 1795350946}
+  - component: {fileID: 1795350947}
   m_Layer: 0
   m_Name: Reality Weed
   m_TagString: Untagged
@@ -16768,6 +16790,132 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1284541929}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
+          m_MethodName: SetObjectData
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1795350946}
+            m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Zoom.ObjectData,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &1795350946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795350940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e0e4b67f63c42aab3f6865f1bbd530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnItemUsed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <ItemData>k__BackingField: {fileID: 1456301014}
+--- !u!114 &1795350947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795350940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1795350940}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1742117265}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 346722028}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1284541929}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
+        m_MethodName: DeactivateZoomImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uBB3C\uBCD1\uC758 \uC561\uCCB4\uB97C \uD654\uBD84\uC5D0 \uBD80\uC5B4\uB123\uC790
+    \uC7A1\uCD08\uAC00 \uB179\uB4EF\uC774 \uC0AC\uB77C\uC9C4\uB2E4.\\n\uC7A1\uCD08\uAC00
+    \uC0AC\uB77C\uC838 \uC5B4\uB518\uAC00 \uD711\uD55C \uD654\uBD84\uB9CC \uB0A8\uC558\uB2E4. "
 --- !u!1 &1814065327
 GameObject:
   m_ObjectHideFlags: 0
@@ -16950,6 +17098,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172541770}
     m_Modifications:
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 1861169909}
     - target: {fileID: 1218500452446639201, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
       propertyPath: m_Name
       value: Item Slot (1)
@@ -18888,6 +19040,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172541770}
     m_Modifications:
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 1861169909}
     - target: {fileID: 1218500452446639201, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
       propertyPath: m_Name
       value: Item Slot (3)
@@ -19132,6 +19288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1172541770}
     m_Modifications:
+    - target: {fileID: 8008349785453487, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 1861169909}
     - target: {fileID: 1218500452446639201, guid: 376ecd23c5021456d91304eea7b7b9ce, type: 3}
       propertyPath: m_Name
       value: Item Slot (0)
