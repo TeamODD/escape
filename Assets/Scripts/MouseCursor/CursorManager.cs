@@ -21,6 +21,7 @@ public class CursorManager : MonoBehaviour
     
     public void ChangeCursor(bool status)
     {
+        
         if (status) //꿈
         {
             Cursor.SetCursor(cursorTextures[0], new Vector2(4, 4), CursorMode.Auto);
