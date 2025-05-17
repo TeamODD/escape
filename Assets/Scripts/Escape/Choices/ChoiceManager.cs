@@ -8,9 +8,9 @@ namespace Assets.Scripts.Escape.Choices
     public class ChoiceManager : SerializedMonoBehaviour
     {
         public static ChoiceManager Instance { get; private set; }
-        [field:SerializeField] public UnityEvent OnDataApplied { get; private set; }
-        [field:SerializeField] private TMP_Text _comfirmChoiceText;
-        [field:SerializeField] private TMP_Text _cancleChoiceText;
+        [field: SerializeField] public UnityEvent OnDataApplied { get; private set; }
+        [field: SerializeField] private TMP_Text _comfirmChoiceText;
+        [field: SerializeField] private TMP_Text _cancleChoiceText;
         private ChoiceData _choiceData;
         private void Awake()
         {
@@ -27,9 +27,13 @@ namespace Assets.Scripts.Escape.Choices
             _cancleChoiceText.text = data.CancelChoice;
             OnDataApplied.Invoke();
         }
-        public void Confirm()
+        public void OnConfirm()
         {
             _choiceData.OnCofirmed.Invoke();
+        }
+        public void OnCancle()
+        {
+            _choiceData.OnCancled.Invoke();
         }
     }        
 }
