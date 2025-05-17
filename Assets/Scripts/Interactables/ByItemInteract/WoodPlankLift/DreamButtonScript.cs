@@ -3,22 +3,23 @@ using UnityEngine.Events;
 
 public class DreamButtonScript : ClickHandler
 {
+    public Testing testingScript;
     public AudioClip changeSFX;
     [field:SerializeField] public UnityEvent OnSwitchPattern { get; private set; }
     public bool isBoxOpened;
     public override void DoToWork()
     {
-        SoundControllerScript.Instance.StartEffectBgm(changeSFX);
         flowIdx++;
         if (flowIdx >= 3)
         {
             flowIdx = 0;
         }
-        ChangeSprite(flowIdx);
 
         if (isBoxOpened)
         {
+            SoundControllerScript.Instance.StartEffectBgm(changeSFX);
             OnSwitchPattern.Invoke();
+            ChangeSprite(flowIdx);
         }
         
         
@@ -34,8 +35,6 @@ public class DreamButtonScript : ClickHandler
         {
             
         }
-       
-        
         
     }
 

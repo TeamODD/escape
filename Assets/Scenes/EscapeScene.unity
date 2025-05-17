@@ -2078,8 +2078,8 @@ MonoBehaviour:
   dialogueData: []
   imageList:
   - {fileID: 8166710274925509176, guid: 51bc4dc2132e26a4fbf94079e1191e05, type: 3}
-  - {fileID: -2615874204119335, guid: 4cbf1c2dbdb51c5429af8621e3c54809, type: 3}
   - {fileID: -2093324750932669864, guid: 5799a05735c738f41813f7c65458c02c, type: 3}
+  - {fileID: -2615874204119335, guid: 4cbf1c2dbdb51c5429af8621e3c54809, type: 3}
   flowController: {fileID: 1811805540}
   changeSFX: {fileID: 8300000, guid: d7bfaf69e1e172644888c1c6bb93cd84, type: 3}
   <OnSwitchPattern>k__BackingField:
@@ -2110,6 +2110,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   isBoxOpened: 0
+  testingScript: {fileID: 0}
 --- !u!60 &379343698
 PolygonCollider2D:
   m_ObjectHideFlags: 0
