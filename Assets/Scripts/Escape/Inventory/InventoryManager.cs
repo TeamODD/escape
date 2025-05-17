@@ -17,9 +17,16 @@ namespace Assets.Scripts.Escape.Inventory
             Instance = this;
         }
         [field: SerializeField] public Dictionary<string, ItemData> ItemDictionary { get; private set; }
+
         [SerializeField] private Sprite _realityBackgroundSprite;
         [SerializeField] private Sprite _dreamBackgroundSprite;
         [SerializeField] private Image _BackgroundImage;
+
+
+        [SerializeField] private Sprite _realityToggleButtonSprite;
+        [SerializeField] private Sprite _dreamToggleButtonSprite;
+        [SerializeField] private Image _ToggleButtonImage;
+
         [SerializeField] private List<InventoryPage> _inventoryPages;
         [SerializeField] private ItemSlot[] _itemSlots = new ItemSlot[5];
         
@@ -84,6 +91,16 @@ namespace Assets.Scripts.Escape.Inventory
             {
                 _state = value;
                 SetItemSlots();
+                if (value == SceneState.Reality)
+                {
+                    _BackgroundImage.sprite = _realityBackgroundSprite;
+                    _ToggleButtonImage.sprite = _realityToggleButtonSprite;
+                }
+                else
+                {
+                    _BackgroundImage.sprite = _dreamBackgroundSprite;
+                    _ToggleButtonImage.sprite = _dreamToggleButtonSprite;
+                }
             }
         }
         public void InitializeState()
