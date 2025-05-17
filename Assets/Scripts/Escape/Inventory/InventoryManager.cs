@@ -27,6 +27,14 @@ namespace Assets.Scripts.Escape.Inventory
         [SerializeField] private Sprite _dreamToggleButtonSprite;
         [SerializeField] private Image _ToggleButtonImage;
 
+        [SerializeField] private Sprite _realityUpArrowButtonSprite;
+        [SerializeField] private Sprite _dreamUpArrowButtonSprite;
+        [SerializeField] private Image _UpArrowButtonImage;
+
+        [SerializeField] private Sprite _realityDownArrowButtonSprite;
+        [SerializeField] private Sprite _dreamDownArrowButtonSprite;
+        [SerializeField] private Image _DownArrowButtonImage;
+
         [SerializeField] private List<InventoryPage> _inventoryPages;
         [SerializeField] private ItemSlot[] _itemSlots = new ItemSlot[5];
         
@@ -95,11 +103,15 @@ namespace Assets.Scripts.Escape.Inventory
                 {
                     _BackgroundImage.sprite = _realityBackgroundSprite;
                     _ToggleButtonImage.sprite = _realityToggleButtonSprite;
+                    _UpArrowButtonImage.sprite = _realityUpArrowButtonSprite;
+                    _DownArrowButtonImage.sprite = _realityDownArrowButtonSprite;
                 }
                 else
                 {
                     _BackgroundImage.sprite = _dreamBackgroundSprite;
                     _ToggleButtonImage.sprite = _dreamToggleButtonSprite;
+                    _UpArrowButtonImage.sprite = _dreamUpArrowButtonSprite;
+                    _DownArrowButtonImage.sprite = _dreamDownArrowButtonSprite;
                 }
             }
         }

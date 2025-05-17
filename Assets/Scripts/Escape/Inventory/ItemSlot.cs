@@ -54,7 +54,7 @@ namespace Assets.Scripts.Escape.Inventory
 
         public void PlayDialogue()
         {
-            if (_itemData == null)
+            if (_itemData == null || !_itemData.IsAcquired)
             {
                 return;
             }

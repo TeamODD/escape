@@ -67,6 +67,7 @@ MonoBehaviour:
   _realityBorderSprite: {fileID: 1191303254347674446, guid: 03251653451ce4fd5a81ad552dbb38e3, type: 3}
   _dreamBorderSprite: {fileID: 1191303254347674446, guid: 03251653451ce4fd5a81ad552dbb38e3, type: 3}
   _itemObject: {fileID: 7670579598022372529}
+  _itemSlotButton: {fileID: 3675207250664147917}
 --- !u!222 &3421410656786351710
 CanvasRenderer:
   m_ObjectHideFlags: 0
