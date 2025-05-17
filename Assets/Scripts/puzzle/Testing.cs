@@ -133,9 +133,10 @@ public class Testing : MonoBehaviour
         Vector3 worldPos = grid.GetWorldPosition(gridPos.x, gridPos.y) + new Vector3(grid.GetCellSize(), grid.GetCellSize())*0.5f;
         worldPos.z = -5f;
         ballObject.transform.DOMove(worldPos,0.3f).SetEase(Ease.InOutSine).Play();
-        if (grid.GetValue(gridPos.x, gridPos.y) == 3)
+        if (grid.GetValue(gridPos.x, gridPos.y) == 3)//막야 도착했다면
         {
             RealityBoxScript.BoxSolve();
+            
         }
     }
 
