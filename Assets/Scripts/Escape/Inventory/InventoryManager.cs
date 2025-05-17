@@ -23,7 +23,7 @@ namespace Assets.Scripts.Escape.Inventory
         [SerializeField] private List<InventoryPage> _inventoryPages;
         [SerializeField] private ItemSlot[] _itemSlots = new ItemSlot[5];
         
-        private int _pageIndex;
+        [SerializeField] private int _pageIndex;
         [SerializeField] private Button _prevPageButton;
         [SerializeField] private Button _nextPageButton;
         public void MovePrevPage()
@@ -91,14 +91,15 @@ namespace Assets.Scripts.Escape.Inventory
             State = SceneState.Reality;
         }
 
-        public void AcquireItem(string name)
+        public void AcquireItem(ItemData data)
         {
+            string name = data.Name;
             if (ItemDictionary.TryGetValue(name, out var item))
             {
                 item.IsAcquired = true;
                 foreach (var itemSlot in _itemSlots)
                 {
-                    if (itemSlot.ItemData.Name == name)
+                    if (itemSlot.ItemData != null && itemSlot.ItemData.Name == name)
                     {
                         itemSlot.ItemImage.gameObject.SetActive(true);
                         break;
@@ -107,7 +108,7 @@ namespace Assets.Scripts.Escape.Inventory
             }
             else
             {
-                Debug.Log("아이템 정보가 없습니다 : "+name);
+                Debug.Log("아이템 정보가 없습니다 : " + name);
             }
         }
     }        
