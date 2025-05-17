@@ -136,7 +136,7 @@ public class Testing : MonoBehaviour
         if (grid.GetValue(gridPos.x, gridPos.y) == 3)//막야 도착했다면
         {
             RealityBoxScript.BoxSolve();
-            RealityBoxScript.GetKey();
+           
         }
     }
 
