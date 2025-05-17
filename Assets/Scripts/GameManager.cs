@@ -74,8 +74,8 @@ public class GameManager : MonoBehaviour
     {
         //OptionManager.Instance.ChangeSprites();
         FlowController.CheckSwitch();
-        CursorManager.Instance.ChangeCursor(IsInDream);
         IsInDream = !IsInDream;
+        CursorManager.Instance.ChangeCursor(IsInDream);
         _dreamObjects.SetActive(IsInDream);
         _realityObjects.SetActive(!IsInDream);
         totalInventoryController.AllInventorySwitchStatus(IsInDream);

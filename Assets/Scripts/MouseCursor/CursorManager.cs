@@ -24,13 +24,13 @@ public class CursorManager : MonoBehaviour
         
         if (status) //꿈
         {
-            Cursor.SetCursor(cursorTextures[0], new Vector2(4, 4), CursorMode.Auto);
-            Cursor.SetCursor(cursorTextures[0],cursorHotspot,CursorMode.Auto);
+            Cursor.SetCursor(cursorTextures[0], Vector2.zero, CursorMode.ForceSoftware);
+            Cursor.SetCursor(cursorTextures[0],cursorHotspot,CursorMode.ForceSoftware);
         }
         else //현실
         {
-            Cursor.SetCursor(cursorTextures[1], new Vector2(4, 4), CursorMode.Auto);
-            Cursor.SetCursor(cursorTextures[1],cursorHotspot,CursorMode.Auto);
+            Cursor.SetCursor(cursorTextures[1], Vector2.zero, CursorMode.ForceSoftware);
+            Cursor.SetCursor(cursorTextures[1],cursorHotspot,CursorMode.ForceSoftware);
         }
     }
 }

@@ -5997,8 +5997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTextures:
-  - {fileID: 2800000, guid: a1f3bf21e2e98c042921f03f8e169dcd, type: 3}
   - {fileID: 2800000, guid: 09fb4b18416f5d9489675214b36ddf4e, type: 3}
+  - {fileID: 2800000, guid: a1f3bf21e2e98c042921f03f8e169dcd, type: 3}
 --- !u!1 &835508178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1675161834879814041, guid: c3d1125ec88600e49a2c2f8f471676e7, type: 3}
