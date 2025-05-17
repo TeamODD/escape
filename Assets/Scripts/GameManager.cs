@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using Assets.Scripts.Dialogue;
 using Assets.Scripts.UI.Options;
+using Assets.Scripts.Utility.Scene;
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     public bool _isWindowEmpty;
     [SerializeField] private GameObject _dreamObjects;
     [SerializeField] private GameObject _realityObjects;
+   
     [field:SerializeField] public UnityEvent OnFade { get; private set; }
     public bool IsInDream { get; private set; } = false;
 
@@ -145,5 +148,9 @@ public class GameManager : MonoBehaviour
         _isZoomIn = input;
     }
    
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(0);
+    }
  
 }

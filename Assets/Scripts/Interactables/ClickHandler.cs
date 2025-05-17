@@ -15,7 +15,8 @@ public class ClickHandler : MonoBehaviour
     protected ZoomTarget _zoomTarget;
     protected int flowIdx;
     protected bool isEnableZoom = true;
-    
+
+    protected bool _isGetEnd = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -123,4 +124,13 @@ public class ClickHandler : MonoBehaviour
     {
         return isEnableZoom;
     }
+    
+    public void tryGoLobby()
+    {
+        if (_isGetEnd)
+        {
+            GameManager.Instance.LoadScene();
+        }
+    }
+    
 }

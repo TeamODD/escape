@@ -16,7 +16,7 @@ public class FlowController : MonoBehaviour
     private int _gameSwitchCount;
     private GameObject _currentSelectObject;
     private GameObject _previousObject;
-    
+    private bool _isGetEnd;
     [field:SerializeField] public UnityEvent OnHiddenStart { get; private set; }
     [field:SerializeField] public UnityEvent OnBedStart { get; private set; }
     
@@ -38,7 +38,7 @@ public class FlowController : MonoBehaviour
     public void CheckSwitch()
     {
         _gameSwitchCount++;
-        Debug.Log(_gameSwitchCount);
+       
         // 아무것도 안건들고
         //꿈  현실 상태 변환 몇번 ?
         //아무것도 좀 빡세 아이템획득이나 줌안하는거 이걸로 ㄱㄱ
@@ -61,11 +61,13 @@ public class FlowController : MonoBehaviour
     {
         DialogueController.Instance.PlayDialogue(DialogueDatas[0]);
         EndingScript.Instance.RequsetEnding(0);
+        _isGetEnd = true;
     }
     public void StartBedEnding()
     {
         DialogueController.Instance.PlayDialogue(DialogueDatas[1]);
         EndingScript.Instance.RequsetEnding(1);
+        _isGetEnd = true;
     }
     public void CheckGameObject(GameObject input)
     {
@@ -82,7 +84,16 @@ public class FlowController : MonoBehaviour
         
         
     }
+
+
+    public void tryGoLobby()
+    {
+        if (_isGetEnd)
+        {
+            GameManager.Instance.LoadScene();
+        }
+    }
     
-    
+  
    
 }

@@ -33,6 +33,7 @@ public class RealiryDoorScript : ClickHandler
     {
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         EndingScript.Instance.RequsetEnding(3);
+        _isGetEnd = true;
     }
 
     

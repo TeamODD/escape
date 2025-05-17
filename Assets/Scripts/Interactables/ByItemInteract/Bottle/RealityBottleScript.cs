@@ -45,7 +45,7 @@ public class RealityBottleScript : ClickHandler
     {
         
         //죽음 엔딩 처리 
-        
+        _isGetEnd = true;
        
         OnFade.Invoke();
         flowIdx++;

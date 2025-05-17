@@ -64,6 +64,7 @@ public class DreamDoorScript : ClickHandler
     {
         DialogueController.Instance.PlayDialogue(dialogueData[1]);
         EndingScript.Instance.RequsetEnding(2);
+        _isGetEnd = true;
     }
     public void GetBrouchToDoor(GameObject input)
     {

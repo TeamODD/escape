@@ -5975,7 +5975,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 601
+  m_SortingOrder: 1001
   m_TargetDisplay: 0
 --- !u!224 &861535568
 RectTransform:
@@ -9551,19 +9551,7 @@ MonoBehaviour:
         m_CallState: 2
   <OnCompleteEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1392723028}
-        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
-        m_MethodName: PlayAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   <OnKillEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -12271,19 +12259,19 @@ PrefabInstance:
       objectReference: {fileID: -428258248077468117, guid: 0e4d3daae318e7449a35bb28bd505a53, type: 3}
     - target: {fileID: 642515691229564990, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 642515691229564990, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 642515691229564990, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 642515691229564990, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -140
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 711626921788659599, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Sprite
@@ -12295,19 +12283,19 @@ PrefabInstance:
       objectReference: {fileID: -7899847174998850031, guid: 0e4d3daae318e7449a35bb28bd505a53, type: 3}
     - target: {fileID: 862029483544543024, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 862029483544543024, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 862029483544543024, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 862029483544543024, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -860
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 876896039979889664, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Sprite
@@ -12499,19 +12487,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1819003259505824395, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1819003259505824395, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1819003259505824395, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1819003259505824395, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -680
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2143729919821168698, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Type
@@ -12827,19 +12815,19 @@ PrefabInstance:
       objectReference: {fileID: 3085519562072248888, guid: 0e4d3daae318e7449a35bb28bd505a53, type: 3}
     - target: {fileID: 3235304530142081516, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3235304530142081516, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3235304530142081516, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3235304530142081516, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3334552263974791230, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Sprite
@@ -12851,19 +12839,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384534327147218206, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3384534327147218206, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3384534327147218206, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3384534327147218206, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -320
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3463675181396292054, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Sprite
@@ -13055,35 +13043,35 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d7547426445397248afc980d0558685f, type: 2}
     - target: {fileID: 4806238353460137943, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4806238353460137943, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4806238353460137943, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4806238353460137943, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -320
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4930445859096718939, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4930445859096718939, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4930445859096718939, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4930445859096718939, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -680
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4937393394610752712, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: background
@@ -13379,35 +13367,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586616230543557326, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5586616230543557326, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5586616230543557326, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5586616230543557326, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -860
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5651189162345477669, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5651189162345477669, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5651189162345477669, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5651189162345477669, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -140
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5733392428467989105, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_Sprite
@@ -13807,19 +13795,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8064341698277842672, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8064341698277842672, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8064341698277842672, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8064341698277842672, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8077338620593923923, guid: 629127a78321f1d45aadaf164fe54447, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16213,6 +16201,54 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1811805540}
+        m_TargetAssemblyTypeName: FlowController, Assembly-CSharp
+        m_MethodName: tryGoLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 728440355}
+        m_TargetAssemblyTypeName: ClickHandler, Assembly-CSharp
+        m_MethodName: tryGoLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1196354716}
+        m_TargetAssemblyTypeName: ClickHandler, Assembly-CSharp
+        m_MethodName: tryGoLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1392723023}
+        m_TargetAssemblyTypeName: ClickHandler, Assembly-CSharp
+        m_MethodName: tryGoLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnHide>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -17468,7 +17504,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3040335290423629121, guid: c3d1125ec88600e49a2c2f8f471676e7, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 1755464292}
     - targetCorrespondingSourceObject: {fileID: 3040335290423629121, guid: c3d1125ec88600e49a2c2f8f471676e7, type: 3}
       insertIndex: -1
