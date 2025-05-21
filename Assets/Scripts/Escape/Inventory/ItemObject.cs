@@ -1,13 +1,16 @@
 namespace Assets.Scripts.Escape.Inventory
 {
-    using Assets.Scripts.Escape.Zoom;
-    using Sirenix.OdinInspector;
+    using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.UI;
     using UnityEngine.EventSystems;
+    using Sirenix.OdinInspector;
+    using Zoom;
 
     public class ItemObject : SerializedMonoBehaviour
     {
         public ItemData ItemData;
+        [SerializeField] private GraphicRaycaster raycaster;
 
         public void UseItemOnTargetObject(PointerEventData eventData)
         {
@@ -15,15 +18,15 @@ namespace Assets.Scripts.Escape.Inventory
             {
                 return;
             }
+            
+            List<RaycastResult> results = new();
+            raycaster.Raycast(eventData, results);
 
-            Vector3 worldPoint = Camera.main.ScreenToWorldPoint(eventData.position);
-
-            RaycastHit2D[] hit = Physics2D.RaycastAll(worldPoint, Vector2.zero);
-            foreach (RaycastHit2D hit2d in hit)
+            foreach (var result in results)
             {
-                if (hit2d.collider.CompareTag("Target"))
+                if (result.gameObject.CompareTag("Target"))
                 {
-                    ZoomManager zoomManager = hit2d.collider.GetComponentInParent<ZoomManager>();
+                    ZoomManager zoomManager = result.gameObject.GetComponentInParent<ZoomManager>();
                     if (zoomManager.ObjectData != null && zoomManager.ObjectData.ItemData.Name == ItemData.Name)
                     {
                         zoomManager.ObjectData.OnItemUsed.Invoke();
