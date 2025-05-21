@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 9899583}
   - component: {fileID: 9899581}
   - component: {fileID: 9899582}
+  - component: {fileID: 9899585}
   m_Layer: 5
   m_Name: Zoom Image
   m_TagString: Target
@@ -180,7 +181,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 9899583}
+    - {fileID: 9899585}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -188,8 +189,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _fadable
       Entry: 7
-      Data: 0|Assets.Scripts.Animators.FadableAdapters.ImageAdapter, Assembly-CSharp
-    - Name: _image
+      Data: 0|Assets.Scripts.Animators.FadableAdapters.CanvasGroupAdapter, Assembly-CSharp
+    - Name: _canvasGroup
       Entry: 10
       Data: 0
     - Name: 
@@ -199,18 +200,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9899579}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -250,7 +239,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 9899583}
+    - {fileID: 9899585}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -258,8 +247,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _fadable
       Entry: 7
-      Data: 0|Assets.Scripts.Animators.FadableAdapters.ImageAdapter, Assembly-CSharp
-    - Name: _image
+      Data: 0|Assets.Scripts.Animators.FadableAdapters.CanvasGroupAdapter, Assembly-CSharp
+    - Name: _canvasGroup
       Entry: 10
       Data: 0
     - Name: 
@@ -275,18 +264,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9899579}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -342,6 +319,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9899579}
   m_CullTransparentMesh: 1
+--- !u!225 &9899585
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9899579}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &12086400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6361,9 +6350,6 @@ MonoBehaviour:
       m_Calls: []
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
-  <OnEnableEvent>k__BackingField:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 544911851}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
@@ -6377,6 +6363,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnEnableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   <OnDisableEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -7560,9 +7549,6 @@ MonoBehaviour:
       m_Calls: []
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
-  <OnEnableEvent>k__BackingField:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 680067685}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
@@ -7576,6 +7562,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnEnableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   <OnDisableEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -8078,9 +8067,6 @@ MonoBehaviour:
       m_Calls: []
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
-  <OnEnableEvent>k__BackingField:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 727314151}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
@@ -8094,6 +8080,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnEnableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   <OnDisableEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -10901,18 +10890,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1378822928}
-        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
-        m_MethodName: DeactivateZoomImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 346722028}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
         m_MethodName: PlayAnimation
@@ -10941,6 +10918,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9899582}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23547,9 +23536,6 @@ MonoBehaviour:
       m_Calls: []
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
-  <OnEnableEvent>k__BackingField:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1824671404}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
@@ -23563,6 +23549,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnEnableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   <OnDisableEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -26079,9 +26068,6 @@ MonoBehaviour:
       m_Calls: []
   <OnStartEvent>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
-  <OnEnableEvent>k__BackingField:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2019321999}
         m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
@@ -26095,6 +26081,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnEnableEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   <OnDisableEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
