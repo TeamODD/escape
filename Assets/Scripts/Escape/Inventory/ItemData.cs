@@ -26,10 +26,7 @@ namespace Assets.Scripts.Escape.Inventory
         }
         private void AcquiredMappingItemData()
         {
-            if (!MappingItemData._isAcquired)
-            {
-                MappingItemData._isAcquired = true;
-            }
+            MappingItemData._isAcquired = IsAcquired;
         }
     }        
 }
