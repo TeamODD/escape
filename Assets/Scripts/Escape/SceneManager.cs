@@ -14,9 +14,12 @@ namespace Assets.Scripts.Escape
         [field: SerializeField] private GameObject _realityObejcts;
         [field: SerializeField] private GameObject _dreamObejcts;
 
+
         [field: SerializeField] private Image _dialogueImage;
+        [field: SerializeField] private Image _itemDialogueImage;
         [field: SerializeField] private Sprite _realityDialogueSprite;
         [field: SerializeField] private Sprite _dreamDialogueSprite;
+
 
         public SceneState State
         {
@@ -33,10 +36,12 @@ namespace Assets.Scripts.Escape
                 if (value == SceneState.Reality)
                 {
                     _dialogueImage.sprite = _realityDialogueSprite;
+                    _itemDialogueImage.sprite = _realityDialogueSprite;
                 }
                 else
                 {
                     _dialogueImage.sprite = _dreamDialogueSprite;
+                    _itemDialogueImage.sprite = _dreamDialogueSprite;
                 }
             }
         }
