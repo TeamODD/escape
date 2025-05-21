@@ -9,5 +9,9 @@ namespace Assets.Scripts.Escape.Zoom
     {
         [field: SerializeField] public UnityEvent OnItemUsed { get; private set; }
         [field: SerializeField] public ItemData ItemData { get; private set; }
+        private void Start()
+        {
+            OnItemUsed.AddListener(() => InventoryManager.Instance.SetItemSlots());
+        }
     }        
 }
