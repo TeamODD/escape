@@ -8,16 +8,16 @@ namespace Assets.Scripts.Escape.Dialogue
 
     public class DialogueController : SerializedMonoBehaviour
     {
-        public static DialogueController Instance { get; private set; }
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
-        }
+        // public static DialogueController Instance { get; private set; }
+        // private void Awake()
+        // {
+        //     if (Instance != null && Instance != this)
+        //     {
+        //         Destroy(gameObject);
+        //         return;
+        //     }
+        //     Instance = this;
+        // }
         [field:SerializeField] private TMP_Text _text;
         [field:SerializeField] private TextFadeAnimator _animator;
         [field:SerializeField] public UnityEvent OnPlayDialogue { get; private set; }

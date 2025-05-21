@@ -7,6 +7,7 @@ namespace Assets.Scripts.Escape.Inventory
 
     public class ItemSlot : SerializedMonoBehaviour
     {
+        [field: SerializeField] public DialogueController DialogueController { get; private set; }
         [field: SerializeField] public Image ItemImage { get; private set; }
         [SerializeField] private Image _borderImage;
         [SerializeField] private Sprite _realityBorderSprite;
@@ -58,7 +59,7 @@ namespace Assets.Scripts.Escape.Inventory
             {
                 return;
             }
-            DialogueController.Instance.PlayDialogue(_itemData.Description);
+            DialogueController.PlayDialogue(_itemData.Description);
         }
     }
 }
