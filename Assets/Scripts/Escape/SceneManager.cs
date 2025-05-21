@@ -9,6 +9,8 @@ namespace Assets.Scripts.Escape
 
     public class SceneManager : SerializedMonoBehaviour, ISceneStateHandler
     {
+        [field: SerializeField] public UnityEvent OnRealityState { get; private set; }
+        [field: SerializeField] public UnityEvent OnDreamState { get; private set; }
         [field: SerializeField] public List<ISceneStateHandler> SceneStateHandlers { get; private set; }
         [field: SerializeField] private SceneState _state;
         [field: SerializeField] private GameObject _realityObejcts;
@@ -31,17 +33,21 @@ namespace Assets.Scripts.Escape
                 {
                     handler.State = value;
                 }
-                _dreamObejcts.SetActive(value == SceneState.Dream);
-                _realityObejcts.SetActive(value == SceneState.Reality);
                 if (value == SceneState.Reality)
                 {
+                    _dreamObejcts.SetActive(false);
+                    _realityObejcts.SetActive(true);
                     _dialogueImage.sprite = _realityDialogueSprite;
                     _itemDialogueImage.sprite = _realityDialogueSprite;
+                    OnRealityState.Invoke();
                 }
                 else
                 {
+                    _realityObejcts.SetActive(false);
+                    _dreamObejcts.SetActive(true);
                     _dialogueImage.sprite = _dreamDialogueSprite;
                     _itemDialogueImage.sprite = _dreamDialogueSprite;
+                    OnDreamState.Invoke();
                 }
             }
         }
