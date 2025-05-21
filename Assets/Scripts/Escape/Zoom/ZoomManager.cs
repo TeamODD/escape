@@ -1,5 +1,6 @@
 namespace Assets.Scripts.Escape.Zoom
 {
+    using System.Collections.Generic;
     using Assets.Scripts.Escape.Inventory;
     using Sirenix.OdinInspector;
     using UnityEngine;
@@ -11,19 +12,19 @@ namespace Assets.Scripts.Escape.Zoom
         [field: SerializeField] private Image _zoomImage;
         [field: SerializeField] public UnityEvent OnImageEnabled { get; private set; }
         [field: SerializeField] public UnityEvent OnImageDisabled { get; private set; }
-        public ObjectData ObjectData { get; private set; }
+        [field: SerializeField] public List<ObjectData> ObjectData { get; private set; }
         public void SetZoomImage(Sprite sprite)
         {
             _zoomImage.sprite = sprite;
             OnImageEnabled.Invoke();
         }
-        public void SetObjectData(ObjectData data)
+        public void AddObjectData(ObjectData data)
         {
-            ObjectData = data;
+            ObjectData.Add(data);
         }
         public void DeactivateZoomImage()
         {
-            ObjectData = null;
+            ObjectData.Clear();
             OnImageDisabled.Invoke();
         }
     }        
