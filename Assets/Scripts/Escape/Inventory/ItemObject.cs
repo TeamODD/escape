@@ -27,9 +27,15 @@ namespace Assets.Scripts.Escape.Inventory
                 if (result.gameObject.CompareTag("Target"))
                 {
                     ZoomManager zoomManager = result.gameObject.GetComponentInParent<ZoomManager>();
-                    if (zoomManager.ObjectData != null && zoomManager.ObjectData.ItemData.Name == ItemData.Name)
+                    if (zoomManager.ObjectData != null)
                     {
-                        zoomManager.ObjectData.OnItemUsed.Invoke();
+                        foreach (ObjectData objectData in zoomManager.ObjectData)
+                        {
+                            if (objectData.ItemData.Name == ItemData.Name)
+                            {
+                                objectData.OnItemUsed.Invoke();
+                            }
+                        }
                     }
                     break;
                 }
