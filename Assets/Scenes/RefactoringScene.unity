@@ -11016,13 +11016,16 @@ GameObject:
   m_Component:
   - component: {fileID: 968753833}
   - component: {fileID: 968753834}
+  - component: {fileID: 968753837}
+  - component: {fileID: 968753836}
+  - component: {fileID: 968753835}
   m_Layer: 0
   m_Name: Dream Bursted Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &968753833
 Transform:
   m_ObjectHideFlags: 0
@@ -11093,6 +11096,372 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &968753835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968753832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 856800535}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uD479\uC2E0\uD574 \uBCF4\uC774\uB294 \uCEE4\uB2E4\uB780 \uACF0\uC778\uD615\uC774\uB2E4.\\n\uC758\uC678\uB85C
+    \uBC14\uB098\uB098\uD5A5\uC774 \uB09C\uB2E4. "
+--- !u!114 &968753836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968753832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1284541929}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
+          m_MethodName: SetZoomImage
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5138156439060762716, guid: 4f65974763db14144a8788e84f3659a2, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 922794499}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueController,
+            Assembly-CSharp
+          m_MethodName: PlayDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 968753835}
+            m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueData,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!60 &968753837
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968753832}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.52, y: -5.06}
+      - {x: 4.52, y: -4.99}
+      - {x: 4.45, y: -4.9}
+      - {x: 4.33, y: -4.8399997}
+      - {x: 4.22, y: -4.81}
+      - {x: 4.13, y: -4.73}
+      - {x: 4.15, y: -4.63}
+      - {x: 4.1, y: -4.6}
+      - {x: 4.0099998, y: -4.6}
+      - {x: 3.87, y: -4.65}
+      - {x: 3.84, y: -4.71}
+      - {x: 3.6699998, y: -4.65}
+      - {x: 3.56, y: -4.7599998}
+      - {x: 3.4499998, y: -4.7999997}
+      - {x: 3.3999999, y: -4.8399997}
+      - {x: 3.3999999, y: -4.85}
+      - {x: 3.4299998, y: -4.93}
+      - {x: 3.31, y: -5.0099998}
+      - {x: 3.27, y: -5.2}
+      - {x: 3.1999998, y: -5.23}
+      - {x: 3.1999998, y: -5.2799997}
+      - {x: 3.22, y: -5.33}
+      - {x: 3.33, y: -5.39}
+      - {x: 3.3799999, y: -5.4}
+      - {x: 4.17, y: -5.4}
+      - {x: 4.2999997, y: -5.3199997}
+      - {x: 4.39, y: -5.27}
+      - {x: 4.5099998, y: -5.12}
+    - - {x: 6.0299997, y: -5.08}
+      - {x: 6.1, y: -4.93}
+      - {x: 6.12, y: -4.83}
+      - {x: 6.12, y: -4.7599998}
+      - {x: 6.08, y: -4.73}
+      - {x: 6.1099997, y: -4.66}
+      - {x: 5.92, y: -4.58}
+      - {x: 5.83, y: -4.49}
+      - {x: 5.64, y: -4.49}
+      - {x: 5.5, y: -4.52}
+      - {x: 5.43, y: -4.5699997}
+      - {x: 5.2799997, y: -4.6}
+      - {x: 5.16, y: -4.71}
+      - {x: 5.18, y: -4.7799997}
+      - {x: 5.13, y: -4.89}
+      - {x: 5.08, y: -4.8399997}
+      - {x: 5.0299997, y: -4.7999997}
+      - {x: 4.87, y: -4.79}
+      - {x: 4.7799997, y: -4.87}
+      - {x: 4.72, y: -4.96}
+      - {x: 4.67, y: -4.93}
+      - {x: 4.5899997, y: -5.02}
+      - {x: 4.63, y: -5.16}
+      - {x: 4.5099998, y: -5.2799997}
+      - {x: 4.5099998, y: -5.3599997}
+      - {x: 4.52, y: -5.37}
+      - {x: 4.58, y: -5.4}
+      - {x: 5.96, y: -5.4}
+      - {x: 6.04, y: -5.33}
+      - {x: 6.0699997, y: -5.2799997}
+      - {x: 6.06, y: -5.15}
+    - - {x: 8.07, y: -5.0699997}
+      - {x: 8.11, y: -4.8199997}
+      - {x: 8.099999, y: -4.63}
+      - {x: 8.08, y: -4.5899997}
+      - {x: 8.099999, y: -4.5}
+      - {x: 8.139999, y: -4.44}
+      - {x: 8.24, y: -4.56}
+      - {x: 8.4, y: -4.67}
+      - {x: 8.59, y: -4.74}
+      - {x: 8.79, y: -4.74}
+      - {x: 8.9, y: -4.71}
+      - {x: 8.98, y: -4.65}
+      - {x: 9.15, y: -4.56}
+      - {x: 9.21, y: -4.5}
+      - {x: 9.24, y: -4.43}
+      - {x: 9.34, y: -4.23}
+      - {x: 9.37, y: -4.11}
+      - {x: 9.37, y: -3.83}
+      - {x: 9.38, y: -3.81}
+      - {x: 9.38, y: -3.75}
+      - {x: 9.37, y: -3.73}
+      - {x: 9.33, y: -3.54}
+      - {x: 9.26, y: -3.3999999}
+      - {x: 9.26, y: -3.32}
+      - {x: 9.28, y: -3.28}
+      - {x: 9.2699995, y: -3.24}
+      - {x: 9.17, y: -3.25}
+      - {x: 9.2, y: -3.1899998}
+      - {x: 9.179999, y: -3.12}
+      - {x: 9.099999, y: -3.1399999}
+      - {x: 8.849999, y: -2.87}
+      - {x: 8.65, y: -2.74}
+      - {x: 8.61, y: -2.69}
+      - {x: 8.51, y: -2.61}
+      - {x: 8.58, y: -2.55}
+      - {x: 8.65, y: -2.47}
+      - {x: 8.72, y: -2.37}
+      - {x: 8.7699995, y: -2.3999999}
+      - {x: 8.79, y: -2.31}
+      - {x: 8.84, y: -2.27}
+      - {x: 8.809999, y: -2.2}
+      - {x: 8.849999, y: -2.08}
+      - {x: 8.88, y: -1.91}
+      - {x: 8.88, y: -1.74}
+      - {x: 8.99, y: -1.66}
+      - {x: 9.059999, y: -1.5899999}
+      - {x: 9.13, y: -1.4499999}
+      - {x: 9.17, y: -1.3199999}
+      - {x: 9.17, y: -1.09}
+      - {x: 9.11, y: -0.91999996}
+      - {x: 8.96, y: -0.71999997}
+      - {x: 8.97, y: -0.66999996}
+      - {x: 9.059999, y: -0.53}
+      - {x: 9.07, y: -0.48}
+      - {x: 9.04, y: -0.35}
+      - {x: 9.0199995, y: -0.32999998}
+      - {x: 8.84, y: -0.22999999}
+      - {x: 8.7, y: -0.21}
+      - {x: 8.44, y: -0.22}
+      - {x: 8.24, y: -0.26999998}
+      - {x: 8.11, y: -0.29999998}
+      - {x: 7.99, y: -0.29}
+      - {x: 7.8999996, y: -0.22999999}
+      - {x: 7.8199997, y: -0.03}
+      - {x: 7.7, y: 0.14999999}
+      - {x: 7.62, y: 0.22}
+      - {x: 7.5, y: 0.32}
+      - {x: 7.37, y: 0.39}
+      - {x: 7.33, y: 0.41}
+      - {x: 7.25, y: 0.41}
+      - {x: 7.16, y: 0.38}
+      - {x: 7.12, y: 0.31}
+      - {x: 7.1, y: 0.14}
+      - {x: 6.98, y: 0.14999999}
+      - {x: 6.89, y: 0.13}
+      - {x: 6.79, y: 0.089999996}
+      - {x: 6.69, y: -0.01}
+      - {x: 6.64, y: -0.08}
+      - {x: 6.6099997, y: -0.14999999}
+      - {x: 6.5699997, y: -0.28}
+      - {x: 6.58, y: -0.41}
+      - {x: 6.6299996, y: -0.5}
+      - {x: 6.7, y: -0.56}
+      - {x: 6.67, y: -0.61}
+      - {x: 6.5299997, y: -0.76}
+      - {x: 6.43, y: -0.89}
+      - {x: 6.31, y: -1.0699999}
+      - {x: 6.2999997, y: -1.18}
+      - {x: 6.17, y: -1.41}
+      - {x: 6.15, y: -1.5799999}
+      - {x: 6.21, y: -1.76}
+      - {x: 6.18, y: -1.78}
+      - {x: 5.92, y: -1.65}
+      - {x: 5.8599997, y: -1.5899999}
+      - {x: 5.77, y: -1.52}
+      - {x: 5.7599998, y: -1.52}
+      - {x: 5.7, y: -1.54}
+      - {x: 5.52, y: -1.4499999}
+      - {x: 5.5, y: -1.37}
+      - {x: 5.39, y: -1.41}
+      - {x: 5.19, y: -1.35}
+      - {x: 5.12, y: -1.3}
+      - {x: 4.91, y: -1.3}
+      - {x: 4.85, y: -1.28}
+      - {x: 4.7599998, y: -1.3}
+      - {x: 4.62, y: -1.4499999}
+      - {x: 4.58, y: -1.5899999}
+      - {x: 4.56, y: -1.87}
+      - {x: 4.56, y: -2.05}
+      - {x: 4.6, y: -2.12}
+      - {x: 4.62, y: -2.22}
+      - {x: 4.64, y: -2.29}
+      - {x: 4.72, y: -2.46}
+      - {x: 4.7799997, y: -2.54}
+      - {x: 4.83, y: -2.59}
+      - {x: 4.93, y: -2.6299999}
+      - {x: 5.0699997, y: -2.6699998}
+      - {x: 5.2, y: -2.7}
+      - {x: 5.3399997, y: -2.6799998}
+      - {x: 5.42, y: -2.6699998}
+      - {x: 5.39, y: -2.71}
+      - {x: 5.25, y: -2.71}
+      - {x: 5.2, y: -2.74}
+      - {x: 5.21, y: -2.79}
+      - {x: 5.0899997, y: -2.82}
+      - {x: 5.0899997, y: -2.9399998}
+      - {x: 5.0499997, y: -2.8999999}
+      - {x: 4.96, y: -2.84}
+      - {x: 4.92, y: -2.86}
+      - {x: 4.7999997, y: -2.78}
+      - {x: 4.62, y: -2.7}
+      - {x: 4.44, y: -2.6299999}
+      - {x: 4.23, y: -2.59}
+      - {x: 3.97, y: -2.6}
+      - {x: 3.74, y: -2.7}
+      - {x: 3.6999998, y: -2.79}
+      - {x: 3.6299999, y: -3}
+      - {x: 3.61, y: -3.11}
+      - {x: 3.61, y: -3.36}
+      - {x: 3.6399999, y: -3.51}
+      - {x: 3.6899998, y: -3.6699998}
+      - {x: 3.84, y: -4.0099998}
+      - {x: 3.9199998, y: -4.21}
+      - {x: 3.9499998, y: -4.22}
+      - {x: 4.0099998, y: -4.21}
+      - {x: 4.08, y: -4.35}
+      - {x: 4.18, y: -4.31}
+      - {x: 4.47, y: -4.3199997}
+      - {x: 4.5899997, y: -4.29}
+      - {x: 4.7599998, y: -4.23}
+      - {x: 4.83, y: -4.23}
+      - {x: 5.22, y: -4.02}
+      - {x: 5.2799997, y: -3.99}
+      - {x: 5.33, y: -3.9299998}
+      - {x: 5.41, y: -4.04}
+      - {x: 5.5899997, y: -4.23}
+      - {x: 5.75, y: -4.36}
+      - {x: 5.9, y: -4.44}
+      - {x: 6.0499997, y: -4.5299997}
+      - {x: 6.23, y: -4.5899997}
+      - {x: 6.2, y: -4.68}
+      - {x: 6.19, y: -4.85}
+      - {x: 6.23, y: -5}
+      - {x: 6.2999997, y: -5.13}
+      - {x: 6.2999997, y: -5.22}
+      - {x: 6.29, y: -5.29}
+      - {x: 6.33, y: -5.37}
+      - {x: 6.42, y: -5.4}
+      - {x: 7.77, y: -5.4}
+      - {x: 7.95, y: -5.2599998}
+      - {x: 8.03, y: -5.16}
+    - - {x: 3.22, y: -5.17}
+      - {x: 3.22, y: -5.19}
+      - {x: 3.24, y: -5.21}
+      - {x: 3.25, y: -5.21}
+      - {x: 3.28, y: -5.18}
+      - {x: 3.27, y: -5.15}
+      - {x: 3.24, y: -5.15}
+  m_UseDelaunayMesh: 0
 --- !u!1 &977512970
 GameObject:
   m_ObjectHideFlags: 0
@@ -23232,6 +23601,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1814065328}
   - component: {fileID: 1814065329}
+  - component: {fileID: 1814065332}
+  - component: {fileID: 1814065331}
+  - component: {fileID: 1814065330}
+  - component: {fileID: 1814065333}
+  - component: {fileID: 1814065334}
   m_Layer: 0
   m_Name: Dream Bear
   m_TagString: Untagged
@@ -23309,6 +23683,481 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1814065330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 856800535}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uD479\uC2E0\uD574 \uBCF4\uC774\uB294 \uCEE4\uB2E4\uB780 \uACF0\uC778\uD615\uC774\uB2E4.\\n\uC758\uC678\uB85C
+    \uBC14\uB098\uB098\uD5A5\uC774 \uB09C\uB2E4. "
+--- !u!114 &1814065331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 922794499}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueController,
+            Assembly-CSharp
+          m_MethodName: PlayDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1814065330}
+            m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueData,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1284541929}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
+          m_MethodName: SetZoomImage
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 910496213930414708, guid: 3dc1eb84e1130884f8f47ca5d208cafe, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1284541929}
+          m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
+          m_MethodName: AddObjectData
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1814065333}
+            m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Zoom.ObjectData,
+              Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!60 &1814065332
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065327}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.81, y: 5.85}
+    newSize: {x: 5.81, y: 5.85}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.515, y: -2.685}
+      - {x: 1.555, y: -2.595}
+      - {x: 1.5949999, y: -2.345}
+      - {x: 1.5849999, y: -2.155}
+      - {x: 1.5649999, y: -2.115}
+      - {x: 1.5849999, y: -2.0249999}
+      - {x: 1.625, y: -1.9649999}
+      - {x: 1.7249999, y: -2.085}
+      - {x: 1.885, y: -2.195}
+      - {x: 2.075, y: -2.2649999}
+      - {x: 2.2749999, y: -2.2649999}
+      - {x: 2.385, y: -2.235}
+      - {x: 2.435, y: -2.195}
+      - {x: 2.635, y: -2.085}
+      - {x: 2.695, y: -2.0249999}
+      - {x: 2.725, y: -1.9549999}
+      - {x: 2.825, y: -1.755}
+      - {x: 2.855, y: -1.635}
+      - {x: 2.855, y: -1.345}
+      - {x: 2.865, y: -1.305}
+      - {x: 2.865, y: -1.265}
+      - {x: 2.8049998, y: -1.0649999}
+      - {x: 2.745, y: -0.92499995}
+      - {x: 2.7649999, y: -0.805}
+      - {x: 2.7549999, y: -0.765}
+      - {x: 2.655, y: -0.775}
+      - {x: 2.685, y: -0.715}
+      - {x: 2.665, y: -0.645}
+      - {x: 2.585, y: -0.66499996}
+      - {x: 2.355, y: -0.42499998}
+      - {x: 2.2949998, y: -0.36499998}
+      - {x: 2.135, y: -0.275}
+      - {x: 2.095, y: -0.21499999}
+      - {x: 1.995, y: -0.13499999}
+      - {x: 2.065, y: -0.074999996}
+      - {x: 2.135, y: 0.005}
+      - {x: 2.225, y: 0.095}
+      - {x: 2.2549999, y: 0.074999996}
+      - {x: 2.2749999, y: 0.16499999}
+      - {x: 2.315, y: 0.205}
+      - {x: 2.315, y: 0.305}
+      - {x: 2.375, y: 0.565}
+      - {x: 2.365, y: 0.73499995}
+      - {x: 2.475, y: 0.815}
+      - {x: 2.5449998, y: 0.885}
+      - {x: 2.615, y: 1.025}
+      - {x: 2.665, y: 1.155}
+      - {x: 2.655, y: 1.385}
+      - {x: 2.565, y: 1.5949999}
+      - {x: 2.445, y: 1.755}
+      - {x: 2.455, y: 1.805}
+      - {x: 2.5449998, y: 1.9449999}
+      - {x: 2.5549998, y: 1.995}
+      - {x: 2.5249999, y: 2.125}
+      - {x: 2.5049999, y: 2.145}
+      - {x: 2.325, y: 2.245}
+      - {x: 2.185, y: 2.2649999}
+      - {x: 1.925, y: 2.2549999}
+      - {x: 1.7249999, y: 2.205}
+      - {x: 1.5949999, y: 2.175}
+      - {x: 1.475, y: 2.185}
+      - {x: 1.385, y: 2.245}
+      - {x: 1.305, y: 2.445}
+      - {x: 1.1949999, y: 2.625}
+      - {x: 0.98499995, y: 2.8049998}
+      - {x: 0.85499996, y: 2.865}
+      - {x: 0.815, y: 2.885}
+      - {x: 0.73499995, y: 2.885}
+      - {x: 0.645, y: 2.855}
+      - {x: 0.60499996, y: 2.7849998}
+      - {x: 0.585, y: 2.615}
+      - {x: 0.465, y: 2.625}
+      - {x: 0.36499998, y: 2.615}
+      - {x: 0.24499999, y: 2.5549998}
+      - {x: 0.114999995, y: 2.405}
+      - {x: 0.055, y: 2.195}
+      - {x: 0.065, y: 2.065}
+      - {x: 0.095, y: 2.0149999}
+      - {x: 0.114999995, y: 1.985}
+      - {x: 0.185, y: 1.915}
+      - {x: 0.155, y: 1.865}
+      - {x: 0.015, y: 1.7149999}
+      - {x: -0.085, y: 1.5849999}
+      - {x: -0.205, y: 1.405}
+      - {x: -0.21499999, y: 1.295}
+      - {x: -0.315, y: 1.115}
+      - {x: -0.33499998, y: 1.0649999}
+      - {x: -0.36499998, y: 0.895}
+      - {x: -0.305, y: 0.715}
+      - {x: -0.33499998, y: 0.695}
+      - {x: -0.615, y: 0.84499997}
+      - {x: -0.635, y: 0.885}
+      - {x: -0.705, y: 0.91499996}
+      - {x: -0.78499997, y: 0.945}
+      - {x: -0.875, y: 0.945}
+      - {x: -0.995, y: 1.025}
+      - {x: -1.015, y: 1.105}
+      - {x: -1.155, y: 1.095}
+      - {x: -1.3249999, y: 1.125}
+      - {x: -1.395, y: 1.175}
+      - {x: -1.605, y: 1.175}
+      - {x: -1.665, y: 1.1949999}
+      - {x: -1.755, y: 1.175}
+      - {x: -1.895, y: 1.025}
+      - {x: -1.935, y: 0.885}
+      - {x: -1.9549999, y: 0.60499996}
+      - {x: -1.9549999, y: 0.435}
+      - {x: -1.915, y: 0.355}
+      - {x: -1.895, y: 0.255}
+      - {x: -1.875, y: 0.185}
+      - {x: -1.795, y: 0.015}
+      - {x: -1.735, y: -0.065}
+      - {x: -1.685, y: -0.114999995}
+      - {x: -1.5849999, y: -0.155}
+      - {x: -1.4449999, y: -0.195}
+      - {x: -1.375, y: -0.205}
+      - {x: -1.115, y: -0.195}
+      - {x: -1.015, y: -0.185}
+      - {x: -1.125, y: -0.33499998}
+      - {x: -1.2049999, y: -0.42499998}
+      - {x: -1.235, y: -0.525}
+      - {x: -1.255, y: -0.60499996}
+      - {x: -1.3349999, y: -0.525}
+      - {x: -1.4649999, y: -0.435}
+      - {x: -1.535, y: -0.415}
+      - {x: -1.555, y: -0.355}
+      - {x: -1.635, y: -0.355}
+      - {x: -1.8149999, y: -0.24499999}
+      - {x: -2.075, y: -0.155}
+      - {x: -2.2849998, y: -0.114999995}
+      - {x: -2.5449998, y: -0.125}
+      - {x: -2.7749999, y: -0.225}
+      - {x: -2.8149998, y: -0.315}
+      - {x: -2.885, y: -0.525}
+      - {x: -2.895, y: -0.585}
+      - {x: -2.905, y: -0.675}
+      - {x: -2.905, y: -0.825}
+      - {x: -2.895, y: -0.935}
+      - {x: -2.875, y: -1.035}
+      - {x: -2.825, y: -1.1949999}
+      - {x: -2.675, y: -1.535}
+      - {x: -2.595, y: -1.735}
+      - {x: -2.565, y: -1.745}
+      - {x: -2.5049999, y: -1.7249999}
+      - {x: -2.455, y: -1.8349999}
+      - {x: -2.435, y: -1.865}
+      - {x: -2.335, y: -1.8349999}
+      - {x: -2.0449998, y: -1.8449999}
+      - {x: -1.925, y: -1.8149999}
+      - {x: -1.755, y: -1.755}
+      - {x: -1.685, y: -1.755}
+      - {x: -1.5749999, y: -1.6949999}
+      - {x: -1.235, y: -1.515}
+      - {x: -1.105, y: -1.5649999}
+      - {x: -1.025, y: -1.655}
+      - {x: -0.835, y: -1.8249999}
+      - {x: -0.615, y: -1.9749999}
+      - {x: -0.465, y: -2.055}
+      - {x: -0.345, y: -2.105}
+      - {x: -0.295, y: -2.145}
+      - {x: -0.315, y: -2.205}
+      - {x: -0.325, y: -2.375}
+      - {x: -0.285, y: -2.5249999}
+      - {x: -0.21499999, y: -2.655}
+      - {x: -0.235, y: -2.8149998}
+      - {x: -0.16499999, y: -2.925}
+      - {x: 1.255, y: -2.925}
+      - {x: 1.365, y: -2.835}
+      - {x: 1.435, y: -2.7849998}
+  m_UseDelaunayMesh: 0
+--- !u!114 &1814065333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e0e4b67f63c42aab3f6865f1bbd530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnItemUsed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 607231902}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Inventory.ItemData, Assembly-CSharp
+        m_MethodName: set_IsAcquired
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1016449727}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5138156439060762716, guid: 4f65974763db14144a8788e84f3659a2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 856800535}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 922794499}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueController,
+          Assembly-CSharp
+        m_MethodName: PlayDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1814065334}
+          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Escape.Dialogue.DialogueData,
+            Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1814065327}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 968753832}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  <ItemData>k__BackingField: {fileID: 607231902}
+--- !u!114 &1814065334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814065327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353e728ea809041a9b5de9277efc8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  <OnCompleted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841896676}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Inventory.ItemData, Assembly-CSharp
+        m_MethodName: set_IsAcquired
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1284541929}
+        m_TargetAssemblyTypeName: Assets.Scripts.Escape.Zoom.ZoomManager, Assembly-CSharp
+        m_MethodName: DeactivateZoomImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 346722028}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animators.AbstractAnimator, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  <Contents>k__BackingField:
+  - "\uD3B8\uC9C0\uCE7C\uB85C \uC778\uD615\uC758 \uBC30\uB97C \uAC08\uB790\uB2E4.\\n\uAC08\uB77C\uC9C4
+    \uD2C8\uC73C\uB85C \uC19C\uC774 \uC794\uB729 \uD280\uC5B4 \uB098\uC654\uB2E4."
+  - "\uD280\uC5B4\uB098\uC628 \uC19C\uB4E4 \uC0AC\uC774\uC5D0 \uBE0C\uB85C\uCE58
+    \uC870\uAC01\uC774 \uBC18\uC9DD\uC774\uACE0 \uC788\uB2E4. "
 --- !u!1 &1824671400
 GameObject:
   m_ObjectHideFlags: 0
