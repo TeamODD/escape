@@ -41,10 +41,10 @@ namespace Assets.Scripts.Escape.Dialogue
             }
             if(_contentIndex==_data.Contents.Length)
             {
+                _contentIndex++;
                 _animator.CompleteAnimation();
                 OnDialogueCompleted.Invoke();
                 _data.OnCompleted.Invoke();
-                _contentIndex++;
                 return;
             }
             else if(_contentIndex>_data.Contents.Length)
