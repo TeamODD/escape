@@ -19,13 +19,13 @@ namespace Assets.Scripts.Escape.Inventory
             get => _itemData;
             set
             {
+                _itemData = value;
+                _itemObject.ItemData = value;
                 if (value == null)
                 {
                     ItemImage.gameObject.SetActive(false);
                     return;
                 }
-                _itemData = value;
-                _itemObject.ItemData = value;
                 ItemImage.sprite = value.Sprite;
                 ItemImage.SetNativeSize();
                 ItemImage.gameObject.SetActive(value.IsAcquired);
