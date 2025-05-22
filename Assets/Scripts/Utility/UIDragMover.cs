@@ -6,6 +6,8 @@ namespace Assets.Scripts.Utility
 
     public class UIDragMover : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
+        [field:SerializeField] public UnityEvent<PointerEventData> OnBeginDragEvent { get; private set; }
+        [field:SerializeField] public UnityEvent<PointerEventData> OnDragEvent { get; private set; }
         [field:SerializeField] public UnityEvent<PointerEventData> OnEndDragEvent { get; private set; }
         [SerializeField] private RectTransform _rectTransform;
         [SerializeField] private Canvas _canvas;
@@ -22,6 +24,8 @@ namespace Assets.Scripts.Utility
                 out var localMousePos);
 
             _dragOffset = _rectTransform.anchoredPosition - localMousePos;
+
+            OnBeginDragEvent.Invoke(eventData);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -34,6 +38,8 @@ namespace Assets.Scripts.Utility
             {
                 _rectTransform.anchoredPosition = localPoint + _dragOffset;
             }
+
+            OnDragEvent.Invoke(eventData);
         }
 
         public void OnEndDrag(PointerEventData eventData)
