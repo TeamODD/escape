@@ -132,12 +132,12 @@ TextureImporter:
       name: zoomin(crow)_2_0
       rect:
         serializedVersion: 2
-        x: 245
+        x: 323
         y: 348
-        width: 1347
+        width: 1269
         height: 713
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,7 +159,7 @@ TextureImporter:
         width: 7
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -176,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 54f0c546299f34c6d9d36f74f86f47de
     internalID: 0
     vertices: []
     indices: 

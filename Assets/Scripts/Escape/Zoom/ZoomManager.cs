@@ -16,6 +16,7 @@ namespace Assets.Scripts.Escape.Zoom
         public void SetZoomImage(Sprite sprite)
         {
             _zoomImage.sprite = sprite;
+            _zoomImage.SetNativeSize();
             OnImageEnabled.Invoke();
         }
         public void AddObjectData(ObjectData data)
