@@ -17,7 +17,7 @@ public class SoundControllerScript : MonoBehaviour
         {
             _bgmSequence.Kill();
         }
-        _bgmSequence = DOTween.Sequence();
+        _bgmSequence = DOTween.Sequence().OnKill(()=>_bgmSequence=null);
         if (bgmSource.isPlaying)
         {
             _bgmSequence.Append(bgmSource.DOFade(0, 1f).SetEase(Ease.InQuad));
@@ -42,6 +42,15 @@ public class SoundControllerScript : MonoBehaviour
     public void VolumeSetting(float volume) //설정에서 소리변경시 모든 사운드가 설정되도록
     {
         this.volume = volume;
+    }
+
+    public void StopSequence()
+    {
+        if (_bgmSequence == null || !_bgmSequence.IsPlaying())
+        {
+            return;
+        }
+        _bgmSequence.Kill();
     }
     
     
