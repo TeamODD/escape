@@ -1,17 +1,39 @@
 namespace Assets.Scripts.SoundControl
 {
+    using DG.Tweening;
     using UnityEngine;
-    
+
     public class SoundPlayer : MonoBehaviour
     {
-        [SerializeField] private AudioClip _audioClip;
-        public void PlayBGM()
+        public void PlayBGM(AudioClip audioClip)
         {
-            SoundControllerScript.Instance.StartMainBgm(_audioClip);
+            if (SoundControllerScript.Instance == null)
+            {
+                return;
+            }
+            SoundControllerScript.Instance.StartMainBgm(audioClip);
         }
-        public void PlaySFX()
+        public void PlaySFX(AudioClip audioClip)
         {
-            SoundControllerScript.Instance.StartEffectBgm(_audioClip);
+            if (SoundControllerScript.Instance == null)
+            {
+                return;
+            }
+            SoundControllerScript.Instance.StartEffectBgm(audioClip);
+        }
+        public void StopBGM()
+        {
+            if (SoundControllerScript.Instance == null)
+            {
+                return;
+            }
+            AudioSource audioSource = SoundControllerScript.Instance.bgmSource;
+            Sequence sequence = DOTween.Sequence();
+            if (audioSource.isPlaying)
+            {
+                sequence.Append(audioSource.DOFade(0, 1f).SetEase(Ease.InQuad));
+                sequence.AppendCallback(() => audioSource.Stop());
+            }
         }
     }
 }
